@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=ynt
+]{biblatex}
+ 
+\addbibresource{bibliography.bib}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        
+        \textbf{Exploring Semantic Hierarchies to Improve Resolution Theorem Proving on Ontologies}
+        
+        \vspace{0.5cm}
+        2018 - 2019
+        
+        \vspace{1.5cm}
+        
+        \textbf{Stanley Small}
+        
+    \end{center}
+\end{titlepage}
+
+\section{Abstract}
+A resolution-theorem-prover (RTP) evaluates the validity (truthfulness) of conjectures against a set of axioms classified as a knowledge-base. The axioms each contain a number of predicates which provide information about a domain. When given a conjecture, an RTP attempts to resolve the negated conjecture with axioms from the knowledge-base until the prover finds a contradiction. If the RTP finds a contradiction between the axioms and a negated conjecture, it proves the conjecture. 
+
+The order in which the axioms within the knowledge-base are evaluated significantly impacts the run time of the program, as the search-space increases exponentially with the number of axioms. 
+
+Ontologies, knowledge bases with semantic (and predominantly hierarchical) structures, describe objects and their relationships to other objects. For example, a 'Car' class might exist in a sample ontology with 'Vehicle' as a parent class and 'Bus' as a sibling class. Currently, any hierarchical structures within an ontology are not taken into account when evaluating the relevance of each axiom. At present, each predicate is automatically assigned a weight based on a heuristic measure (such as the number of terms or the frequency of predicates relevant to the conjecture) and axioms with higher weights are evaluated first. My research aims to intelligently select relevant axioms within a knowledge-base given a structured relationship between predicates. I will use the semantic hierarchy over predicates to assign weights to each predicate passed to a weighting function used by the Knuth-Bendix ordering algorithm. The research aims to design heuristics based upon the semantics of the predicates, rather than solely the syntax of the statements. 
+
+I plan to develop weighting functions based upon various parameters relevant to the ontological structure of predicates contained in the ontology, such as the size and depth of a hierarchy based upon the structure of the ontology. 
+
+I will implement methods to calculate weights for each predicate and thus each axiom in attempts to select relevant axioms when proving a theorem. Then, I will conduct an experimental study to determine if my methods show any improvements over current reasoning methods. 
+
+
+%"supplying the prover with a modified theory omitting sentences that are not needed" \cite{kuksa2016prover}
+\nocite{*}
+
+\printbibliography
+
+\end{document}
+
