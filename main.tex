@@ -39,16 +39,69 @@ I plan to develop weighting functions based upon various parameters relevant to 
 
 I will implement methods to calculate weights for each predicate and thus each axiom in attempts to select relevant axioms when proving a theorem. Then, I will conduct an experimental study to determine if my methods show any improvements over current reasoning methods. 
 
-\section{Introduction}
-Theorem proving has classically been used in mathematical applications, to validate theories and to prove new ones. 
+\newpage
 
-\section{Background}
+\section{Introduction}
+This research aims to improve resolution-theorem proving by referencing the relational structure within ontologies when calculating the relevance of each axiom for a specific proof. For this research, I will be conducting an experimental study of different weighting functions in efforts to improve current theorem proving methods. Previous work has shown the effectiveness of automatically weighting the predicates in a set of axioms within a knowledge-base.
+
+\section{Background and Related Works}
+
+Previous attempts to order axioms within a knowledge-base have relied on the frequency of predicates within a knowledge-base, without taking into account the implicit semantic relationships contained within the ontological structure. The structure of ontologies can typically be represented as a hierarchy. This information can be used to gain insights into the relevancy of the predicates. 
+
+\subsection{Formal Logic}
+	Formal logic, specifically first-order logic, represents an environment using statements which can be used to form logical and mathematical proofs
+	    
+	    \[\forall x [isCat(x) \rightarrow hasFourLegs(x)]\]
+	
+	
+	    \subsection{Theorem Proving}
+	    Axioms are statements accepted without proof
+        \[isMan(socrates)\]
+        \[\lnot isMan(X)\lor isMortal(X)\]
+	    A conjecture is an unproved statement believed to be true 
+	    \[isMortal(socrates)\]
+	
+
+	\subsection{Resolution}
+		Axioms must be expressed in Conjunctive Normal Form
+		\[a \rightarrow c\]
+		\[\lnot a \lor c\]
+		One can then resolve the statements
+		\[\frac{a \lor b, \lnot a \lor c }{b \lor c}\]
+	
+	\subsection{Resolution Theorem Proving}
+        \begin{itemize}
+            \item Search space increases exponentially with the addition of each new axiom
+            \item Currently only the syntax of statements is taken into account
+        \end{itemize}
+	
+	\subsection{Comparing Syntax to Semantics}
+		\begin{itemize}
+		    \item Syntax defines the structure of a sentence
+		    \item Semantics describe the meaning of a sentence
+		\end{itemize}
+	
+	\subsection{Knuth-Bendix Ordering}
+		\begin{itemize}
+		    \item Each predicate is assigned a weight
+		    \item Terms are automatically assigned weights by summing the predicate weights
+		\end{itemize}
+	
+	\subsection{Ontologies}
+		An ontology defines categories and relationships among objects. Typically, the objects can be arranged in a hierarchy. 
+
+	
+	\subsection{Objective}
+		\begin{itemize}
+		    \item Use semantic knowledge in addition to syntax of logical statements
+		    \item Improve automated theorem proving
+		    \item Possibly advance artificial intelligence research
+		\end{itemize}
+	
 
 
 %"supplying the prover with a modified theory omitting sentences that are not needed" \cite{kuksa2016prover}
-\nocite{*}
 
 \printbibliography
 
 \end{document}
-
