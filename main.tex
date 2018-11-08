@@ -4,7 +4,7 @@
 
 \usepackage[
 backend=biber,
-style=alphabetic,
+style=numeric,
 sorting=ynt
 ]{biblatex}
  
@@ -28,6 +28,10 @@ sorting=ynt
     \end{center}
 \end{titlepage}
 
+\tableofcontents
+
+\newpage
+
 \section{Abstract}
 A resolution-theorem-prover (RTP) evaluates the validity (truthfulness) of conjectures against a set of axioms classified as a knowledge-base. The axioms each contain a number of predicates which provide information about a domain. When given a conjecture, an RTP attempts to resolve the negated conjecture with axioms from the knowledge-base until the prover finds a contradiction. If the RTP finds a contradiction between the axioms and a negated conjecture, it proves the conjecture. 
 
@@ -42,20 +46,23 @@ I will implement methods to calculate weights for each predicate and thus each a
 \newpage
 
 \section{Introduction}
-This research aims to improve resolution-theorem proving by referencing the relational structure within ontologies when calculating the relevance of each axiom for a specific proof. For this research, I will be conducting an experimental study of different weighting functions in efforts to improve current theorem proving methods. Previous work has shown the effectiveness of automatically weighting the predicates in a set of axioms within a knowledge-base.
+Automatic theorem proving has long been a mechanical process. Currently, information encoded in structural hierarchies constructed from ontologies is not taken into account when determining the relevance axioms when attempting to prove a specific conjecture. 
+
+My research attempts to reduce the time and space required for proofs within an ontology by using semantic knowledge in addition to the syntax of logical statements. 
+
+Improvement for automatic theorem proving has potential to benefit artificial intelligence research, and reasoning in domains with organized relationships.
+
+For this research, I will be conducting an experimental study of different weighting functions in efforts to improve current theorem proving methods. Previous work has shown the effectiveness of automatically weighting the predicates in a set of axioms within a knowledge-base.
 
 \section{Background and Related Works}
 
 Previous attempts to order axioms within a knowledge-base have relied on the frequency of predicates within a knowledge-base, without taking into account the implicit semantic relationships contained within the ontological structure. The structure of ontologies can typically be represented as a hierarchy. This information can be used to gain insights into the relevancy of the predicates. 
 
 \subsection{Formal Logic}
-	Formal logic, specifically first-order logic, represents an environment using statements which can be used to form logical and mathematical proofs
-	    
-	    \[\forall x [isCat(x) \rightarrow hasFourLegs(x)]\]
+Formal logic, specifically first-order logic, represents an environment using statements which can be used to form logical and mathematical proofs. Predicate logic specifically is the focus of my research.  
 	
-	
-	    \subsection{Theorem Proving}
-	    Axioms are statements accepted without proof
+\subsection{Theorem Proving}
+In Axioms are statements accepted without proof
         \[isMan(socrates)\]
         \[\lnot isMan(X)\lor isMortal(X)\]
 	    A conjecture is an unproved statement believed to be true 
@@ -98,10 +105,20 @@ Previous attempts to order axioms within a knowledge-base have relied on the fre
 		    \item Possibly advance artificial intelligence research
 		\end{itemize}
 	
+\section{Computing Weighting Functions}
 
+\section{Experimental Setup}
+My experiments were conducted using Prover9, written by William McCune \cite{mccune2005prover9}.
+
+\section{Results}
+
+\section{Conclusion}
 
 %"supplying the prover with a modified theory omitting sentences that are not needed" \cite{kuksa2016prover}
 
+\nocite{*}
+
+\newpage
 \printbibliography
 
 \end{document}
