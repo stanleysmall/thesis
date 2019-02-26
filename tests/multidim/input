@@ -18,7 +18,7 @@ formulas(sos).
 (all x all y all z (x <= y & Cont(z,difference(x,y)) -> Cont(z,x))).
 (all x all y all z (x <= y & P(z,difference(x,y)) -> intersection(z,y) < z)).
 (all x all y (ZEX(difference(x,y)) <-> ZEX(x) | Cont(x,y))).
-end_of_list.
+
 
 % Reading from file codi/theorems/input/codi_down_theoremsPO-E1.p9
 
@@ -26,7 +26,7 @@ end_of_list.
 formulas(sos).
 (all x all y (-ZEX(x) & (all z (PO(x,z) -> PO(y,z))) -> P(x,y))).
 (all x all y ((all z (PO(x,z) <-> PO(y,z))) -> x = y)).
-end_of_list.
+
 
 % Reading from file codi/conversions/codi_int.p9
 
@@ -36,35 +36,35 @@ formulas(sos).
 (all x all y (-ZEX(intersection(x,y)) -> Cont(intersection(x,y),x))).
 (all x all y all z (Cont(z,x) & Cont(z,y) -> z <= intersection(x,y))).
 (all x all y all z (Cont(z,x) & Cont(z,y) & EqDim(z,intersection(x,y)) <-> P(z,intersection(x,y)))).
-end_of_list.
+
 
 % Reading from file codi/theorems/input/codi_down_theoremsEP-E3.p9
 
 
 formulas(sos).
 (all x all y (-ZEX(x) & -ZEX(y) & -Cont(y,x) -> (exists z (P(z,y) & intersection(z,x) < z)))).
-end_of_list.
+
 
 % Reading from file codi/theorems/input/codi_down_theoremsT11.p9
 
 
 formulas(sos).
 (all x all y all z (P(y,x) & Min(z) & Cont(z,x) -> Cont(z,y) | Cont(z,difference(x,y)))).
-end_of_list.
+
 
 % Reading from file codi/conversions/codi_linear.p9
 
 
 formulas(sos).
 (all x all y (Cont(x,y) -> x <= y)).
-end_of_list.
+
 
 % Reading from file zex/input/zex.p9
 
 
 formulas(sos).
 (exists x ZEX(x)).
-end_of_list.
+
 
 % Reading from file codi/theorems/input/codi_down_theoremsEP-E2.p9
 
@@ -73,7 +73,7 @@ formulas(sos).
 (all x all y (-ZEX(x) & -ZEX(y) & -P(y,x) & EqDim(x,y) & PO(x,y) & -PP(y,x) -> (exists z (P(z,y) & -PO(z,x))))).
 (all x all y (-ZEX(x) & -ZEX(y) & -P(y,x) & EqDim(x,y) & -PO(x,y) -> (exists z (P(z,y) & -PO(z,x))))).
 (all x all y (-ZEX(x) & -ZEX(y) & -P(y,x) & -EqDim(x,y) -> (exists z (P(z,y) & -PO(z,x))))).
-end_of_list.
+
 
 % Reading from file codi/definitions/input/min_max_in_dim.p9
 
@@ -81,7 +81,7 @@ end_of_list.
 formulas(sos).
 (all x (Max(x) <-> -ZEX(x) & (all y -PP(x,y)))).
 (all x (Min(x) <-> -ZEX(x) & (all y -PP(y,x)))).
-end_of_list.
+
 
 % Reading from file dim/conversions/dim_prime_linear.p9
 
@@ -98,55 +98,53 @@ formulas(sos).
 (all x (MaxDim(x) <-> (all y y <= x))).
 (all x (MinDim(x) <-> -ZEX(x) & (all y (y < x -> ZEX(y))))).
 (all x all y (Covers(x,y) <-> y < x & (all z -(y < z & z < x)))).
-end_of_list.
+
 
 % Reading from file cont/conversions/cont_c_ext.p9
 
 
-formulas(sos).
-end_of_list.
 
 % Reading from file codi/definitions/input/ep.p9
 
 
 formulas(sos).
 (all x all y (P(x,y) <-> Cont(x,y) & EqDim(x,y))).
-end_of_list.
+
 
 % Reading from file codi/definitions/input/epp.p9
 
 
 formulas(sos).
 (all x all y (PP(x,y) <-> P(x,y) & x != y)).
-end_of_list.
+
 
 % Reading from file codi/definitions/input/po.p9
 
 
 formulas(sos).
 (all x all y (PO(x,y) <-> (exists z (P(z,x) & P(z,y))))).
-end_of_list.
+
 
 % Reading from file codi/definitions/input/inc.p9
 
 
 formulas(sos).
 (all x all y (Inc(x,y) <-> (exists z (z < x & Cont(z,x) & P(z,y))) | (exists z (z < y & Cont(z,y) & P(z,x))))).
-end_of_list.
+
 
 % Reading from file codi/definitions/input/sc.p9
 
 
 formulas(sos).
 (all x all y (SC(x,y) <-> (exists z (Cont(z,x) & Cont(z,y))) & (all z (Cont(z,x) & Cont(z,y) -> z < x & z < y)))).
-end_of_list.
+
 
 % Reading from file codi/theorems/input/codi_down_theoremsEP-E1.p9
 
 
 formulas(sos).
 (all x all y (PP(x,y) -> (exists z (P(z,y) & -PO(z,x))))).
-end_of_list.
+
 
 % Reading from file cont/conversions/cont_c.p9
 
@@ -154,14 +152,14 @@ end_of_list.
 formulas(sos).
 (all x all y (C(x,y) <-> (exists z (Cont(z,x) & Cont(z,y))))).
 (all x all y (-ZEX(x) & (all z (C(z,x) -> C(z,y))) & (exists z (C(z,y) & -C(z,x))) -> Cont(x,y))).
-end_of_list.
+
 
 % Reading from file cont/conversions/cont_ext.p9
 
 
 formulas(sos).
 (all x all y ((all z (Cont(z,x) <-> Cont(z,y))) -> x = y)).
-end_of_list.
+
 
 % Reading from file codi/theorems/input/codi_down_theoremsT1-T2.p9
 
@@ -170,7 +168,7 @@ formulas(sos).
 (all x all y (-ZEX(difference(x,y)) -> P(difference(x,y),x))).
 (all x all y (PP(y,x) & -ZEX(difference(x,y)) & P(difference(x,y),x) -> PP(difference(x,y),x))).
 (all x all y (PP(y,x) -> PP(difference(x,y),x))).
-end_of_list.
+
 
 % Reading from file codi/theorems/input/codi_down_theoremsT3-T5.p9
 
@@ -181,7 +179,7 @@ formulas(sos).
 (all x all y all z (P(z,difference(x,y)) -> P(z,x))).
 (all x all y all z (P(z,difference(x,y)) -> -PO(z,intersection(x,y)))).
 (all x all y all z (P(z,x) & -PO(z,intersection(x,y)) -> P(z,difference(x,y)))).
-end_of_list.
+
 
 % Reading from file cont/conversions/cont_basic.p9
 
@@ -191,7 +189,7 @@ formulas(sos).
 (all x all y (Cont(x,y) & Cont(y,x) -> x = y)).
 (all x all y all z (Cont(x,y) & Cont(y,z) -> Cont(x,z))).
 (all x all y (ZEX(x) -> -Cont(y,x) & -Cont(x,y))).
-end_of_list.
+
 
 % Reading from file codi/theorems/input/options.txt
 
