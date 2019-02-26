@@ -1,16 +1,15 @@
 list(weights).
-
-  weight(=(x)) = 1.             
-  weight(PP(x)) = 1.          
-  weight(C(x)) = 1.           
-  weight(<=(x)) = 2.       
-  weight(EqDim(x)) = 2.      
+         
+  weight(PP(x,y)) = 1.          
+  weight(C(x,y)) = 1.           
+  weight(EqDim(x,y)) = 2.    
+  weight(<=(x,y)) = 2.
   weight(intersection(x,y)) = 2.
   weight(PO(x,y)) = 2.
-  weight(ZEX(x,y)) = 2.
+  weight(ZEX(x)) = 2.
   weight(<(x,y)) = 3.
-  weight(P(x)) = 20.
+  weight(P(x,y)) = 20.
   weight(difference(x,y)) = 20.
-  weight(Cont(x)) = 20.
+  weight(Cont(x,y)) = 20.
   weight(sum(x,y)) = 20.
 end_of_list.
