@@ -198,8 +198,4 @@ clear(print_initial_clauses).
 clear(print_kept).
 clear(print_given).
 
-% Reading from file codi/theorems/generated/codi_down_sum_theorems_relevance1.order
 
-predicate_order([=,PP,C,<=,EqDim,intersection,PO,ZEX,<,P,difference,Cont,ZEX,sum]).
-set(inverse_order).
-assign(order,kbo).
