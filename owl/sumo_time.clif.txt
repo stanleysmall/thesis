@@ -1,0 +1,350 @@
+/Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+Axiom: ∀(x,y)[(~beforeOrEqual(x,y) | (TimePoint(x) & TimePoint(y)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[((~beforeOrEqual(z,y) | TimePoint(z)) & (~beforeOrEqual(z,y) | TimePoint(y)))]
+ + yielded: ∀(y,z)[(~beforeOrEqual(z,y) | TimePoint(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~beforeOrEqual(z,y) | TimePoint(y))]
+     - pattern range_restriction
+
+Axiom: ∀(x)[(~TimePoint(x) | beforeOrEqual(x,x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~TimePoint(z) | beforeOrEqual(z,z))]
+ + yielded: ∀(z)[(~TimePoint(z) | beforeOrEqual(z,z))]
+
+Axiom: ∀(x,y,z)[(~(beforeOrEqual(x,y) & beforeOrEqual(y,z)) | beforeOrEqual(x,z))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x)[(~beforeOrEqual(z,y) | ~beforeOrEqual(y,x) | beforeOrEqual(z,x))]
+ + yielded: ∀(z,y,x)[(~beforeOrEqual(z,y) | ~beforeOrEqual(y,x) | beforeOrEqual(z,x))]
+
+Axiom: ∀(x,y)[(~beforeOrEqual(x,y) | before(x,y))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[(~beforeOrEqual(z,y) | before(z,y))]
+ + yielded: ∀(z,y)[(~beforeOrEqual(z,y) | before(z,y))]
+     - pattern subproperty
+
+Axiom: ∀(x,y)[(~before(x,y) | (TimePoint(x) & TimePoint(y)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[((~before(z,y) | TimePoint(z)) & (~before(z,y) | TimePoint(y)))]
+ + yielded: ∀(y,z)[(~before(z,y) | TimePoint(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~before(z,y) | TimePoint(y))]
+     - pattern range_restriction
+
+Axiom: ∀(x)[(~TimePoint(x) | ~before(x,x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~TimePoint(z) | ~before(z,z))]
+ + yielded: ∀(z)[(~TimePoint(z) | ~before(z,z))]
+
+Axiom: ∀(x,y,z)[(~(before(x,y) & before(y,z)) | before(x,z))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x)[(~before(z,y) | ~before(y,x) | before(z,x))]
+ + yielded: ∀(z,y,x)[(~before(z,y) | ~before(y,x) | before(z,x))]
+
+Axiom: ∀(x,y,z)[(~temporallyBetween(x,y,z) | (TimePoint(x) & TimePoint(y) & TimePoint(z)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x)[((~temporallyBetween(z,y,x) | TimePoint(z)) & (~temporallyBetween(z,y,x) | TimePoint(y)) & (~temporallyBetween(z,y,x) | TimePoint(x)))]
+ + yielded: ∀(x,y,z)[(~temporallyBetween(z,y,x) | TimePoint(z))]
+ + yielded: ∀(x,y,z)[(~temporallyBetween(z,y,x) | TimePoint(y))]
+ + yielded: ∀(x,y,z)[(~temporallyBetween(z,y,x) | TimePoint(x))]
+
+Axiom: ∀(x,y,z)[(~temporallyBetween(x,y,z) | temporallyBetweenOrEqual(x,y,z))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x)[(~temporallyBetween(z,y,x) | temporallyBetweenOrEqual(z,y,x))]
+ + yielded: ∀(z,y,x)[(~temporallyBetween(z,y,x) | temporallyBetweenOrEqual(z,y,x))]
+
+Axiom: ∀(x,y,z)[((~temporallyBetween(x,y,z) | (before(x,y) & before(y,z))) & (~(before(x,y) & before(y,z)) | temporallyBetween(x,y,z)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x)[((~before(z,y) | ~before(y,x) | temporallyBetween(z,y,x)) & (~temporallyBetween(z,y,x) | before(z,y)) & (~temporallyBetween(z,y,x) | before(y,x)))]
+ + yielded: ∀(x,y,z)[(~before(z,y) | ~before(y,x) | temporallyBetween(z,y,x))]
+ + yielded: ∀(x,y,z)[(~temporallyBetween(z,y,x) | before(z,y))]
+ + yielded: ∀(x,y,z)[(~temporallyBetween(z,y,x) | before(y,x))]
+
+Axiom: ∀(x,y,z)[((~temporallyBetween(x,y,z) | (beforeOrEqual(x,y) & beforeOrEqual(y,z))) & (~(beforeOrEqual(x,y) & beforeOrEqual(y,z)) | temporallyBetween(x,y,z)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x)[((~beforeOrEqual(z,y) | ~beforeOrEqual(y,x) | temporallyBetween(z,y,x)) & (~temporallyBetween(z,y,x) | beforeOrEqual(z,y)) & (~temporallyBetween(z,y,x) | beforeOrEqual(y,x)))]
+ + yielded: ∀(x,y,z)[(~beforeOrEqual(z,y) | ~beforeOrEqual(y,x) | temporallyBetween(z,y,x))]
+ + yielded: ∀(x,y,z)[(~temporallyBetween(z,y,x) | beforeOrEqual(z,y))]
+ + yielded: ∀(x,y,z)[(~temporallyBetween(z,y,x) | beforeOrEqual(y,x))]
+
+Axiom: ∀(x,y,z)[(~temporallyBetweenorEqual(x,y,z) | (TimePoint(x) & TimePoint(y) & TimePoint(z)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x)[((~temporallyBetweenorEqual(z,y,x) | TimePoint(z)) & (~temporallyBetweenorEqual(z,y,x) | TimePoint(y)) & (~temporallyBetweenorEqual(z,y,x) | TimePoint(x)))]
+ + yielded: ∀(x,y,z)[(~temporallyBetweenorEqual(z,y,x) | TimePoint(z))]
+ + yielded: ∀(x,y,z)[(~temporallyBetweenorEqual(z,y,x) | TimePoint(y))]
+ + yielded: ∀(x,y,z)[(~temporallyBetweenorEqual(z,y,x) | TimePoint(x))]
+
+Axiom: TimePoint(PositiveInfinity) from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: TimePoint(PositiveInfinity)
+ + yielded: TimePoint(PositiveInfinity)
+
+Axiom: TimePoint(NegativeInfinity) from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: TimePoint(NegativeInfinity)
+ + yielded: TimePoint(NegativeInfinity)
+
+Axiom: ∀(x)[(~(TimePoint(x) & ~=(x,PositiveInfinity)) | before(x,PositiveInfinity))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~TimePoint(z) | =(z,PositiveInfinity) | before(z,PositiveInfinity))]
+ + yielded: ∀(z)[(~TimePoint(z) | =(z,PositiveInfinity) | before(z,PositiveInfinity))]
+
+Axiom: ∀(x)[(~(TimePoint(x) & ~=(x,NegativeInfinity)) | before(NegativeInfinity,x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~TimePoint(z) | =(z,NegativeInfinity) | before(NegativeInfinity,z))]
+ + yielded: ∀(z)[(~TimePoint(z) | =(z,NegativeInfinity) | before(NegativeInfinity,z))]
+
+Axiom: ∀(x)[(~(TimePoint(x) & ~=(x,PositiveInfinity)) | ∃(y)[temporallyBetween(x,y,PositiveInfinity)])] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[∃(y)[(temporallyBetween(z,y,PositiveInfinity) | ~TimePoint(z) | =(z,PositiveInfinity))]]
+ + yielded: ∀(z)[∃(y)[(temporallyBetween(z,y,PositiveInfinity) | ~TimePoint(z) | =(z,PositiveInfinity))]]
+
+Axiom: ∀(x)[(~(TimePoint(x) & ~=(x,NegativeInfinity)) | ∃(y)[temporallyBetween(NegativeInfinity,y,x)])] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[∃(y)[(temporallyBetween(NegativeInfinity,y,z) | ~TimePoint(z) | =(z,NegativeInfinity))]]
+ + yielded: ∀(z)[∃(y)[(temporallyBetween(NegativeInfinity,y,z) | ~TimePoint(z) | =(z,NegativeInfinity))]]
+
+Axiom: ∀(x,y)[(~(temporalPart(x,y) & temporalPart(y,x)) | =(x,y))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[(~temporalPart(z,y) | ~temporalPart(y,z) | =(z,y))]
+ + yielded: ∀(z,y)[(~temporalPart(z,y) | ~temporalPart(y,z) | =(z,y))]
+     - pattern subproperty
+
+Axiom: ∀(x,y,z)[(~(temporalPart(x,y) & temporalPart(y,z)) | temporalPart(x,z))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x)[(~temporalPart(z,y) | ~temporalPart(y,x) | temporalPart(z,x))]
+ + yielded: ∀(z,y,x)[(~temporalPart(z,y) | ~temporalPart(y,x) | temporalPart(z,x))]
+
+Axiom: ∀(x,y)[(~overlapsTemporally(x,y) | (TimeInterval(x) & TimeInterval(y)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[((~overlapsTemporally(z,y) | TimeInterval(z)) & (~overlapsTemporally(z,y) | TimeInterval(y)))]
+ + yielded: ∀(y,z)[(~overlapsTemporally(z,y) | TimeInterval(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~overlapsTemporally(z,y) | TimeInterval(y))]
+     - pattern range_restriction
+
+Axiom: ∀(x)[(~TimeInterval(x) | overlapsTemporally(x,x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~TimeInterval(z) | overlapsTemporally(z,z))]
+ + yielded: ∀(z)[(~TimeInterval(z) | overlapsTemporally(z,z))]
+
+Axiom: ∀(x,y)[(~overlapsTemporally(x,y) | overlapsTemporally(y,x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[(~overlapsTemporally(z,y) | overlapsTemporally(y,z))]
+ + yielded: ∀(z,y)[(~overlapsTemporally(z,y) | overlapsTemporally(y,z))]
+     - pattern symmetric
+
+Axiom: ∀(x,y)[((~overlapsTemporally(x,y) | ∃(z)[(TimeInterval(z) & temporalPart(z,x) & temporalPart(z,y))]) & (~∃(z)[(TimeInterval(z) & temporalPart(z,x) & temporalPart(z,y))] | overlapsTemporally(x,y)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+((~TimeInterval(w) | ~temporalPart(w,z) | ~temporalPart(w,y) | overlapsTemporally(z,y)) & ((TimeInterval(x) & temporalPart(x,z) & temporalPart(x,y)) | ~overlapsTemporally(z,y)))
+FF-PCNF: ∀(z,y,w)[∃(x)[((~TimeInterval(w) | ~temporalPart(w,z) | ~temporalPart(w,y) | overlapsTemporally(z,y)) & (~overlapsTemporally(z,y) | TimeInterval(x)) & (~overlapsTemporally(z,y) | temporalPart(x,z)) & (~overlapsTemporally(z,y) | temporalPart(x,y)))]]
+ + yielded: ∀(y,z,w)[(~TimeInterval(w) | ~temporalPart(w,z) | ~temporalPart(w,y) | overlapsTemporally(z,y))]
+ + yielded: ∀(y,z)[∃(x)[((~overlapsTemporally(z,y) | TimeInterval(x)) & (~overlapsTemporally(z,y) | temporalPart(x,z)) & (~overlapsTemporally(z,y) | temporalPart(x,y)))]]
+
+Axiom: ∀(x,y)[(~starts(x,y) | (TimeInterval(x) & TimeInterval(y)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[((~starts(z,y) | TimeInterval(z)) & (~starts(z,y) | TimeInterval(y)))]
+ + yielded: ∀(y,z)[(~starts(z,y) | TimeInterval(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~starts(z,y) | TimeInterval(y))]
+     - pattern range_restriction
+
+Axiom: ∀(x,y,z)[(~(starts(x,y) & starts(y,z)) | starts(x,z))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x)[(~starts(z,y) | ~starts(y,x) | starts(z,x))]
+ + yielded: ∀(z,y,x)[(~starts(z,y) | ~starts(y,x) | starts(z,x))]
+
+Axiom: ∀(x)[(~TimeInterval(x) | ~starts(x,x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~TimeInterval(z) | ~starts(z,z))]
+ + yielded: ∀(z)[(~TimeInterval(z) | ~starts(z,z))]
+
+Axiom: ∀(x,y)[(~starts(x,y) | temporalPart(x,y))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[(~starts(z,y) | temporalPart(z,y))]
+ + yielded: ∀(z,y)[(~starts(z,y) | temporalPart(z,y))]
+     - pattern subproperty
+
+Axiom: ∀(x,y)[((~starts(x,y) | (TimeInterval(x) & TimeInterval(y) & before(endfn(x),endfn(y)) & =(beginfn(x),beginfn(y)))) & (~(TimeInterval(x) & TimeInterval(y) & before(endfn(x),endfn(y)) & =(beginfn(x),beginfn(y))) | starts(x,y)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+((((=(x,w) | ~BeginFn(z,x) | ~BeginFn(y,w)) & (before(x,w) | ~EndFn(z,x) | ~EndFn(y,w)) & TimeInterval(z) & TimeInterval(y)) | ~starts(z,y)) & ((~=(t,s) & BeginFn(z,t) & BeginFn(y,s)) | (~before(t,s) & EndFn(z,t) & EndFn(y,s)) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y)))
+FF-PCNF: ∀(z,y,x,w)[∃(t,s)[((~starts(z,y) | =(x,w) | ~BeginFn(z,x) | ~BeginFn(y,w)) & (~starts(z,y) | before(x,w) | ~EndFn(z,x) | ~EndFn(y,w)) & (~starts(z,y) | TimeInterval(z)) & (~starts(z,y) | TimeInterval(y)) & (~=(t,s) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | ~before(t,s)) & (~=(t,s) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | EndFn(z,t)) & (~=(t,s) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | EndFn(y,s)) & (BeginFn(z,t) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | ~before(t,s)) & (BeginFn(z,t) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | EndFn(z,t)) & (BeginFn(z,t) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | EndFn(y,s)) & (BeginFn(y,s) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | ~before(t,s)) & (BeginFn(y,s) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | EndFn(z,t)) & (BeginFn(y,s) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | EndFn(y,s)))]]
+ + yielded: ∀(x,y,z,w)[(~starts(z,y) | =(x,w) | ~BeginFn(z,x) | ~BeginFn(y,w))]
+ + yielded: ∀(x,y,z,w)[(~starts(z,y) | before(x,w) | ~EndFn(z,x) | ~EndFn(y,w))]
+ + yielded: ∀(y,z)[(~starts(z,y) | TimeInterval(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~starts(z,y) | TimeInterval(y))]
+     - pattern range_restriction
+ + yielded: ∀(y,z)[∃(t,s)[((~=(t,s) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | ~before(t,s)) & (~=(t,s) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | EndFn(z,t)) & (~=(t,s) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | EndFn(y,s)) & (BeginFn(z,t) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | ~before(t,s)) & (BeginFn(z,t) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | EndFn(z,t)) & (BeginFn(z,t) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | EndFn(y,s)) & (BeginFn(y,s) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | ~before(t,s)) & (BeginFn(y,s) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | EndFn(z,t)) & (BeginFn(y,s) | ~TimeInterval(z) | ~TimeInterval(y) | starts(z,y) | EndFn(y,s)))]]
+
+Axiom: ∀(x,y)[(~finishes(x,y) | (TimeInterval(x) & TimeInterval(y)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[((~finishes(z,y) | TimeInterval(z)) & (~finishes(z,y) | TimeInterval(y)))]
+ + yielded: ∀(y,z)[(~finishes(z,y) | TimeInterval(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~finishes(z,y) | TimeInterval(y))]
+     - pattern range_restriction
+
+Axiom: ∀(x,y,z)[(~(finishes(x,y) & finishes(y,z)) | finishes(x,z))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x)[(~finishes(z,y) | ~finishes(y,x) | finishes(z,x))]
+ + yielded: ∀(z,y,x)[(~finishes(z,y) | ~finishes(y,x) | finishes(z,x))]
+
+Axiom: ∀(x)[(~TimeInterval(x) | ~finishes(x,x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~TimeInterval(z) | ~finishes(z,z))]
+ + yielded: ∀(z)[(~TimeInterval(z) | ~finishes(z,z))]
+
+Axiom: ∀(x,y)[(~finishes(x,y) | temporalPart(x,y))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[(~finishes(z,y) | temporalPart(z,y))]
+ + yielded: ∀(z,y)[(~finishes(z,y) | temporalPart(z,y))]
+     - pattern subproperty
+
+Axiom: ∀(x,y)[((~finishes(x,y) | (TimeInterval(x) & TimeInterval(y) & before(beginfn(x),beginfn(y)) & =(endfn(x),endfn(y)))) & (~(TimeInterval(x) & TimeInterval(y) & before(beginfn(x),beginfn(y)) & =(endfn(x),endfn(y))) | finishes(x,y)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+((((=(x,w) | ~EndFn(z,x) | ~EndFn(y,w)) & (before(x,w) | ~BeginFn(z,x) | ~BeginFn(y,w)) & TimeInterval(z) & TimeInterval(y)) | ~finishes(z,y)) & ((~=(t,s) & EndFn(z,t) & EndFn(y,s)) | (~before(t,s) & BeginFn(z,t) & BeginFn(y,s)) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y)))
+FF-PCNF: ∀(z,y,x,w)[∃(t,s)[((~finishes(z,y) | =(x,w) | ~EndFn(z,x) | ~EndFn(y,w)) & (~finishes(z,y) | before(x,w) | ~BeginFn(z,x) | ~BeginFn(y,w)) & (~finishes(z,y) | TimeInterval(z)) & (~finishes(z,y) | TimeInterval(y)) & (~=(t,s) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | ~before(t,s)) & (~=(t,s) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | BeginFn(z,t)) & (~=(t,s) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | BeginFn(y,s)) & (EndFn(z,t) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | ~before(t,s)) & (EndFn(z,t) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | BeginFn(z,t)) & (EndFn(z,t) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | BeginFn(y,s)) & (EndFn(y,s) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | ~before(t,s)) & (EndFn(y,s) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | BeginFn(z,t)) & (EndFn(y,s) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | BeginFn(y,s)))]]
+ + yielded: ∀(x,y,z,w)[(~finishes(z,y) | =(x,w) | ~EndFn(z,x) | ~EndFn(y,w))]
+ + yielded: ∀(x,y,z,w)[(~finishes(z,y) | before(x,w) | ~BeginFn(z,x) | ~BeginFn(y,w))]
+ + yielded: ∀(y,z)[(~finishes(z,y) | TimeInterval(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~finishes(z,y) | TimeInterval(y))]
+     - pattern range_restriction
+ + yielded: ∀(y,z)[∃(t,s)[((~=(t,s) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | ~before(t,s)) & (~=(t,s) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | BeginFn(z,t)) & (~=(t,s) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | BeginFn(y,s)) & (EndFn(z,t) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | ~before(t,s)) & (EndFn(z,t) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | BeginFn(z,t)) & (EndFn(z,t) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | BeginFn(y,s)) & (EndFn(y,s) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | ~before(t,s)) & (EndFn(y,s) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | BeginFn(z,t)) & (EndFn(y,s) | ~TimeInterval(z) | ~TimeInterval(y) | finishes(z,y) | BeginFn(y,s)))]]
+
+Axiom: ∀(x,y)[(~during(x,y) | (TimeInterval(x) & TimeInterval(y)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[((~during(z,y) | TimeInterval(z)) & (~during(z,y) | TimeInterval(y)))]
+ + yielded: ∀(y,z)[(~during(z,y) | TimeInterval(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~during(z,y) | TimeInterval(y))]
+     - pattern range_restriction
+
+Axiom: ∀(x,y,z)[(~(during(x,y) & during(y,z)) | during(x,z))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x)[(~during(z,y) | ~during(y,x) | during(z,x))]
+ + yielded: ∀(z,y,x)[(~during(z,y) | ~during(y,x) | during(z,x))]
+
+Axiom: ∀(x)[(~TimeInterval(x) | ~during(x,x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~TimeInterval(z) | ~during(z,z))]
+ + yielded: ∀(z)[(~TimeInterval(z) | ~during(z,z))]
+
+Axiom: ∀(x,y)[(~during(x,y) | temporalPart(x,y))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[(~during(z,y) | temporalPart(z,y))]
+ + yielded: ∀(z,y)[(~during(z,y) | temporalPart(z,y))]
+     - pattern subproperty
+
+Axiom: ∀(x,y)[(~during(x,y) | (TimeInterval(x) & TimeInterval(y) & before(endfn(x),endfn(y)) & before(beginfn(y),beginfn(x))))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x,w)[((~during(z,y) | before(x,w) | ~BeginFn(y,x) | ~BeginFn(z,w)) & (~during(z,y) | before(x,w) | ~EndFn(z,x) | ~EndFn(y,w)) & (~during(z,y) | TimeInterval(z)) & (~during(z,y) | TimeInterval(y)))]
+ + yielded: ∀(x,y,z,w)[(~during(z,y) | before(x,w) | ~BeginFn(y,x) | ~BeginFn(z,w))]
+ + yielded: ∀(x,y,z,w)[(~during(z,y) | before(x,w) | ~EndFn(z,x) | ~EndFn(y,w))]
+ + yielded: ∀(y,z)[(~during(z,y) | TimeInterval(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~during(z,y) | TimeInterval(y))]
+     - pattern range_restriction
+
+Axiom: ∀(x,y)[(~earlier(x,y) | (TimeInterval(x) & TimeInterval(y)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[((~earlier(z,y) | TimeInterval(z)) & (~earlier(z,y) | TimeInterval(y)))]
+ + yielded: ∀(y,z)[(~earlier(z,y) | TimeInterval(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~earlier(z,y) | TimeInterval(y))]
+     - pattern range_restriction
+
+Axiom: ∀(x,y,z)[(~(earlier(x,y) & earlier(y,z)) | earlier(x,z))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x)[(~earlier(z,y) | ~earlier(y,x) | earlier(z,x))]
+ + yielded: ∀(z,y,x)[(~earlier(z,y) | ~earlier(y,x) | earlier(z,x))]
+
+Axiom: ∀(x)[(~TimeInterval(x) | ~earlier(x,x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~TimeInterval(z) | ~earlier(z,z))]
+ + yielded: ∀(z)[(~TimeInterval(z) | ~earlier(z,z))]
+
+Axiom: ∀(x,y)[((~earlier(x,y) | (TimeInterval(x) & TimeInterval(y) & before(endfn(x),beginfn(y)))) & (~(TimeInterval(x) & TimeInterval(y) & before(endfn(x),beginfn(y))) | earlier(x,y)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+((((before(x,w) | ~EndFn(z,x) | ~BeginFn(y,w)) & TimeInterval(z) & TimeInterval(y)) | ~earlier(z,y)) & ((~before(v,u) & EndFn(z,v) & BeginFn(y,u)) | ~TimeInterval(z) | ~TimeInterval(y) | earlier(z,y)))
+FF-PCNF: ∀(z,y,x,w)[∃(v,u)[((~earlier(z,y) | before(x,w) | ~EndFn(z,x) | ~BeginFn(y,w)) & (~earlier(z,y) | TimeInterval(z)) & (~earlier(z,y) | TimeInterval(y)) & (earlier(z,y) | ~TimeInterval(y) | ~TimeInterval(z) | ~before(v,u)) & (earlier(z,y) | ~TimeInterval(y) | ~TimeInterval(z) | EndFn(z,v)) & (earlier(z,y) | ~TimeInterval(y) | ~TimeInterval(z) | BeginFn(y,u)))]]
+ + yielded: ∀(x,y,z,w)[(~earlier(z,y) | before(x,w) | ~EndFn(z,x) | ~BeginFn(y,w))]
+ + yielded: ∀(y,z)[(~earlier(z,y) | TimeInterval(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~earlier(z,y) | TimeInterval(y))]
+     - pattern range_restriction
+ + yielded: ∀(y,z)[∃(v,u)[((earlier(z,y) | ~TimeInterval(y) | ~TimeInterval(z) | ~before(v,u)) & (earlier(z,y) | ~TimeInterval(y) | ~TimeInterval(z) | EndFn(z,v)) & (earlier(z,y) | ~TimeInterval(y) | ~TimeInterval(z) | BeginFn(y,u)))]]
+
+Axiom: ∀(x,y)[(~meetsTemporally(x,y) | (TimeInterval(x) & TimeInterval(y)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[((~meetsTemporally(z,y) | TimeInterval(z)) & (~meetsTemporally(z,y) | TimeInterval(y)))]
+ + yielded: ∀(y,z)[(~meetsTemporally(z,y) | TimeInterval(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~meetsTemporally(z,y) | TimeInterval(y))]
+     - pattern range_restriction
+
+Axiom: ∀(x,y,z)[(~(meetsTemporally(x,y) & meetsTemporally(y,z)) | ~meetsTemporally(x,z))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x)[(~meetsTemporally(z,y) | ~meetsTemporally(y,x) | ~meetsTemporally(z,x))]
+ + yielded: ∀(z,y,x)[(~meetsTemporally(z,y) | ~meetsTemporally(y,x) | ~meetsTemporally(z,x))]
+
+Axiom: ∀(x,y)[(~meetsTemporally(x,y) | ~meetsTemporally(y,x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[(~meetsTemporally(z,y) | ~meetsTemporally(y,z))]
+ + yielded: ∀(z,y)[(~meetsTemporally(z,y) | ~meetsTemporally(y,z))]
+     - pattern asymmetric
+
+Axiom: ∀(x,y)[((~meetTemporally(x,y) | (TimeInterval(x) & TimeInterval(y) & =(endfn(x),beginfn(y)))) & (~(TimeInterval(x) & TimeInterval(y) & =(endfn(x),beginfn(y))) | meetTemporally(x,y)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+((((=(x,w) | ~EndFn(z,x) | ~BeginFn(y,w)) & TimeInterval(z) & TimeInterval(y)) | ~meetTemporally(z,y)) & ((~=(v,u) & EndFn(z,v) & BeginFn(y,u)) | ~TimeInterval(z) | ~TimeInterval(y) | meetTemporally(z,y)))
+FF-PCNF: ∀(z,y,x,w)[∃(v,u)[((~meetTemporally(z,y) | =(x,w) | ~EndFn(z,x) | ~BeginFn(y,w)) & (~meetTemporally(z,y) | TimeInterval(z)) & (~meetTemporally(z,y) | TimeInterval(y)) & (meetTemporally(z,y) | ~TimeInterval(y) | ~TimeInterval(z) | ~=(v,u)) & (meetTemporally(z,y) | ~TimeInterval(y) | ~TimeInterval(z) | EndFn(z,v)) & (meetTemporally(z,y) | ~TimeInterval(y) | ~TimeInterval(z) | BeginFn(y,u)))]]
+ + yielded: ∀(x,y,z,w)[(~meetTemporally(z,y) | =(x,w) | ~EndFn(z,x) | ~BeginFn(y,w))]
+ + yielded: ∀(y,z)[(~meetTemporally(z,y) | TimeInterval(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~meetTemporally(z,y) | TimeInterval(y))]
+     - pattern range_restriction
+ + yielded: ∀(y,z)[∃(v,u)[((meetTemporally(z,y) | ~TimeInterval(y) | ~TimeInterval(z) | ~=(v,u)) & (meetTemporally(z,y) | ~TimeInterval(y) | ~TimeInterval(z) | EndFn(z,v)) & (meetTemporally(z,y) | ~TimeInterval(y) | ~TimeInterval(z) | BeginFn(y,u)))]]
+
+Axiom: ∀(x)[(~TimeInterval(x) | temporalPart(x,x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~TimeInterval(z) | temporalPart(z,z))]
+ + yielded: ∀(z)[(~TimeInterval(z) | temporalPart(z,z))]
+
+Axiom: ∀(x)[(~TimeInterval(x) | Timeposition(x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~TimeInterval(z) | Timeposition(z))]
+ + yielded: ∀(z)[(~TimeInterval(z) | Timeposition(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~TimePoint(x) | Timeposition(x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~TimePoint(z) | Timeposition(z))]
+ + yielded: ∀(z)[(~TimePoint(z) | Timeposition(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~TimePosition(x) | TimeInterval(x) | TimePoint(x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~TimePosition(z) | TimeInterval(z) | TimePoint(z))]
+ + yielded: ∀(z)[(~TimePosition(z) | TimeInterval(z) | TimePoint(z))]
+     - pattern subclass
+['TimeInterval', 'TimePoint'] b'<ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#TimeInterval" /><Class IRI="http://macleod.org/Converted.owl#TimePoint" /></ObjectUnionOf>'
+
+Axiom: ∀(x)[(~TimeInterval(x) | ~TimePoint(x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~TimeInterval(z) | ~TimePoint(z))]
+ + yielded: ∀(z)[(~TimeInterval(z) | ~TimePoint(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x,y)[(~temporalPart(x,y) | (TimePosition(x) & TimePosition(y)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y)[((~temporalPart(z,y) | TimePosition(z)) & (~temporalPart(z,y) | TimePosition(y)))]
+ + yielded: ∀(y,z)[(~temporalPart(z,y) | TimePosition(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~temporalPart(z,y) | TimePosition(y))]
+     - pattern range_restriction
+
+Axiom: ∀(x)[(~TimePosition(x) | temporalPart(x,x))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~TimePosition(z) | temporalPart(z,z))]
+ + yielded: ∀(z)[(~TimePosition(z) | temporalPart(z,z))]
+
+Axiom: ∀(x)[(~(temporalPart(x,y) & temporalPart(y,x)) | =(x,y))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[(~temporalPart(z,y) | ~temporalPart(y,z) | =(z,y))]
+ + yielded: ∀(z)[(~temporalPart(z,y) | ~temporalPart(y,z) | =(z,y))]
+
+Axiom: ∀(x,y,z)[(~(temporalPart(x,y) & temporalPart(y,z)) | temporalPart(x,z))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x)[(~temporalPart(z,y) | ~temporalPart(y,x) | temporalPart(z,x))]
+ + yielded: ∀(z,y,x)[(~temporalPart(z,y) | ~temporalPart(y,x) | temporalPart(z,x))]
+
+Axiom: ∀(x)[(~TimePoint(x) | ∃(y)[(TimeInterval(y) & temporalPart(x,y))])] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[∃(y)[((~TimePoint(z) | TimeInterval(y)) & (~TimePoint(z) | temporalPart(z,y)))]]
+ + yielded: ∀(z)[∃(y)[((~TimePoint(z) | TimeInterval(y)) & (~TimePoint(z) | temporalPart(z,y)))]]
+
+Axiom: ∀(x)[(~TimeInterval(x) | ∃(y)[(TimePoint(y) & temporalPart(y,x))])] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z)[∃(y)[((~TimeInterval(z) | TimePoint(y)) & (~TimeInterval(z) | temporalPart(y,z)))]]
+ + yielded: ∀(z)[∃(y)[((~TimeInterval(z) | TimePoint(y)) & (~TimeInterval(z) | temporalPart(y,z)))]]
+
+Axiom: ∀(x,y,z,t)[(~(TimePoint(x) & TimePoint(y) & TimeInterval(z) & =(timeintervalfn(x,y),z) & TimePoint(t)) | ((~temporallyBetweenOrEqual(x,t,y) | temporalPart(t,z)) & (~temporalPart(t,z) | temporallyBetweenOrEqual(x,t,y))))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x,w)[∃(v)[((~=(v,x) | ~TimePoint(z) | ~TimeInterval(x) | ~TimePoint(w) | ~TimePoint(y) | ~temporalPart(w,x) | temporallyBetweenOrEqual(z,w,y)) & (~=(v,x) | ~TimePoint(z) | ~TimeInterval(x) | ~TimePoint(w) | ~TimePoint(y) | ~temporallyBetweenOrEqual(z,w,y) | temporalPart(w,x)) & (TimeIntervalFn(z,y,v) | ~TimePoint(z) | ~TimeInterval(x) | ~TimePoint(w) | ~TimePoint(y) | ~temporalPart(w,x) | temporallyBetweenOrEqual(z,w,y)) & (TimeIntervalFn(z,y,v) | ~TimePoint(z) | ~TimeInterval(x) | ~TimePoint(w) | ~TimePoint(y) | ~temporallyBetweenOrEqual(z,w,y) | temporalPart(w,x)))]]
+ + yielded: ∀(x,y,z,w)[∃(v)[((~=(v,x) | ~TimePoint(z) | ~TimeInterval(x) | ~TimePoint(w) | ~TimePoint(y) | ~temporalPart(w,x) | temporallyBetweenOrEqual(z,w,y)) & (~=(v,x) | ~TimePoint(z) | ~TimeInterval(x) | ~TimePoint(w) | ~TimePoint(y) | ~temporallyBetweenOrEqual(z,w,y) | temporalPart(w,x)) & (TimeIntervalFn(z,y,v) | ~TimePoint(z) | ~TimeInterval(x) | ~TimePoint(w) | ~TimePoint(y) | ~temporalPart(w,x) | temporallyBetweenOrEqual(z,w,y)) & (TimeIntervalFn(z,y,v) | ~TimePoint(z) | ~TimeInterval(x) | ~TimePoint(w) | ~TimePoint(y) | ~temporallyBetweenOrEqual(z,w,y) | temporalPart(w,x)))]]
+
+Axiom: ∀(x,y,z)[(~(TimePoint(x) & TimePoint(y) & TimeInterval(z) & =(timeintervalfn(x,y),z)) | (=(beginfn(z),x) & =(endfn(z),y)))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+(((=(v,y) | ~EndFn(x,v)) & (=(v,z) | ~BeginFn(x,v))) | (~=(w,x) & TimeIntervalFn(z,y,w)) | ~TimePoint(z) | ~TimePoint(y) | ~TimeInterval(x))
+FF-PCNF: ∀(z,y,x,v)[∃(w)[((~EndFn(x,v) | =(v,y) | ~TimePoint(z) | ~TimePoint(y) | ~TimeInterval(x) | ~=(w,x)) & (~EndFn(x,v) | =(v,y) | ~TimePoint(z) | ~TimePoint(y) | ~TimeInterval(x) | TimeIntervalFn(z,y,w)) & (~BeginFn(x,v) | =(v,z) | ~TimePoint(z) | ~TimePoint(y) | ~TimeInterval(x) | ~=(w,x)) & (~BeginFn(x,v) | =(v,z) | ~TimePoint(z) | ~TimePoint(y) | ~TimeInterval(x) | TimeIntervalFn(z,y,w)))]]
+ + yielded: ∀(x,y,v,z)[∃(w)[((~EndFn(x,v) | =(v,y) | ~TimePoint(z) | ~TimePoint(y) | ~TimeInterval(x) | ~=(w,x)) & (~EndFn(x,v) | =(v,y) | ~TimePoint(z) | ~TimePoint(y) | ~TimeInterval(x) | TimeIntervalFn(z,y,w)) & (~BeginFn(x,v) | =(v,z) | ~TimePoint(z) | ~TimePoint(y) | ~TimeInterval(x) | ~=(w,x)) & (~BeginFn(x,v) | =(v,z) | ~TimePoint(z) | ~TimePoint(y) | ~TimeInterval(x) | TimeIntervalFn(z,y,w)))]]
+
+Axiom: ∀(x,y,z,t)[(~(TimeInterval(x) & TimeInterval(y) & TimePoint(z) & TimePoint(t) & =(beginfn(x),z) & =(beginfn(y),z) & =(endfn(x),t) & =(endfn(y),t)) | =(x,y))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x,w)[∃(v)[((~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | ~=(v,x) | ~=(v,w)) & (~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | ~=(v,x) | EndFn(z,v)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | ~=(v,x) | ~=(v,w)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | ~=(v,x) | EndFn(z,v)) & (~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | BeginFn(z,v) | ~=(v,w)) & (~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | BeginFn(z,v) | EndFn(z,v)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | BeginFn(z,v) | ~=(v,w)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | BeginFn(z,v) | EndFn(z,v)) & (~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | ~=(v,x) | ~=(v,w)) & (~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | ~=(v,x) | EndFn(z,v)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | ~=(v,x) | ~=(v,w)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | ~=(v,x) | EndFn(z,v)) & (~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | BeginFn(z,v) | ~=(v,w)) & (~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | BeginFn(z,v) | EndFn(z,v)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | BeginFn(z,v) | ~=(v,w)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | BeginFn(z,v) | EndFn(z,v)))]]
+ + yielded: ∀(x,y,z,w)[∃(v)[((~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | ~=(v,x) | ~=(v,w)) & (~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | ~=(v,x) | EndFn(z,v)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | ~=(v,x) | ~=(v,w)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | ~=(v,x) | EndFn(z,v)) & (~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | BeginFn(z,v) | ~=(v,w)) & (~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | BeginFn(z,v) | EndFn(z,v)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | BeginFn(z,v) | ~=(v,w)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | ~=(v,x) | ~TimeInterval(y) | BeginFn(z,v) | EndFn(z,v)) & (~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | ~=(v,x) | ~=(v,w)) & (~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | ~=(v,x) | EndFn(z,v)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | ~=(v,x) | ~=(v,w)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | ~=(v,x) | EndFn(z,v)) & (~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | BeginFn(z,v) | ~=(v,w)) & (~=(v,w) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | BeginFn(z,v) | EndFn(z,v)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | BeginFn(z,v) | ~=(v,w)) & (EndFn(y,v) | ~TimeInterval(z) | ~TimePoint(x) | =(z,y) | ~TimePoint(w) | BeginFn(y,v) | ~TimeInterval(y) | BeginFn(z,v) | EndFn(z,v)))]]
+
+Axiom: ∀(x,y)[(~(TimeInterval(x) & TimePoint(y) & =(beginfn(x),y)) | ∀(z)[(~(temporalPart(z,x) & TimePoint(z) & ~=(z,y)) | before(y,z))])] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+(~temporalPart(w,z) | ~TimePoint(w) | =(w,y) | before(y,w) | (~=(x,y) & BeginFn(z,x)) | ~TimeInterval(z) | ~TimePoint(y))
+FF-PCNF: ∀(z,y,w)[∃(x)[((~TimePoint(y) | ~TimeInterval(z) | before(y,w) | =(w,y) | ~TimePoint(w) | ~temporalPart(w,z) | ~=(x,y)) & (~TimePoint(y) | ~TimeInterval(z) | before(y,w) | =(w,y) | ~TimePoint(w) | ~temporalPart(w,z) | BeginFn(z,x)))]]
+ + yielded: ∀(y,z,w)[∃(x)[((~TimePoint(y) | ~TimeInterval(z) | before(y,w) | =(w,y) | ~TimePoint(w) | ~temporalPart(w,z) | ~=(x,y)) & (~TimePoint(y) | ~TimeInterval(z) | before(y,w) | =(w,y) | ~TimePoint(w) | ~temporalPart(w,z) | BeginFn(z,x)))]]
+
+Axiom: ∀(x,y)[(~(TimeInterval(x) & TimePoint(y) & =(endfn(x),y)) | ∀(z)[(~(temporalPart(z,x) & TimePoint(z) & ~=(z,y)) | before(z,y))])] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+(~temporalPart(w,z) | ~TimePoint(w) | =(w,y) | before(w,y) | (~=(x,y) & EndFn(z,x)) | ~TimeInterval(z) | ~TimePoint(y))
+FF-PCNF: ∀(z,y,w)[∃(x)[((~TimePoint(y) | ~TimeInterval(z) | before(w,y) | =(w,y) | ~TimePoint(w) | ~temporalPart(w,z) | ~=(x,y)) & (~TimePoint(y) | ~TimeInterval(z) | before(w,y) | =(w,y) | ~TimePoint(w) | ~temporalPart(w,z) | EndFn(z,x)))]]
+ + yielded: ∀(y,z,w)[∃(x)[((~TimePoint(y) | ~TimeInterval(z) | before(w,y) | =(w,y) | ~TimePoint(w) | ~temporalPart(w,z) | ~=(x,y)) & (~TimePoint(y) | ~TimeInterval(z) | before(w,y) | =(w,y) | ~TimePoint(w) | ~temporalPart(w,z) | EndFn(z,x)))]]
+
+Axiom: ∀(z,u,v)[(~(TimeInterval(z) & TimePoint(u) & TimePoint(v) & =(beginfn(z),u) & =(endfn(z),v)) | before(u,v))] from /Users/rpskillet/thesis/colore/ontologies/sumo/sumo_time.clif
+FF-PCNF: ∀(z,y,x)[∃(w)[((~=(w,x) | ~TimeInterval(z) | ~TimePoint(y) | ~TimePoint(x) | before(y,x) | ~=(w,y)) & (~=(w,x) | ~TimeInterval(z) | ~TimePoint(y) | ~TimePoint(x) | before(y,x) | BeginFn(z,w)) & (EndFn(z,w) | ~TimeInterval(z) | ~TimePoint(y) | ~TimePoint(x) | before(y,x) | ~=(w,y)) & (EndFn(z,w) | ~TimeInterval(z) | ~TimePoint(y) | ~TimePoint(x) | before(y,x) | BeginFn(z,w)))]]
+ + yielded: ∀(x,y,z)[∃(w)[((~=(w,x) | ~TimeInterval(z) | ~TimePoint(y) | ~TimePoint(x) | before(y,x) | ~=(w,y)) & (~=(w,x) | ~TimeInterval(z) | ~TimePoint(y) | ~TimePoint(x) | before(y,x) | BeginFn(z,w)) & (EndFn(z,w) | ~TimeInterval(z) | ~TimePoint(y) | ~TimePoint(x) | before(y,x) | ~=(w,y)) & (EndFn(z,w) | ~TimeInterval(z) | ~TimePoint(y) | ~TimePoint(x) | before(y,x) | BeginFn(z,w)))]]
+
+
+-- Translation --
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#" ontologyIRI="http://macleod.org/Converted.owl" xml:base="http://macleod.org/Converted.owl">
+            <Prefix IRI="http://www.w3.org/2002/07/owl#" name="owl"></Prefix>
+            <Prefix IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#" name="rdf"></Prefix>
+            <Prefix IRI="http://www.w3.org/XML/1998/namespace" name="xml"></Prefix>
+            <Prefix IRI="http://www.w3.org/2001/XMLSchema#" name="xsd"></Prefix>
+            <Prefix IRI="http://www.w3.org/2000/01/rdf-schema#" name="rdfs"></Prefix>
+        <Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#beforeOrEqual"></ObjectProperty></Declaration><Declaration><Class IRI="http://macleod.org/Converted.owl#TimePoint"></Class></Declaration><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#beforeOrEqual"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimePoint"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#beforeOrEqual"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimePoint"></Class></ObjectPropertyRange><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#before"></ObjectProperty></Declaration><SubObjectPropertyOf><ObjectProperty IRI="http://macleod.org/Converted.owl#beforeOrEqual"></ObjectProperty><ObjectProperty IRI="http://macleod.org/Converted.owl#before"></ObjectProperty></SubObjectPropertyOf><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#before"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimePoint"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#before"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimePoint"></Class></ObjectPropertyRange><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#temporalPart"></ObjectProperty></Declaration><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#="></ObjectProperty></Declaration><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#overlapsTemporally"></ObjectProperty></Declaration><Declaration><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></Declaration><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#overlapsTemporally"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#overlapsTemporally"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyRange><SymmetricObjectProperty><ObjectProperty IRI="http://macleod.org/Converted.owl#overlapsTemporally"></ObjectProperty></SymmetricObjectProperty><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#starts"></ObjectProperty></Declaration><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#starts"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#starts"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyRange><SubObjectPropertyOf><ObjectProperty IRI="http://macleod.org/Converted.owl#starts"></ObjectProperty><ObjectProperty IRI="http://macleod.org/Converted.owl#temporalPart"></ObjectProperty></SubObjectPropertyOf><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#starts"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#starts"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyRange><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#finishes"></ObjectProperty></Declaration><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#finishes"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#finishes"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyRange><SubObjectPropertyOf><ObjectProperty IRI="http://macleod.org/Converted.owl#finishes"></ObjectProperty><ObjectProperty IRI="http://macleod.org/Converted.owl#temporalPart"></ObjectProperty></SubObjectPropertyOf><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#finishes"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#finishes"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyRange><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#during"></ObjectProperty></Declaration><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#during"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#during"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyRange><SubObjectPropertyOf><ObjectProperty IRI="http://macleod.org/Converted.owl#during"></ObjectProperty><ObjectProperty IRI="http://macleod.org/Converted.owl#temporalPart"></ObjectProperty></SubObjectPropertyOf><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#during"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#during"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyRange><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#earlier"></ObjectProperty></Declaration><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#earlier"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#earlier"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyRange><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#earlier"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#earlier"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyRange><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#meetsTemporally"></ObjectProperty></Declaration><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#meetsTemporally"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#meetsTemporally"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyRange><AsymmetricObjectProperty><ObjectProperty IRI="http://macleod.org/Converted.owl#meetsTemporally"></ObjectProperty></AsymmetricObjectProperty><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#meetTemporally"></ObjectProperty></Declaration><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#meetTemporally"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#meetTemporally"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class></ObjectPropertyRange><Declaration><Class IRI="http://macleod.org/Converted.owl#Timeposition"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class><Class IRI="http://macleod.org/Converted.owl#Timeposition"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#TimePoint"></Class><Class IRI="http://macleod.org/Converted.owl#Timeposition"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#TimePosition"></Class></Declaration><Declaration><Class IRI="http://macleod.org/Converted.owl#TimeIntervalorTimePoint"></Class></Declaration><EquivalentClasses><Class IRI="http://macleod.org/Converted.owl#TimeIntervalorTimePoint"></Class><ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class><Class IRI="http://macleod.org/Converted.owl#TimePoint"></Class></ObjectUnionOf></EquivalentClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#TimePosition"></Class><Class IRI="http://macleod.org/Converted.owl#TimeIntervalorTimePoint"></Class></SubClassOf><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#TimeInterval"></Class><Class IRI="http://macleod.org/Converted.owl#TimePoint"></Class></DisjointClasses><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#temporalPart"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimePosition"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#temporalPart"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TimePosition"></Class></ObjectPropertyRange></Ontology>

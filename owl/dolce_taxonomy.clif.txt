@@ -1,0 +1,373 @@
+/Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+Axiom: ∀(x)[(~(ED(x) | PD(x) | Q(x) | AB(x)) | PT(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((PT(z) | ~ED(z)) & (PT(z) | ~PD(z)) & (PT(z) | ~Q(z)) & (PT(z) | ~AB(z)))]
+ + yielded: ∀(z)[(PT(z) | ~ED(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(PT(z) | ~PD(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(PT(z) | ~Q(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(PT(z) | ~AB(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~(PED(x) | NPED(x) | AS(x)) | ED(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((ED(z) | ~PED(z)) & (ED(z) | ~NPED(z)) & (ED(z) | ~AS(z)))]
+ + yielded: ∀(z)[(ED(z) | ~PED(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(ED(z) | ~NPED(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(ED(z) | ~AS(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~(EV(x) | STV(x)) | PD(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((PD(z) | ~EV(z)) & (PD(z) | ~STV(z)))]
+ + yielded: ∀(z)[(PD(z) | ~EV(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(PD(z) | ~STV(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~(TQ(x) | PQ(x) | AQ(x)) | Q(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((Q(z) | ~TQ(z)) & (Q(z) | ~PQ(z)) & (Q(z) | ~AQ(z)))]
+ + yielded: ∀(z)[(Q(z) | ~TQ(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(Q(z) | ~PQ(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(Q(z) | ~AQ(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~R(x) | AB(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~R(z) | AB(z))]
+ + yielded: ∀(z)[(~R(z) | AB(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~(M(x) | F(x) | POB(x)) | PED(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((PED(z) | ~M(z)) & (PED(z) | ~F(z)) & (PED(z) | ~POB(z)))]
+ + yielded: ∀(z)[(PED(z) | ~M(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(PED(z) | ~F(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(PED(z) | ~POB(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~NPOB(x) | NPED(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~NPOB(z) | NPED(z))]
+ + yielded: ∀(z)[(~NPOB(z) | NPED(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~(ACH(x) | ACC(x)) | EV(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((EV(z) | ~ACH(z)) & (EV(z) | ~ACC(z)))]
+ + yielded: ∀(z)[(EV(z) | ~ACH(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(EV(z) | ~ACC(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~(ST(x) | PRO(x)) | STV(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((STV(z) | ~ST(z)) & (STV(z) | ~PRO(z)))]
+ + yielded: ∀(z)[(STV(z) | ~ST(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(STV(z) | ~PRO(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~TL(x) | TQ(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~TL(z) | TQ(z))]
+ + yielded: ∀(z)[(~TL(z) | TQ(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~SL(x) | PQ(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~SL(z) | PQ(z))]
+ + yielded: ∀(z)[(~SL(z) | PQ(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~(TR(x) | PR(x) | AR(x)) | R(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((R(z) | ~TR(z)) & (R(z) | ~PR(z)) & (R(z) | ~AR(z)))]
+ + yielded: ∀(z)[(R(z) | ~TR(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(R(z) | ~PR(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(R(z) | ~AR(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~(APO(x) | NAPO(x)) | POB(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((POB(z) | ~APO(z)) & (POB(z) | ~NAPO(z)))]
+ + yielded: ∀(z)[(POB(z) | ~APO(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(POB(z) | ~NAPO(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~(MOB(x) | SOB(x)) | NPOB(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((NPOB(z) | ~MOB(z)) & (NPOB(z) | ~SOB(z)))]
+ + yielded: ∀(z)[(NPOB(z) | ~MOB(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(NPOB(z) | ~SOB(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~T(x) | TR(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~T(z) | TR(z))]
+ + yielded: ∀(z)[(~T(z) | TR(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~S(x) | PR(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~S(z) | PR(z))]
+ + yielded: ∀(z)[(~S(z) | PR(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~(ASO(x) | NASO(x)) | SOB(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((SOB(z) | ~ASO(z)) & (SOB(z) | ~NASO(z)))]
+ + yielded: ∀(z)[(SOB(z) | ~ASO(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(SOB(z) | ~NASO(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[(~(SAG(x) | SC(x)) | ASO(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((ASO(z) | ~SAG(z)) & (ASO(z) | ~SC(z)))]
+ + yielded: ∀(z)[(ASO(z) | ~SAG(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(ASO(z) | ~SC(z))]
+     - pattern subclass
+
+Axiom: ∀(x)[((~PT(x) | ED(x) | PD(x) | Q(x) | AB(x)) & (~(ED(x) | PD(x) | Q(x) | AB(x)) | PT(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((PT(z) | ~ED(z)) & (PT(z) | ~PD(z)) & (PT(z) | ~Q(z)) & (PT(z) | ~AB(z)) & (~PT(z) | ED(z) | PD(z) | Q(z) | AB(z)))]
+ + yielded: ∀(z)[(PT(z) | ~ED(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(PT(z) | ~PD(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(PT(z) | ~Q(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(PT(z) | ~AB(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(~PT(z) | ED(z) | PD(z) | Q(z) | AB(z))]
+     - pattern subclass
+['ED', 'PD', 'Q', 'AB'] b'<ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#ED" /><Class IRI="http://macleod.org/Converted.owl#PD" /><Class IRI="http://macleod.org/Converted.owl#Q" /><Class IRI="http://macleod.org/Converted.owl#AB" /></ObjectUnionOf>'
+
+Axiom: ∀(x)[(~ED(x) | (~PD(x) & ~Q(x) & ~AB(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((~ED(z) | ~PD(z)) & (~ED(z) | ~Q(z)) & (~ED(z) | ~AB(z)))]
+ + yielded: ∀(z)[(~ED(z) | ~PD(z))]
+     - pattern disjoint_classes
+ + yielded: ∀(z)[(~ED(z) | ~Q(z))]
+     - pattern disjoint_classes
+ + yielded: ∀(z)[(~ED(z) | ~AB(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[(~PD(x) | (~Q(x) & ~AB(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((~PD(z) | ~Q(z)) & (~PD(z) | ~AB(z)))]
+ + yielded: ∀(z)[(~PD(z) | ~Q(z))]
+     - pattern disjoint_classes
+ + yielded: ∀(z)[(~PD(z) | ~AB(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[(~Q(x) | ~AB(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~Q(z) | ~AB(z))]
+ + yielded: ∀(z)[(~Q(z) | ~AB(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[((~ED(x) | PED(x) | NPED(x) | AS(x)) & (~(PED(x) | NPED(x) | AS(x)) | ED(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((ED(z) | ~PED(z)) & (ED(z) | ~NPED(z)) & (ED(z) | ~AS(z)) & (~ED(z) | PED(z) | NPED(z) | AS(z)))]
+ + yielded: ∀(z)[(ED(z) | ~PED(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(ED(z) | ~NPED(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(ED(z) | ~AS(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(~ED(z) | PED(z) | NPED(z) | AS(z))]
+     - pattern subclass
+['PED', 'NPED', 'AS'] b'<ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#PED" /><Class IRI="http://macleod.org/Converted.owl#NPED" /><Class IRI="http://macleod.org/Converted.owl#AS" /></ObjectUnionOf>'
+
+Axiom: ∀(x)[(~PED(x) | (~NPED(x) & ~AS(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((~PED(z) | ~NPED(z)) & (~PED(z) | ~AS(z)))]
+ + yielded: ∀(z)[(~PED(z) | ~NPED(z))]
+     - pattern disjoint_classes
+ + yielded: ∀(z)[(~PED(z) | ~AS(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[(~NPED(x) | ~AS(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~NPED(z) | ~AS(z))]
+ + yielded: ∀(z)[(~NPED(z) | ~AS(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[((~PD(x) | EV(x) | STV(x)) & (~(EV(x) | STV(x)) | PD(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((PD(z) | ~EV(z)) & (PD(z) | ~STV(z)) & (~PD(z) | EV(z) | STV(z)))]
+ + yielded: ∀(z)[(PD(z) | ~EV(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(PD(z) | ~STV(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(~PD(z) | EV(z) | STV(z))]
+     - pattern subclass
+['EV', 'STV'] b'<ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#EV" /><Class IRI="http://macleod.org/Converted.owl#STV" /></ObjectUnionOf>'
+
+Axiom: ∀(x)[(~EV(x) | ~STV(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~EV(z) | ~STV(z))]
+ + yielded: ∀(z)[(~EV(z) | ~STV(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[((~Q(x) | TQ(x) | PQ(x) | AQ(x)) & (~(TQ(x) | PQ(x) | AQ(x)) | Q(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((Q(z) | ~TQ(z)) & (Q(z) | ~PQ(z)) & (Q(z) | ~AQ(z)) & (~Q(z) | TQ(z) | PQ(z) | AQ(z)))]
+ + yielded: ∀(z)[(Q(z) | ~TQ(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(Q(z) | ~PQ(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(Q(z) | ~AQ(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(~Q(z) | TQ(z) | PQ(z) | AQ(z))]
+     - pattern subclass
+['TQ', 'PQ', 'AQ'] b'<ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#TQ" /><Class IRI="http://macleod.org/Converted.owl#PQ" /><Class IRI="http://macleod.org/Converted.owl#AQ" /></ObjectUnionOf>'
+
+Axiom: ∀(x)[(~TQ(x) | (~PQ(x) & ~AQ(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((~TQ(z) | ~PQ(z)) & (~TQ(z) | ~AQ(z)))]
+ + yielded: ∀(z)[(~TQ(z) | ~PQ(z))]
+     - pattern disjoint_classes
+ + yielded: ∀(z)[(~TQ(z) | ~AQ(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[(~PQ(x) | ~AQ(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~PQ(z) | ~AQ(z))]
+ + yielded: ∀(z)[(~PQ(z) | ~AQ(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[((~PED(x) | M(x) | F(x) | POB(x)) & (~(M(x) | F(x) | POB(x)) | PED(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((PED(z) | ~M(z)) & (PED(z) | ~F(z)) & (PED(z) | ~POB(z)) & (~PED(z) | M(z) | F(z) | POB(z)))]
+ + yielded: ∀(z)[(PED(z) | ~M(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(PED(z) | ~F(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(PED(z) | ~POB(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(~PED(z) | M(z) | F(z) | POB(z))]
+     - pattern subclass
+['M', 'F', 'POB'] b'<ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#M" /><Class IRI="http://macleod.org/Converted.owl#F" /><Class IRI="http://macleod.org/Converted.owl#POB" /></ObjectUnionOf>'
+
+Axiom: ∀(x)[(~M(x) | (~F(x) & ~POB(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((~M(z) | ~F(z)) & (~M(z) | ~POB(z)))]
+ + yielded: ∀(z)[(~M(z) | ~F(z))]
+     - pattern disjoint_classes
+ + yielded: ∀(z)[(~M(z) | ~POB(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[(~F(x) | ~POB(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~F(z) | ~POB(z))]
+ + yielded: ∀(z)[(~F(z) | ~POB(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[((~EV(x) | ACH(x) | ACC(x)) & (~(ACH(x) | ACC(x)) | EV(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((EV(z) | ~ACH(z)) & (EV(z) | ~ACC(z)) & (~EV(z) | ACH(z) | ACC(z)))]
+ + yielded: ∀(z)[(EV(z) | ~ACH(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(EV(z) | ~ACC(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(~EV(z) | ACH(z) | ACC(z))]
+     - pattern subclass
+['ACH', 'ACC'] b'<ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#ACH" /><Class IRI="http://macleod.org/Converted.owl#ACC" /></ObjectUnionOf>'
+
+Axiom: ∀(x)[(~ACH(x) | ~ACC(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~ACH(z) | ~ACC(z))]
+ + yielded: ∀(z)[(~ACH(z) | ~ACC(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[((~STV(x) | ST(x) | PRO(x)) & (~(ST(x) | PRO(x)) | STV(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((STV(z) | ~ST(z)) & (STV(z) | ~PRO(z)) & (~STV(z) | ST(z) | PRO(z)))]
+ + yielded: ∀(z)[(STV(z) | ~ST(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(STV(z) | ~PRO(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(~STV(z) | ST(z) | PRO(z))]
+     - pattern subclass
+['ST', 'PRO'] b'<ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#ST" /><Class IRI="http://macleod.org/Converted.owl#PRO" /></ObjectUnionOf>'
+
+Axiom: ∀(x)[(~ST(x) | ~PRO(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~ST(z) | ~PRO(z))]
+ + yielded: ∀(z)[(~ST(z) | ~PRO(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[((~R(x) | TR(x) | PR(x) | AR(x)) & (~(TR(x) | PR(x) | AR(x)) | R(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((R(z) | ~TR(z)) & (R(z) | ~PR(z)) & (R(z) | ~AR(z)) & (~R(z) | TR(z) | PR(z) | AR(z)))]
+ + yielded: ∀(z)[(R(z) | ~TR(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(R(z) | ~PR(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(R(z) | ~AR(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(~R(z) | TR(z) | PR(z) | AR(z))]
+     - pattern subclass
+['TR', 'PR', 'AR'] b'<ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#TR" /><Class IRI="http://macleod.org/Converted.owl#PR" /><Class IRI="http://macleod.org/Converted.owl#AR" /></ObjectUnionOf>'
+
+Axiom: ∀(x)[(~TR(x) | (~PR(x) & ~AR(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((~TR(z) | ~PR(z)) & (~TR(z) | ~AR(z)))]
+ + yielded: ∀(z)[(~TR(z) | ~PR(z))]
+     - pattern disjoint_classes
+ + yielded: ∀(z)[(~TR(z) | ~AR(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[(~PR(x) | ~AR(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~PR(z) | ~AR(z))]
+ + yielded: ∀(z)[(~PR(z) | ~AR(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[((~POB(x) | APO(x) | NAPO(x)) & (~(APO(x) | NAPO(x)) | POB(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((POB(z) | ~APO(z)) & (POB(z) | ~NAPO(z)) & (~POB(z) | APO(z) | NAPO(z)))]
+ + yielded: ∀(z)[(POB(z) | ~APO(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(POB(z) | ~NAPO(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(~POB(z) | APO(z) | NAPO(z))]
+     - pattern subclass
+['APO', 'NAPO'] b'<ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#APO" /><Class IRI="http://macleod.org/Converted.owl#NAPO" /></ObjectUnionOf>'
+
+Axiom: ∀(x)[(~APO(x) | ~NAPO(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~APO(z) | ~NAPO(z))]
+ + yielded: ∀(z)[(~APO(z) | ~NAPO(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[((~NPOB(x) | MOB(x) | SOB(x)) & (~(MOB(x) | SOB(x)) | NPOB(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((NPOB(z) | ~MOB(z)) & (NPOB(z) | ~SOB(z)) & (~NPOB(z) | MOB(z) | SOB(z)))]
+ + yielded: ∀(z)[(NPOB(z) | ~MOB(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(NPOB(z) | ~SOB(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(~NPOB(z) | MOB(z) | SOB(z))]
+     - pattern subclass
+['MOB', 'SOB'] b'<ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#MOB" /><Class IRI="http://macleod.org/Converted.owl#SOB" /></ObjectUnionOf>'
+
+Axiom: ∀(x)[(~MOB(x) | ~SOB(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~MOB(z) | ~SOB(z))]
+ + yielded: ∀(z)[(~MOB(z) | ~SOB(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[((~SOB(x) | ASO(x) | NASO(x)) & (~(ASO(x) | NASO(x)) | SOB(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((SOB(z) | ~ASO(z)) & (SOB(z) | ~NASO(z)) & (~SOB(z) | ASO(z) | NASO(z)))]
+ + yielded: ∀(z)[(SOB(z) | ~ASO(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(SOB(z) | ~NASO(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(~SOB(z) | ASO(z) | NASO(z))]
+     - pattern subclass
+['ASO', 'NASO'] b'<ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#ASO" /><Class IRI="http://macleod.org/Converted.owl#NASO" /></ObjectUnionOf>'
+
+Axiom: ∀(x)[(~ASO(x) | ~NASO(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~ASO(z) | ~NASO(z))]
+ + yielded: ∀(z)[(~ASO(z) | ~NASO(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(x)[((~ASO(x) | SAG(x) | SC(x)) & (~(SAG(x) | SC(x)) | ASO(x)))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[((ASO(z) | ~SAG(z)) & (ASO(z) | ~SC(z)) & (~ASO(z) | SAG(z) | SC(z)))]
+ + yielded: ∀(z)[(ASO(z) | ~SAG(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(ASO(z) | ~SC(z))]
+     - pattern subclass
+ + yielded: ∀(z)[(~ASO(z) | SAG(z) | SC(z))]
+     - pattern subclass
+['SAG', 'SC'] b'<ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#SAG" /><Class IRI="http://macleod.org/Converted.owl#SC" /></ObjectUnionOf>'
+
+Axiom: ∀(x)[(~SAG(x) | ~SC(x))] from /Users/rpskillet/thesis/colore/ontologies/dolce_taxonomy/dolce_taxonomy.clif
+FF-PCNF: ∀(z)[(~SAG(z) | ~SC(z))]
+ + yielded: ∀(z)[(~SAG(z) | ~SC(z))]
+     - pattern disjoint_classes
+
+
+-- Translation --
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#" ontologyIRI="http://macleod.org/Converted.owl" xml:base="http://macleod.org/Converted.owl">
+            <Prefix IRI="http://www.w3.org/2002/07/owl#" name="owl"></Prefix>
+            <Prefix IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#" name="rdf"></Prefix>
+            <Prefix IRI="http://www.w3.org/XML/1998/namespace" name="xml"></Prefix>
+            <Prefix IRI="http://www.w3.org/2001/XMLSchema#" name="xsd"></Prefix>
+            <Prefix IRI="http://www.w3.org/2000/01/rdf-schema#" name="rdfs"></Prefix>
+        <Declaration><Class IRI="http://macleod.org/Converted.owl#ED"></Class></Declaration><Declaration><Class IRI="http://macleod.org/Converted.owl#PT"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#ED"></Class><Class IRI="http://macleod.org/Converted.owl#PT"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#PD"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#PD"></Class><Class IRI="http://macleod.org/Converted.owl#PT"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#Q"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#Q"></Class><Class IRI="http://macleod.org/Converted.owl#PT"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#AB"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#AB"></Class><Class IRI="http://macleod.org/Converted.owl#PT"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#PED"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#PED"></Class><Class IRI="http://macleod.org/Converted.owl#ED"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#NPED"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#NPED"></Class><Class IRI="http://macleod.org/Converted.owl#ED"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#AS"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#AS"></Class><Class IRI="http://macleod.org/Converted.owl#ED"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#EV"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#EV"></Class><Class IRI="http://macleod.org/Converted.owl#PD"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#STV"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#STV"></Class><Class IRI="http://macleod.org/Converted.owl#PD"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#TQ"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#TQ"></Class><Class IRI="http://macleod.org/Converted.owl#Q"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#PQ"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#PQ"></Class><Class IRI="http://macleod.org/Converted.owl#Q"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#AQ"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#AQ"></Class><Class IRI="http://macleod.org/Converted.owl#Q"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#R"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#R"></Class><Class IRI="http://macleod.org/Converted.owl#AB"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#M"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#M"></Class><Class IRI="http://macleod.org/Converted.owl#PED"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#F"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#F"></Class><Class IRI="http://macleod.org/Converted.owl#PED"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#POB"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#POB"></Class><Class IRI="http://macleod.org/Converted.owl#PED"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#NPOB"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#NPOB"></Class><Class IRI="http://macleod.org/Converted.owl#NPED"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#ACH"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#ACH"></Class><Class IRI="http://macleod.org/Converted.owl#EV"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#ACC"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#ACC"></Class><Class IRI="http://macleod.org/Converted.owl#EV"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#ST"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#ST"></Class><Class IRI="http://macleod.org/Converted.owl#STV"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#PRO"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#PRO"></Class><Class IRI="http://macleod.org/Converted.owl#STV"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#TL"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#TL"></Class><Class IRI="http://macleod.org/Converted.owl#TQ"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#SL"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#SL"></Class><Class IRI="http://macleod.org/Converted.owl#PQ"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#TR"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#TR"></Class><Class IRI="http://macleod.org/Converted.owl#R"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#PR"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#PR"></Class><Class IRI="http://macleod.org/Converted.owl#R"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#AR"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#AR"></Class><Class IRI="http://macleod.org/Converted.owl#R"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#APO"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#APO"></Class><Class IRI="http://macleod.org/Converted.owl#POB"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#NAPO"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#NAPO"></Class><Class IRI="http://macleod.org/Converted.owl#POB"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#MOB"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#MOB"></Class><Class IRI="http://macleod.org/Converted.owl#NPOB"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#SOB"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#SOB"></Class><Class IRI="http://macleod.org/Converted.owl#NPOB"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#T"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#T"></Class><Class IRI="http://macleod.org/Converted.owl#TR"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#S"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#S"></Class><Class IRI="http://macleod.org/Converted.owl#PR"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#ASO"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#ASO"></Class><Class IRI="http://macleod.org/Converted.owl#SOB"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#NASO"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#NASO"></Class><Class IRI="http://macleod.org/Converted.owl#SOB"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#SAG"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#SAG"></Class><Class IRI="http://macleod.org/Converted.owl#ASO"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#SC"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#SC"></Class><Class IRI="http://macleod.org/Converted.owl#ASO"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#ED"></Class><Class IRI="http://macleod.org/Converted.owl#PT"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#PD"></Class><Class IRI="http://macleod.org/Converted.owl#PT"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#Q"></Class><Class IRI="http://macleod.org/Converted.owl#PT"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#AB"></Class><Class IRI="http://macleod.org/Converted.owl#PT"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#EDorPDorQorAB"></Class></Declaration><EquivalentClasses><Class IRI="http://macleod.org/Converted.owl#EDorPDorQorAB"></Class><ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#ED"></Class><Class IRI="http://macleod.org/Converted.owl#PD"></Class><Class IRI="http://macleod.org/Converted.owl#Q"></Class><Class IRI="http://macleod.org/Converted.owl#AB"></Class></ObjectUnionOf></EquivalentClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#PT"></Class><Class IRI="http://macleod.org/Converted.owl#EDorPDorQorAB"></Class></SubClassOf><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#ED"></Class><Class IRI="http://macleod.org/Converted.owl#PD"></Class></DisjointClasses><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#ED"></Class><Class IRI="http://macleod.org/Converted.owl#Q"></Class></DisjointClasses><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#ED"></Class><Class IRI="http://macleod.org/Converted.owl#AB"></Class></DisjointClasses><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#PD"></Class><Class IRI="http://macleod.org/Converted.owl#Q"></Class></DisjointClasses><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#PD"></Class><Class IRI="http://macleod.org/Converted.owl#AB"></Class></DisjointClasses><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#Q"></Class><Class IRI="http://macleod.org/Converted.owl#AB"></Class></DisjointClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#PED"></Class><Class IRI="http://macleod.org/Converted.owl#ED"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#NPED"></Class><Class IRI="http://macleod.org/Converted.owl#ED"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#AS"></Class><Class IRI="http://macleod.org/Converted.owl#ED"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#PEDorNPEDorAS"></Class></Declaration><EquivalentClasses><Class IRI="http://macleod.org/Converted.owl#PEDorNPEDorAS"></Class><ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#PED"></Class><Class IRI="http://macleod.org/Converted.owl#NPED"></Class><Class IRI="http://macleod.org/Converted.owl#AS"></Class></ObjectUnionOf></EquivalentClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#ED"></Class><Class IRI="http://macleod.org/Converted.owl#PEDorNPEDorAS"></Class></SubClassOf><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#PED"></Class><Class IRI="http://macleod.org/Converted.owl#NPED"></Class></DisjointClasses><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#PED"></Class><Class IRI="http://macleod.org/Converted.owl#AS"></Class></DisjointClasses><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#NPED"></Class><Class IRI="http://macleod.org/Converted.owl#AS"></Class></DisjointClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#EV"></Class><Class IRI="http://macleod.org/Converted.owl#PD"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#STV"></Class><Class IRI="http://macleod.org/Converted.owl#PD"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#EVorSTV"></Class></Declaration><EquivalentClasses><Class IRI="http://macleod.org/Converted.owl#EVorSTV"></Class><ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#EV"></Class><Class IRI="http://macleod.org/Converted.owl#STV"></Class></ObjectUnionOf></EquivalentClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#PD"></Class><Class IRI="http://macleod.org/Converted.owl#EVorSTV"></Class></SubClassOf><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#EV"></Class><Class IRI="http://macleod.org/Converted.owl#STV"></Class></DisjointClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#TQ"></Class><Class IRI="http://macleod.org/Converted.owl#Q"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#PQ"></Class><Class IRI="http://macleod.org/Converted.owl#Q"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#AQ"></Class><Class IRI="http://macleod.org/Converted.owl#Q"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#TQorPQorAQ"></Class></Declaration><EquivalentClasses><Class IRI="http://macleod.org/Converted.owl#TQorPQorAQ"></Class><ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#TQ"></Class><Class IRI="http://macleod.org/Converted.owl#PQ"></Class><Class IRI="http://macleod.org/Converted.owl#AQ"></Class></ObjectUnionOf></EquivalentClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#Q"></Class><Class IRI="http://macleod.org/Converted.owl#TQorPQorAQ"></Class></SubClassOf><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#TQ"></Class><Class IRI="http://macleod.org/Converted.owl#PQ"></Class></DisjointClasses><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#TQ"></Class><Class IRI="http://macleod.org/Converted.owl#AQ"></Class></DisjointClasses><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#PQ"></Class><Class IRI="http://macleod.org/Converted.owl#AQ"></Class></DisjointClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#M"></Class><Class IRI="http://macleod.org/Converted.owl#PED"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#F"></Class><Class IRI="http://macleod.org/Converted.owl#PED"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#POB"></Class><Class IRI="http://macleod.org/Converted.owl#PED"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#MorForPOB"></Class></Declaration><EquivalentClasses><Class IRI="http://macleod.org/Converted.owl#MorForPOB"></Class><ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#M"></Class><Class IRI="http://macleod.org/Converted.owl#F"></Class><Class IRI="http://macleod.org/Converted.owl#POB"></Class></ObjectUnionOf></EquivalentClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#PED"></Class><Class IRI="http://macleod.org/Converted.owl#MorForPOB"></Class></SubClassOf><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#M"></Class><Class IRI="http://macleod.org/Converted.owl#F"></Class></DisjointClasses><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#M"></Class><Class IRI="http://macleod.org/Converted.owl#POB"></Class></DisjointClasses><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#F"></Class><Class IRI="http://macleod.org/Converted.owl#POB"></Class></DisjointClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#ACH"></Class><Class IRI="http://macleod.org/Converted.owl#EV"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#ACC"></Class><Class IRI="http://macleod.org/Converted.owl#EV"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#ACHorACC"></Class></Declaration><EquivalentClasses><Class IRI="http://macleod.org/Converted.owl#ACHorACC"></Class><ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#ACH"></Class><Class IRI="http://macleod.org/Converted.owl#ACC"></Class></ObjectUnionOf></EquivalentClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#EV"></Class><Class IRI="http://macleod.org/Converted.owl#ACHorACC"></Class></SubClassOf><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#ACH"></Class><Class IRI="http://macleod.org/Converted.owl#ACC"></Class></DisjointClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#ST"></Class><Class IRI="http://macleod.org/Converted.owl#STV"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#PRO"></Class><Class IRI="http://macleod.org/Converted.owl#STV"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#STorPRO"></Class></Declaration><EquivalentClasses><Class IRI="http://macleod.org/Converted.owl#STorPRO"></Class><ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#ST"></Class><Class IRI="http://macleod.org/Converted.owl#PRO"></Class></ObjectUnionOf></EquivalentClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#STV"></Class><Class IRI="http://macleod.org/Converted.owl#STorPRO"></Class></SubClassOf><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#ST"></Class><Class IRI="http://macleod.org/Converted.owl#PRO"></Class></DisjointClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#TR"></Class><Class IRI="http://macleod.org/Converted.owl#R"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#PR"></Class><Class IRI="http://macleod.org/Converted.owl#R"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#AR"></Class><Class IRI="http://macleod.org/Converted.owl#R"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#TRorPRorAR"></Class></Declaration><EquivalentClasses><Class IRI="http://macleod.org/Converted.owl#TRorPRorAR"></Class><ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#TR"></Class><Class IRI="http://macleod.org/Converted.owl#PR"></Class><Class IRI="http://macleod.org/Converted.owl#AR"></Class></ObjectUnionOf></EquivalentClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#R"></Class><Class IRI="http://macleod.org/Converted.owl#TRorPRorAR"></Class></SubClassOf><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#TR"></Class><Class IRI="http://macleod.org/Converted.owl#PR"></Class></DisjointClasses><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#TR"></Class><Class IRI="http://macleod.org/Converted.owl#AR"></Class></DisjointClasses><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#PR"></Class><Class IRI="http://macleod.org/Converted.owl#AR"></Class></DisjointClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#APO"></Class><Class IRI="http://macleod.org/Converted.owl#POB"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#NAPO"></Class><Class IRI="http://macleod.org/Converted.owl#POB"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#APOorNAPO"></Class></Declaration><EquivalentClasses><Class IRI="http://macleod.org/Converted.owl#APOorNAPO"></Class><ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#APO"></Class><Class IRI="http://macleod.org/Converted.owl#NAPO"></Class></ObjectUnionOf></EquivalentClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#POB"></Class><Class IRI="http://macleod.org/Converted.owl#APOorNAPO"></Class></SubClassOf><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#APO"></Class><Class IRI="http://macleod.org/Converted.owl#NAPO"></Class></DisjointClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#MOB"></Class><Class IRI="http://macleod.org/Converted.owl#NPOB"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#SOB"></Class><Class IRI="http://macleod.org/Converted.owl#NPOB"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#MOBorSOB"></Class></Declaration><EquivalentClasses><Class IRI="http://macleod.org/Converted.owl#MOBorSOB"></Class><ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#MOB"></Class><Class IRI="http://macleod.org/Converted.owl#SOB"></Class></ObjectUnionOf></EquivalentClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#NPOB"></Class><Class IRI="http://macleod.org/Converted.owl#MOBorSOB"></Class></SubClassOf><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#MOB"></Class><Class IRI="http://macleod.org/Converted.owl#SOB"></Class></DisjointClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#ASO"></Class><Class IRI="http://macleod.org/Converted.owl#SOB"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#NASO"></Class><Class IRI="http://macleod.org/Converted.owl#SOB"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#ASOorNASO"></Class></Declaration><EquivalentClasses><Class IRI="http://macleod.org/Converted.owl#ASOorNASO"></Class><ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#ASO"></Class><Class IRI="http://macleod.org/Converted.owl#NASO"></Class></ObjectUnionOf></EquivalentClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#SOB"></Class><Class IRI="http://macleod.org/Converted.owl#ASOorNASO"></Class></SubClassOf><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#ASO"></Class><Class IRI="http://macleod.org/Converted.owl#NASO"></Class></DisjointClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#SAG"></Class><Class IRI="http://macleod.org/Converted.owl#ASO"></Class></SubClassOf><SubClassOf><Class IRI="http://macleod.org/Converted.owl#SC"></Class><Class IRI="http://macleod.org/Converted.owl#ASO"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#SAGorSC"></Class></Declaration><EquivalentClasses><Class IRI="http://macleod.org/Converted.owl#SAGorSC"></Class><ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#SAG"></Class><Class IRI="http://macleod.org/Converted.owl#SC"></Class></ObjectUnionOf></EquivalentClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#ASO"></Class><Class IRI="http://macleod.org/Converted.owl#SAGorSC"></Class></SubClassOf><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#SAG"></Class><Class IRI="http://macleod.org/Converted.owl#SC"></Class></DisjointClasses></Ontology>

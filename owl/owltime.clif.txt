@@ -1,0 +1,194 @@
+/Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+Axiom: ∀(t1,t2)[(~before(t1,t2) | ~=(t1,t2))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y)[(~before(z,y) | ~=(z,y))]
+ + yielded: ∀(z,y)[(~before(z,y) | ~=(z,y))]
+     - pattern disjoint_properties
+
+Axiom: ∀(t1,t2)[(~before(t1,t2) | ~before(t2,t1))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y)[(~before(z,y) | ~before(y,z))]
+ + yielded: ∀(z,y)[(~before(z,y) | ~before(y,z))]
+     - pattern asymmetric
+
+Axiom: ∀(t1,t2,t3)[(~(before(t1,t2) & before(t2,t3)) | before(t1,t3))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y,x)[(~before(z,y) | ~before(y,x) | before(z,x))]
+ + yielded: ∀(z,y,x)[(~before(z,y) | ~before(y,x) | before(z,x))]
+
+Axiom: ∀(t)[(~Instant(t) | TemporalEntity(t))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z)[(~Instant(z) | TemporalEntity(z))]
+ + yielded: ∀(z)[(~Instant(z) | TemporalEntity(z))]
+     - pattern subclass
+
+Axiom: ∀(t)[(~Interval(t) | TemporalEntity(t))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z)[(~Interval(z) | TemporalEntity(z))]
+ + yielded: ∀(z)[(~Interval(z) | TemporalEntity(z))]
+     - pattern subclass
+
+Axiom: ∀(t)[(~TemporalEntity(t) | Interval(t) | Instant(t))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z)[(~TemporalEntity(z) | Interval(z) | Instant(z))]
+ + yielded: ∀(z)[(~TemporalEntity(z) | Interval(z) | Instant(z))]
+     - pattern subclass
+['Interval', 'Instant'] b'<ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#Interval" /><Class IRI="http://macleod.org/Converted.owl#Instant" /></ObjectUnionOf>'
+
+Axiom: ∀(t,x)[(~begins(t,x) | (Instant(t) & TemporalEntity(x)))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y)[((~begins(z,y) | Instant(z)) & (~begins(z,y) | TemporalEntity(y)))]
+ + yielded: ∀(y,z)[(~begins(z,y) | Instant(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~begins(z,y) | TemporalEntity(y))]
+     - pattern range_restriction
+
+Axiom: ∀(t,x)[(~ends(t,x) | (Instant(t) & TemporalEntity(x)))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y)[((~ends(z,y) | Instant(z)) & (~ends(z,y) | TemporalEntity(y)))]
+ + yielded: ∀(y,z)[(~ends(z,y) | Instant(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~ends(z,y) | TemporalEntity(y))]
+     - pattern range_restriction
+
+Axiom: ∀(t)[((~Instant(t) | begins(t,t)) & (~begins(t,t) | Instant(t)))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z)[((~begins(z,z) | Instant(z)) & (~Instant(z) | begins(z,z)))]
+ + yielded: ∀(z)[(~begins(z,z) | Instant(z))]
+ + yielded: ∀(z)[(~Instant(z) | begins(z,z))]
+
+Axiom: ∀(t)[((~Instant(t) | ends(t,t)) & (~ends(t,t) | Instant(t)))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z)[((~ends(z,z) | Instant(z)) & (~Instant(z) | ends(z,z)))]
+ + yielded: ∀(z)[(~ends(z,z) | Instant(z))]
+ + yielded: ∀(z)[(~Instant(z) | ends(z,z))]
+
+Axiom: ∀(x,t1,t2)[(~(TemporalEntity(x) & begins(t1,x) & begins(t2,x)) | =(t1,t2))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y,x)[(~TemporalEntity(z) | ~begins(y,z) | ~begins(x,z) | =(y,x))]
+ + yielded: ∀(z,y,x)[(~TemporalEntity(z) | ~begins(y,z) | ~begins(x,z) | =(y,x))]
+
+Axiom: ∀(x,t1,t2)[(~(TemporalEntity(x) & ends(t1,x) & ends(t2,x)) | =(t1,t2))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y,x)[(~TemporalEntity(z) | ~ends(y,z) | ~ends(x,z) | =(y,x))]
+ + yielded: ∀(z,y,x)[(~TemporalEntity(z) | ~ends(y,z) | ~ends(x,z) | =(y,x))]
+
+Axiom: ∀(x,t1,t2)[(~timeBetween(x,t1,t2) | (TemporalEntity(x) & Instant(t1) & Instant(t2)))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y,x)[((~timeBetween(z,y,x) | TemporalEntity(z)) & (~timeBetween(z,y,x) | Instant(y)) & (~timeBetween(z,y,x) | Instant(x)))]
+ + yielded: ∀(x,y,z)[(~timeBetween(z,y,x) | TemporalEntity(z))]
+ + yielded: ∀(x,y,z)[(~timeBetween(z,y,x) | Instant(y))]
+ + yielded: ∀(x,y,z)[(~timeBetween(z,y,x) | Instant(x))]
+
+Axiom: ∀(t1,t2)[(~~=(t1,t2) | ∀(x)[((~timeBetween(x,t1,t2) | (begins(t1,x) & ends(t2,x))) & (~(begins(t1,x) & ends(t2,x)) | timeBetween(x,t1,t2)))])] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y,x)[((=(z,y) | ~begins(z,x) | ~ends(y,x) | timeBetween(x,z,y)) & (~timeBetween(x,z,y) | =(z,y) | begins(z,x)) & (~timeBetween(x,z,y) | =(z,y) | ends(y,x)))]
+ + yielded: ∀(x,y,z)[(=(z,y) | ~begins(z,x) | ~ends(y,x) | timeBetween(x,z,y))]
+ + yielded: ∀(x,y,z)[(~timeBetween(x,z,y) | =(z,y) | begins(z,x))]
+ + yielded: ∀(x,y,z)[(~timeBetween(x,z,y) | =(z,y) | ends(y,x))]
+
+Axiom: ∀(x,t1,t2)[(~(Interval(x) & begins(t1,x) & ends(t2,x)) | ~before(t2,t1))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y,x)[(~Interval(z) | ~begins(y,z) | ~ends(x,z) | ~before(x,y))]
+ + yielded: ∀(z,y,x)[(~Interval(z) | ~begins(y,z) | ~ends(x,z) | ~before(x,y))]
+
+Axiom: ∀(x,t1,t2)[(~(ProperInterval(x) & begins(t1,x) & ends(t2,x)) | before(t1,t2))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y,x)[(~ProperInterval(z) | ~begins(y,z) | ~ends(x,z) | before(y,x))]
+ + yielded: ∀(z,y,x)[(~ProperInterval(z) | ~begins(y,z) | ~ends(x,z) | before(y,x))]
+
+Axiom: ∀(t1,t2)[(~(Instant(t1) & Instant(t2) & before(t1,t2)) | ∃(x)[timeBetween(x,t1,t2)])] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y)[∃(x)[(timeBetween(x,z,y) | ~Instant(z) | ~Instant(y) | ~before(z,y))]]
+ + yielded: ∀(z,y)[∃(x)[(timeBetween(x,z,y) | ~Instant(z) | ~Instant(y) | ~before(z,y))]]
+
+Axiom: ∀(x)[((~ProperInterval(x) | (Interval(x) & ∀(t1,t2)[(~(begins(t1,x) & ends(t2,x)) | ~=(t1,t2))])) & (~(Interval(x) & ∀(t1,t2)[(~(begins(t1,x) & ends(t2,x)) | ~=(t1,t2))]) | ProperInterval(x)))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+((((~begins(y,z) | ~ends(x,z) | ~=(y,x)) & Interval(z)) | ~ProperInterval(z)) & ((begins(w,z) & ends(v,z) & =(w,v)) | ~Interval(z) | ProperInterval(z)))
+FF-PCNF: ∀(z,y,x)[∃(w,v)[((~ProperInterval(z) | ~begins(y,z) | ~ends(x,z) | ~=(y,x)) & (~ProperInterval(z) | Interval(z)) & (ProperInterval(z) | ~Interval(z) | begins(w,z)) & (ProperInterval(z) | ~Interval(z) | ends(v,z)) & (ProperInterval(z) | ~Interval(z) | =(w,v)))]]
+ + yielded: ∀(x,y,z)[(~ProperInterval(z) | ~begins(y,z) | ~ends(x,z) | ~=(y,x))]
+ + yielded: ∀(z)[(~ProperInterval(z) | Interval(z))]
+     - pattern subclass
+ + yielded: ∀(z)[∃(w,v)[((ProperInterval(z) | ~Interval(z) | begins(w,z)) & (ProperInterval(z) | ~Interval(z) | ends(v,z)) & (ProperInterval(z) | ~Interval(z) | =(w,v)))]]
+
+Axiom: ∀(t,x)[(~inside(t,x) | (Instant(t) & Interval(x)))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y)[((~inside(z,y) | Instant(z)) & (~inside(z,y) | Interval(y)))]
+ + yielded: ∀(y,z)[(~inside(z,y) | Instant(z))]
+     - pattern domain_restriction
+ + yielded: ∀(y,z)[(~inside(z,y) | Interval(y))]
+     - pattern range_restriction
+
+Axiom: ∀(t,x)[((~beginsOrIn(t,x) | begins(t,x) | inside(t,x)) & (~(begins(t,x) | inside(t,x)) | beginsOrIn(t,x)))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y)[((beginsOrIn(z,y) | ~begins(z,y)) & (beginsOrIn(z,y) | ~inside(z,y)) & (~beginsOrIn(z,y) | begins(z,y) | inside(z,y)))]
+ + yielded: ∀(y,z)[(beginsOrIn(z,y) | ~begins(z,y))]
+     - pattern subproperty
+ + yielded: ∀(y,z)[(beginsOrIn(z,y) | ~inside(z,y))]
+     - pattern subproperty
+ + yielded: ∀(y,z)[(~beginsOrIn(z,y) | begins(z,y) | inside(z,y))]
+     - pattern subproperty
+
+Axiom: ∀(t,t1,t2,x)[(~(inside(t,x) & begins(t1,x) & ends(t2,x) & ProperInterval(x)) | (before(t1,t) & before(t,t2)))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y,x,w)[((~ProperInterval(w) | ~ends(x,w) | ~begins(y,w) | ~inside(z,w) | before(y,z)) & (~ProperInterval(w) | ~ends(x,w) | ~begins(y,w) | ~inside(z,w) | before(z,x)))]
+ + yielded: ∀(x,w,y,z)[(~ProperInterval(w) | ~ends(x,w) | ~begins(y,w) | ~inside(z,w) | before(y,z))]
+ + yielded: ∀(x,w,y,z)[(~ProperInterval(w) | ~ends(x,w) | ~begins(y,w) | ~inside(z,w) | before(z,x))]
+
+Axiom: ∀(t1,t2,i)[(~(inside(t1,i) & inside(t2,i)) | before(t1,t2) | before(t2,t1) | =(t1,t2))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y,x)[(~inside(z,x) | ~inside(y,x) | before(z,y) | before(y,z) | =(z,y))]
+ + yielded: ∀(z,y,x)[(~inside(z,x) | ~inside(y,x) | before(z,y) | before(y,z) | =(z,y))]
+
+Axiom: ∀(i,t1,t2)[(~(inside(t1,i) & begins(t2,i)) | before(t2,t1))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y,x)[(~inside(y,z) | ~begins(x,z) | before(x,y))]
+ + yielded: ∀(z,y,x)[(~inside(y,z) | ~begins(x,z) | before(x,y))]
+
+Axiom: ∀(i,t1,t2)[(~(inside(t1,i) & ends(t2,i)) | before(t1,t2))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y,x)[(~inside(y,z) | ~ends(x,z) | before(y,x))]
+ + yielded: ∀(z,y,x)[(~inside(y,z) | ~ends(x,z) | before(y,x))]
+
+Axiom: ∀(e)[(~Eventuality(e) | ~TemporalEntity(e))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z)[(~Eventuality(z) | ~TemporalEntity(z))]
+ + yielded: ∀(z)[(~Eventuality(z) | ~TemporalEntity(z))]
+     - pattern disjoint_classes
+
+Axiom: ∀(e,t)[(~atTime(e,t) | Eventuality(e))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y)[(~atTime(z,y) | Eventuality(z))]
+ + yielded: ∀(z,y)[(~atTime(z,y) | Eventuality(z))]
+     - pattern domain_restriction
+
+Axiom: ∀(e,t)[(~during(e,t) | Eventuality(e))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y)[(~during(z,y) | Eventuality(z))]
+ + yielded: ∀(z,y)[(~during(z,y) | Eventuality(z))]
+     - pattern domain_restriction
+
+Axiom: ∀(t,e)[(~timeSpan(t,e) | (Eventuality(e) & TemporalEntity(t)))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y)[((~timeSpan(z,y) | Eventuality(y)) & (~timeSpan(z,y) | TemporalEntity(z)))]
+ + yielded: ∀(y,z)[(~timeSpan(z,y) | Eventuality(y))]
+     - pattern range_restriction
+ + yielded: ∀(y,z)[(~timeSpan(z,y) | TemporalEntity(z))]
+     - pattern domain_restriction
+
+Axiom: ∀(e,t)[(~atTime(e,t) | Instant(t))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y)[(~atTime(z,y) | Instant(y))]
+ + yielded: ∀(z,y)[(~atTime(z,y) | Instant(y))]
+     - pattern range_restriction
+
+Axiom: ∀(e,t)[(~during(e,t) | Interval(t))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y)[(~during(z,y) | Interval(y))]
+ + yielded: ∀(z,y)[(~during(z,y) | Interval(y))]
+     - pattern range_restriction
+
+Axiom: ∀(e,t1,t2)[(~(during(e,t1) & inside(t2,t1)) | atTime(e,t2))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y,x)[(~during(z,y) | ~inside(x,y) | atTime(z,x))]
+ + yielded: ∀(z,y,x)[(~during(z,y) | ~inside(x,y) | atTime(z,x))]
+
+Axiom: ∀(e,t,t1)[(~(during(e,t) & intDuring(t1,t)) | during(e,t1))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y,x)[(~during(z,y) | ~intDuring(x,y) | during(z,x))]
+ + yielded: ∀(z,y,x)[(~during(z,y) | ~intDuring(x,y) | during(z,x))]
+
+Axiom: ∀(t,e)[(~(timeSpan(t,e) & Interval(t)) | during(e,t))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y)[(~timeSpan(z,y) | ~Interval(z) | during(y,z))]
+ + yielded: ∀(z,y)[(~timeSpan(z,y) | ~Interval(z) | during(y,z))]
+
+Axiom: ∀(t,e)[(~(timeSpan(t,e) & Instant(t)) | atTime(e,t))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y)[(~timeSpan(z,y) | ~Instant(z) | atTime(y,z))]
+ + yielded: ∀(z,y)[(~timeSpan(z,y) | ~Instant(z) | atTime(y,z))]
+
+Axiom: ∀(t1,t2,e)[(~(timeSpan(t1,e) & Interval(t2) & atTime(e,t2)) | inside(t2,t1) | begins(t2,t1) | ends(t2,t1))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y,x)[(~timeSpan(z,x) | ~Interval(y) | ~atTime(x,y) | inside(y,z) | begins(y,z) | ends(y,z))]
+ + yielded: ∀(z,y,x)[(~timeSpan(z,x) | ~Interval(y) | ~atTime(x,y) | inside(y,z) | begins(y,z) | ends(y,z))]
+
+Axiom: ∀(t,t1,e)[(~(timeSpan(t,e) & Instant(t) & atTime(e,t1)) | =(t,t1))] from /Users/rpskillet/thesis/colore/ontologies/owltime/owltime.clif
+FF-PCNF: ∀(z,y,x)[(~timeSpan(z,x) | ~Instant(z) | ~atTime(x,y) | =(z,y))]
+ + yielded: ∀(z,y,x)[(~timeSpan(z,x) | ~Instant(z) | ~atTime(x,y) | =(z,y))]
+
+
+-- Translation --
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#" ontologyIRI="http://macleod.org/Converted.owl" xml:base="http://macleod.org/Converted.owl">
+            <Prefix IRI="http://www.w3.org/2002/07/owl#" name="owl"></Prefix>
+            <Prefix IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#" name="rdf"></Prefix>
+            <Prefix IRI="http://www.w3.org/XML/1998/namespace" name="xml"></Prefix>
+            <Prefix IRI="http://www.w3.org/2001/XMLSchema#" name="xsd"></Prefix>
+            <Prefix IRI="http://www.w3.org/2000/01/rdf-schema#" name="rdfs"></Prefix>
+        <Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#before"></ObjectProperty></Declaration><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#="></ObjectProperty></Declaration><DisjointObjectProperties><ObjectProperty IRI="http://macleod.org/Converted.owl#before"></ObjectProperty><ObjectProperty IRI="http://macleod.org/Converted.owl#="></ObjectProperty></DisjointObjectProperties><AsymmetricObjectProperty><ObjectProperty IRI="http://macleod.org/Converted.owl#before"></ObjectProperty></AsymmetricObjectProperty><Declaration><Class IRI="http://macleod.org/Converted.owl#Instant"></Class></Declaration><Declaration><Class IRI="http://macleod.org/Converted.owl#TemporalEntity"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#Instant"></Class><Class IRI="http://macleod.org/Converted.owl#TemporalEntity"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#Interval"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#Interval"></Class><Class IRI="http://macleod.org/Converted.owl#TemporalEntity"></Class></SubClassOf><Declaration><Class IRI="http://macleod.org/Converted.owl#IntervalorInstant"></Class></Declaration><EquivalentClasses><Class IRI="http://macleod.org/Converted.owl#IntervalorInstant"></Class><ObjectUnionOf><Class IRI="http://macleod.org/Converted.owl#Interval"></Class><Class IRI="http://macleod.org/Converted.owl#Instant"></Class></ObjectUnionOf></EquivalentClasses><SubClassOf><Class IRI="http://macleod.org/Converted.owl#TemporalEntity"></Class><Class IRI="http://macleod.org/Converted.owl#IntervalorInstant"></Class></SubClassOf><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#begins"></ObjectProperty></Declaration><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#begins"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#Instant"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#begins"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TemporalEntity"></Class></ObjectPropertyRange><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#ends"></ObjectProperty></Declaration><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#ends"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#Instant"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#ends"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TemporalEntity"></Class></ObjectPropertyRange><Declaration><Class IRI="http://macleod.org/Converted.owl#ProperInterval"></Class></Declaration><SubClassOf><Class IRI="http://macleod.org/Converted.owl#ProperInterval"></Class><Class IRI="http://macleod.org/Converted.owl#Interval"></Class></SubClassOf><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#inside"></ObjectProperty></Declaration><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#inside"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#Instant"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#inside"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#Interval"></Class></ObjectPropertyRange><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#beginsOrIn"></ObjectProperty></Declaration><SubObjectPropertyOf><ObjectProperty IRI="http://macleod.org/Converted.owl#begins"></ObjectProperty><ObjectProperty IRI="http://macleod.org/Converted.owl#beginsOrIn"></ObjectProperty></SubObjectPropertyOf><SubObjectPropertyOf><ObjectProperty IRI="http://macleod.org/Converted.owl#inside"></ObjectProperty><ObjectProperty IRI="http://macleod.org/Converted.owl#beginsOrIn"></ObjectProperty></SubObjectPropertyOf><Declaration><Class IRI="http://macleod.org/Converted.owl#Eventuality"></Class></Declaration><DisjointClasses><Class IRI="http://macleod.org/Converted.owl#Eventuality"></Class><Class IRI="http://macleod.org/Converted.owl#TemporalEntity"></Class></DisjointClasses><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#atTime"></ObjectProperty></Declaration><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#atTime"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#Eventuality"></Class></ObjectPropertyDomain><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#during"></ObjectProperty></Declaration><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#during"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#Eventuality"></Class></ObjectPropertyDomain><Declaration><ObjectProperty IRI="http://macleod.org/Converted.owl#timeSpan"></ObjectProperty></Declaration><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#timeSpan"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#Eventuality"></Class></ObjectPropertyRange><ObjectPropertyDomain><ObjectProperty IRI="http://macleod.org/Converted.owl#timeSpan"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#TemporalEntity"></Class></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#atTime"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#Instant"></Class></ObjectPropertyRange><ObjectPropertyRange><ObjectProperty IRI="http://macleod.org/Converted.owl#during"></ObjectProperty><Class IRI="http://macleod.org/Converted.owl#Interval"></Class></ObjectPropertyRange></Ontology>

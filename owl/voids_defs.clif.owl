@@ -1,0 +1,676 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#" ontologyIRI="http://macleod.org/Converted.owl" xml:base="http://macleod.org/Converted.owl">
+  <Prefix IRI="http://www.w3.org/2002/07/owl#" name="owl"/>
+  <Prefix IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#" name="rdf"/>
+  <Prefix IRI="http://www.w3.org/XML/1998/namespace" name="xml"/>
+  <Prefix IRI="http://www.w3.org/2001/XMLSchema#" name="xsd"/>
+  <Prefix IRI="http://www.w3.org/2000/01/rdf-schema#" name="rdfs"/>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsh"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsv"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsh"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsv"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsg"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsg"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsv"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#Hole"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsh"/>
+    <Class IRI="http://macleod.org/Converted.owl#Hole"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#Gap"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsg"/>
+    <Class IRI="http://macleod.org/Converted.owl#Gap"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostscavity"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostscavity"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsv"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#CAVITY"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostscavity"/>
+    <Class IRI="http://macleod.org/Converted.owl#CAVITY"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostscavityi"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostscavityi"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostscavity"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostscavityt"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostscavityt"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostscavity"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostshollow"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostshollow"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsv"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#HOL"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostshollow"/>
+    <Class IRI="http://macleod.org/Converted.owl#HOL"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hoststunnel"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hoststunnel"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsv"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#TUN"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hoststunnel"/>
+    <Class IRI="http://macleod.org/Converted.owl#TUN"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsve"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsve"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsv"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsvi"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsvi"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsv"/>
+  </SubObjectPropertyOf>
+  <DisjointObjectProperties>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsvi"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsve"/>
+  </DisjointObjectProperties>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#PED"/>
+  </Declaration>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </Declaration>
+  <DisjointClasses>
+    <Class IRI="http://macleod.org/Converted.owl#PED"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </DisjointClasses>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#r"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#r"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Cont"/>
+  </Declaration>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Cont"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Cont"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#lt"/>
+  </Declaration>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#lt"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#lt"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#ZEX"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#ZEX"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </SubClassOf>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#BCont"/>
+  </Declaration>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#BCont"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#BCont"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#MaxDim"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#PED"/>
+    <ObjectAllValuesFrom>
+      <ObjectProperty IRI="http://macleod.org/Converted.owl#r"/>
+      <Class IRI="http://macleod.org/Converted.owl#MaxDim"/>
+    </ObjectAllValuesFrom>
+  </SubClassOf>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#ICon"/>
+  </Declaration>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#Con"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#ICon"/>
+    <Class IRI="http://macleod.org/Converted.owl#Con"/>
+  </SubClassOf>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Covers"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Covers"/>
+    <ObjectInverseOf>
+      <ObjectProperty IRI="http://macleod.org/Converted.owl#lt"/>
+    </ObjectInverseOf>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#gt"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#lt"/>
+    <ObjectInverseOf>
+      <ObjectProperty IRI="http://macleod.org/Converted.owl#gt"/>
+    </ObjectInverseOf>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#gt"/>
+    <ObjectInverseOf>
+      <ObjectProperty IRI="http://macleod.org/Converted.owl#lt"/>
+    </ObjectInverseOf>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#lt="/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#gt="/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#lt="/>
+    <ObjectInverseOf>
+      <ObjectProperty IRI="http://macleod.org/Converted.owl#gt="/>
+    </ObjectInverseOf>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#gt="/>
+    <ObjectInverseOf>
+      <ObjectProperty IRI="http://macleod.org/Converted.owl#lt="/>
+    </ObjectInverseOf>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#EqDim"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#lt"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#lt="/>
+  </SubObjectPropertyOf>
+  <DisjointObjectProperties>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#lt"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#EqDim"/>
+  </DisjointObjectProperties>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#EqDim"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#lt="/>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#EqDim"/>
+    <ObjectInverseOf>
+      <ObjectProperty IRI="http://macleod.org/Converted.owl#lt="/>
+    </ObjectInverseOf>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#lt="/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#lt="/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyRange>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#ZEX"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </SubClassOf>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#P"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#="/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#PP"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#PP"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#P"/>
+  </SubObjectPropertyOf>
+  <DisjointObjectProperties>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#PP"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#="/>
+  </DisjointObjectProperties>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#P"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Cont"/>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#P"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#EqDim"/>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Cont"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#lt="/>
+  </SubObjectPropertyOf>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#MaxDim"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </SubClassOf>
+  <DisjointClasses>
+    <Class IRI="http://macleod.org/Converted.owl#MaxDim"/>
+    <Class IRI="http://macleod.org/Converted.owl#ZEX"/>
+  </DisjointClasses>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#MinDim"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#MinDim"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </SubClassOf>
+  <DisjointClasses>
+    <Class IRI="http://macleod.org/Converted.owl#MinDim"/>
+    <Class IRI="http://macleod.org/Converted.owl#ZEX"/>
+  </DisjointClasses>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#ZEX"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </SubClassOf>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Cont"/>
+    <Class IRI="http://macleod.org/Converted.owl#ZEX"/>
+  </ObjectPropertyRange>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Cont"/>
+    <Class IRI="http://macleod.org/Converted.owl#ZEX"/>
+  </ObjectPropertyDomain>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#Con"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </SubClassOf>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#TCont"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#TCont"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Cont"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#SC"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#C"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#SC"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#C"/>
+  </SubObjectPropertyOf>
+  <SymmetricObjectProperty>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#SC"/>
+  </SymmetricObjectProperty>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Inc"/>
+  </Declaration>
+  <SymmetricObjectProperty>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Inc"/>
+  </SymmetricObjectProperty>
+  <DisjointObjectProperties>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#EqDim"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Inc"/>
+  </DisjointObjectProperties>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#PO"/>
+  </Declaration>
+  <SymmetricObjectProperty>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#PO"/>
+  </SymmetricObjectProperty>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#PO"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#EqDim"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#Max"/>
+  </Declaration>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#PP"/>
+    <Class IRI="http://macleod.org/Converted.owl#Max"/>
+  </ObjectPropertyDomain>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#Max"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </SubClassOf>
+  <DisjointClasses>
+    <Class IRI="http://macleod.org/Converted.owl#Max"/>
+    <Class IRI="http://macleod.org/Converted.owl#ZEX"/>
+  </DisjointClasses>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#Min"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#PP"/>
+    <Class IRI="http://macleod.org/Converted.owl#Min"/>
+  </ObjectPropertyRange>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#Min"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </SubClassOf>
+  <DisjointClasses>
+    <Class IRI="http://macleod.org/Converted.owl#Min"/>
+    <Class IRI="http://macleod.org/Converted.owl#ZEX"/>
+  </DisjointClasses>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#BCont"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Cont"/>
+  </SubObjectPropertyOf>
+  <DisjointObjectProperties>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#BCont"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#EqDim"/>
+  </DisjointObjectProperties>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#ICont"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#ICont"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Cont"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#Closed"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#BCont"/>
+    <Class IRI="http://macleod.org/Converted.owl#Closed"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#DK1"/>
+  </Declaration>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#M"/>
+  </Declaration>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#DK1"/>
+    <Class IRI="http://macleod.org/Converted.owl#M"/>
+  </ObjectPropertyDomain>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#POB"/>
+  </Declaration>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#RPF"/>
+  </Declaration>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#POBorRPF"/>
+  </Declaration>
+  <EquivalentClasses>
+    <Class IRI="http://macleod.org/Converted.owl#POBorRPF"/>
+    <ObjectUnionOf>
+      <Class IRI="http://macleod.org/Converted.owl#POB"/>
+      <Class IRI="http://macleod.org/Converted.owl#RPF"/>
+    </ObjectUnionOf>
+  </EquivalentClasses>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#DK1"/>
+    <Class IRI="http://macleod.org/Converted.owl#POBorRPF"/>
+  </ObjectPropertyRange>
+  <InverseFunctionalObjectProperty>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#DK1"/>
+  </InverseFunctionalObjectProperty>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#F"/>
+  </Declaration>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#POBorMorF"/>
+  </Declaration>
+  <EquivalentClasses>
+    <Class IRI="http://macleod.org/Converted.owl#POBorMorF"/>
+    <ObjectUnionOf>
+      <Class IRI="http://macleod.org/Converted.owl#POB"/>
+      <Class IRI="http://macleod.org/Converted.owl#M"/>
+      <Class IRI="http://macleod.org/Converted.owl#F"/>
+    </ObjectUnionOf>
+  </EquivalentClasses>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#PED"/>
+    <Class IRI="http://macleod.org/Converted.owl#POBorMorF"/>
+  </SubClassOf>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#POB"/>
+    <Class IRI="http://macleod.org/Converted.owl#PED"/>
+  </SubClassOf>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#M"/>
+    <Class IRI="http://macleod.org/Converted.owl#PED"/>
+  </SubClassOf>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#F"/>
+    <Class IRI="http://macleod.org/Converted.owl#PED"/>
+  </SubClassOf>
+  <DisjointClasses>
+    <Class IRI="http://macleod.org/Converted.owl#POB"/>
+    <Class IRI="http://macleod.org/Converted.owl#M"/>
+  </DisjointClasses>
+  <DisjointClasses>
+    <Class IRI="http://macleod.org/Converted.owl#POB"/>
+    <Class IRI="http://macleod.org/Converted.owl#F"/>
+  </DisjointClasses>
+  <DisjointClasses>
+    <Class IRI="http://macleod.org/Converted.owl#M"/>
+    <Class IRI="http://macleod.org/Converted.owl#F"/>
+  </DisjointClasses>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#NAPO"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#NAPO"/>
+    <Class IRI="http://macleod.org/Converted.owl#POB"/>
+  </SubClassOf>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hosts"/>
+  </Declaration>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hosts"/>
+    <Class IRI="http://macleod.org/Converted.owl#PED"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hosts"/>
+    <Class IRI="http://macleod.org/Converted.owl#F"/>
+  </ObjectPropertyRange>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hosts"/>
+    <Class IRI="http://macleod.org/Converted.owl#F"/>
+  </ObjectPropertyRange>
+  <AsymmetricObjectProperty>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hosts"/>
+  </AsymmetricObjectProperty>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#RPF"/>
+    <Class IRI="http://macleod.org/Converted.owl#F"/>
+  </SubClassOf>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#DPF"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#DPF"/>
+    <Class IRI="http://macleod.org/Converted.owl#F"/>
+  </SubClassOf>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#RPForDPF"/>
+  </Declaration>
+  <EquivalentClasses>
+    <Class IRI="http://macleod.org/Converted.owl#RPForDPF"/>
+    <ObjectUnionOf>
+      <Class IRI="http://macleod.org/Converted.owl#RPF"/>
+      <Class IRI="http://macleod.org/Converted.owl#DPF"/>
+    </ObjectUnionOf>
+  </EquivalentClasses>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#F"/>
+    <Class IRI="http://macleod.org/Converted.owl#RPForDPF"/>
+  </SubClassOf>
+  <DisjointClasses>
+    <Class IRI="http://macleod.org/Converted.owl#RPF"/>
+    <Class IRI="http://macleod.org/Converted.owl#DPF"/>
+  </DisjointClasses>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#VS"/>
+  </Declaration>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#VS"/>
+    <Class IRI="http://macleod.org/Converted.owl#PED"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#VS"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#SimpleV"/>
+  </Declaration>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#V"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#SimpleV"/>
+    <Class IRI="http://macleod.org/Converted.owl#V"/>
+  </SubClassOf>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#ComplexV"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#ComplexV"/>
+    <Class IRI="http://macleod.org/Converted.owl#V"/>
+  </SubClassOf>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#SimpleVorComplexV"/>
+  </Declaration>
+  <EquivalentClasses>
+    <Class IRI="http://macleod.org/Converted.owl#SimpleVorComplexV"/>
+    <ObjectUnionOf>
+      <Class IRI="http://macleod.org/Converted.owl#SimpleV"/>
+      <Class IRI="http://macleod.org/Converted.owl#ComplexV"/>
+    </ObjectUnionOf>
+  </EquivalentClasses>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#V"/>
+    <Class IRI="http://macleod.org/Converted.owl#SimpleVorComplexV"/>
+  </SubClassOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hostsv"/>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#hosts"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#mat"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#POB"/>
+    <Class IRI="http://macleod.org/Converted.owl#mat"/>
+  </SubClassOf>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#M"/>
+    <Class IRI="http://macleod.org/Converted.owl#mat"/>
+  </SubClassOf>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#RPF"/>
+    <Class IRI="http://macleod.org/Converted.owl#mat"/>
+  </SubClassOf>
+  <Declaration>
+    <Class IRI="http://macleod.org/Converted.owl#POBorMorRPF"/>
+  </Declaration>
+  <EquivalentClasses>
+    <Class IRI="http://macleod.org/Converted.owl#POBorMorRPF"/>
+    <ObjectUnionOf>
+      <Class IRI="http://macleod.org/Converted.owl#POB"/>
+      <Class IRI="http://macleod.org/Converted.owl#M"/>
+      <Class IRI="http://macleod.org/Converted.owl#RPF"/>
+    </ObjectUnionOf>
+  </EquivalentClasses>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#mat"/>
+    <Class IRI="http://macleod.org/Converted.owl#POBorMorRPF"/>
+  </SubClassOf>
+  <Declaration>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#ch"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#ch"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyRange>
+  <DisjointClasses>
+    <Class IRI="http://macleod.org/Converted.owl#PED"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </DisjointClasses>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#r"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyRange>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Cont"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#Cont"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyRange>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#lt"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#lt"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyRange>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#ZEX"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </SubClassOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#BCont"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://macleod.org/Converted.owl#BCont"/>
+    <Class IRI="http://macleod.org/Converted.owl#S"/>
+  </ObjectPropertyRange>
+  <SubClassOf>
+    <Class IRI="http://macleod.org/Converted.owl#PED"/>
+    <ObjectAllValuesFrom>
+      <ObjectProperty IRI="http://macleod.org/Converted.owl#r"/>
+      <Class IRI="http://macleod.org/Converted.owl#MaxDim"/>
+    </ObjectAllValuesFrom>
+  </SubClassOf>
+</Ontology>
