@@ -3,11 +3,7 @@
 \usepackage[utf8]{inputenc}
 % Add the appendix library
 \usepackage{appendix}
-\linespread{2}
-
-
-% Do not number sections
-\setcounter{secnumdepth}{0}
+\usepackage{setspace}
 
 % allow for links
 \usepackage{hyperref}
@@ -25,6 +21,7 @@
 \begin{document}
 
 \begin{titlepage}
+\begin{spacing}{2}
     \begin{center}
         \MakeUppercase{Exploring Semantic Hierarchies to Improve}
         
@@ -59,30 +56,33 @@
     
     \hspace{10mm} Dr. Mark Brewer, Professor of Things
     
-    \hspace{10mm} Dr. Roy Turner, Professor of Things
-    
     \hspace{10mm} Dr. Max Egenhofer, Professor of Things
     
     \hspace{10mm} Dr. Sepideh Ghanavati, Professor of Things
     
+    \hspace{10mm} Dr. Roy Turner, Professor of Things
     
+    \end{spacing}
 \end{titlepage}
 
 \tableofcontents
 
+\begin{spacing}{2}
+
+
 \newpage
-\section{Abstract}
+\section*{Abstract}
 A resolution-theorem-prover (RTP) evaluates the validity (truthfulness) of conjectures against a set of axioms classified as a knowledge-base. The axioms each contain a number of predicates which provide information about a domain. When given a conjecture, an RTP attempts to resolve the negated conjecture with axioms from the knowledge-base until the prover finds a contradiction. If the RTP finds a contradiction between the axioms and a negated conjecture, it proves the conjecture. 
 
 The order in which the axioms within the knowledge-base are evaluated significantly impacts the run time of the program, as the search-space increases exponentially with the number of axioms. 
 
-Ontologies, knowledge bases with semantic (and predominantly hierarchical) structures, describe objects and their relationships to other objects. For example, a 'Car' class might exist in a sample ontology with 'Vehicle' as a parent class and 'Bus' as a sibling class. Currently, any hierarchical structures within an ontology are not taken into account when evaluating the relevance of each axiom. At present, each predicate is automatically assigned a weight based on a heuristic measure (such as the number of terms or the frequency of predicates relevant to the conjecture) and axioms with higher weights are evaluated first. My research aims to intelligently select relevant axioms within a knowledge-base given a structured relationship between predicates. I will use the semantic hierarchy over predicates to assign weights to each predicate passed to a weighting function used by the Knuth-Bendix ordering algorithm. The research aims to design heuristics based upon the semantics of the predicates, rather than solely the syntax of the statements. 
+Ontologies, knowledge bases with semantic (and predominantly hierarchical) structures, describe objects and their relationships to other objects. For example, a 'Car' class might exist in a sample ontology with 'Vehicle' as a parent class and 'Bus' as a sibling class. Currently, any hierarchical structures within an ontology are not taken into account when evaluating the relevance of each axiom. At present, each predicate is automatically assigned a weight based on a heuristic measure (such as the number of terms or the frequency of predicates relevant to the conjecture) and axioms with higher weights are evaluated first. My research aims to intelligently select relevant axioms within a knowledge-base given a structured relationship between predicates. I will use the semantic hierarchy over predicates to assign weights to each predicate passed to a weighting function. The research aims to design heuristics based upon the semantics of the predicates, rather than solely the syntax of the statements. 
 
 I plan to develop weighting functions based upon various parameters relevant to the ontological structure of predicates contained in the ontology, such as the size and depth of a hierarchy based upon the structure of the ontology. 
 
 I will implement methods to calculate weights for each predicate and thus each axiom in attempts to select relevant axioms when proving a theorem. Then, I will conduct an experimental study to determine if my methods show any improvements over current reasoning methods. 
 \newpage
-\section{Acknowledgements}
+\section*{Acknowledgements}
 Many thanks are given to Dr. Hahmann and Robert Powell. The thesis committee was also instrumental in producing this undergraduate thesis.
 \newpage
 \section{Introduction}
@@ -97,16 +97,21 @@ One can most directly view the impact of automated theorem proving in mathematic
 For this research, I will be conducting an experimental study of different weighting functions in efforts to improve current theorem proving methods. Previous work has shown the effectiveness of automatically weighting the predicates in a set of axioms within a knowledge-base.
 
 \newpage
-\section{Background and Related Works}
+\section{Background and Related Work}
 
 Previous attempts to order axioms within a knowledge-base have relied on the frequency of predicates within a knowledge-base, without taking into account the implicit semantic relationships contained within the ontological structure. The structure of ontologies can typically be represented as a hierarchy. This information can be used to gain insights into the relevancy of the predicates. 
 
-\subsection{Formal Logic}
+
+
+\subsection{Ontologies}
 Formal logic, specifically first-order logic, represents an environment using statements which can be used to form logical and mathematical proofs. Predicate logic specifically is the focus of my research. 
 
 Each statement written in formal logic can be expressed with conjunction, disjunction, and negation. 
+
+By expressing facts in a formal notation, one makes proofs using such statements mechanical and easily parsed by a computer. Expressing statements in formal logic poses multiple challenges. First, each object and relationship must be explicitly defined. 
 	
 \subsection{Theorem Proving}
+Proofs in logic are formed with a series of rules 
 In Axioms are statements accepted without proof
         \[isMan(socrates)\]
         \[\lnot isMan(X)\lor isMortal(X)\]
@@ -114,56 +119,63 @@ In Axioms are statements accepted without proof
 	    \[isMortal(socrates)\]
 	
 
-	\subsection{Resolution}
-		Axioms must be expressed in Conjunctive Normal Form
-		\[a \rightarrow c\]
-		\[\lnot a \lor c\]
-		One can then resolve the statements
-		\[\frac{a \lor b, \lnot a \lor c }{b \lor c}\]
-	
-	\subsection{Resolution Theorem Proving}
-        \begin{itemize}
-            \item Search space increases exponentially with the addition of each new axiom
-            \item Currently only the syntax of statements is taken into account
-        \end{itemize}
-	
-	\subsection{Comparing Syntax to Semantics}
-		\begin{itemize}
-		    \item Syntax defines the structure of a sentence
-		    \item Semantics describe the meaning of a sentence
-		\end{itemize}
-	
-	\subsection{Ontologies}
-		An ontology defines categories and relationships among objects.
-		One can think of an ontology as a "vocabulary" used to desrcibe a domain \cite[308]{russell2016artificial}. Typically, the objects can be arranged in a hierarchy. 
+
+Resolution is one of many methods for automated theorem proving. Historically, resolution has significance and is widely used \cite[51]{ertel2018introduction}.
+In order to use resolution as a proof technique, axioms must first be expressed in Conjunctive Normal Form. This can be done by expressing the set of facts as a conjunction of disjunctions. 
+		\[Winter \rightarrow Cold\]
+		\[\lnot Winter \lor Cold\]
+		One can then resolve the statements. 
+		\[\frac{Winter \lor Hot, \lnot Winter \lor Cold}{Hot \lor Cold}\]
+		In the above example, because both $Winter$ and $\lnot Winter $ can be true, one can conclude either $Hot$ or $Cold$ must be true. 
+		
+
+In resolution, the search space increases exponentially with the addition of each new axiom. 
+Currently only the syntax of statements is taken into account
 
 	
-	\subsection{Objective}
+
+        Syntax defines the structure of a sentence, whereas semantics describe the meaning of a sentence. 
+	
+
+		An ontology defines categories and relationships among objects.
+		One can think of an ontology as a "vocabulary" used to desrcibe a domain \cite[308]{russell2016artificial}. Typically, the objects can be arranged in a hierarchy. 
+		
+	At a simplistic level, semantic hierarchies describing an ontology can be compared to a family tree. Given a pair of two individuals, if one were tasking with determining if two individuals are related, a family tree would prove quite useful. 
+
+	
 		\begin{itemize}
 		    \item Use semantic knowledge in addition to syntax of logical statements
 		    \item Improve automated theorem proving
 		    \item Possibly advance artificial intelligence research
 		\end{itemize}
-	
-\section{Computing Weighting Functions}
 
-\section{Experimental Setup}
-\subsection{Tools}
+\newpage	
+\section{Approach}
+\subsection{Weighting Functions}
 My experiments were conducted using Prover9, written by William McCune \cite{mccune2005prover9}. Prot{\'e}g{\'e} was also used \cite{gennari2003evolution}.
 
 Git was used for version control and the repository for code can be found at \url{https://github.com/stansmall/thesis}.
 
-\section{Results}
+\subsection{Computing Weighting Functions}
+
+\newpage
+\section{Experiments}
 The study was a success!
-\section{Conclusion}
+\subsection{Setup}
+\subsection{Results}
+\newpage
+\section{Conclusions}
 I have concluded something. 
 \nocite{*}
 \newpage
 \printbibliography
 \newpage
-\section{Appendix A: Tests}
+\appendix
+\section{Tests}
 \newpage
-\section{Author's Biography}
+\section*{Author's Biography}
 Stanley C. Small grew up in Hampden, Maine with his mother Diane and his father Scott. He attended the University of Maine and received a Bachelor of Science degree in Computer Science. 
+
+\end{spacing}
 
 \end{document}
