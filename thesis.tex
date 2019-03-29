@@ -10,6 +10,11 @@
 % remove dots in TOC
 \usepackage[titles]{tocloft}
 \renewcommand{\cftdot}{}
+% unbold things
+\usepackage{titlesec}
+\titleformat*{\section}\MakeUppercase{\normalfont}
+\titleformat*{\subsection}{\em {\normalfont} }
+\titleformat*{\subsubsection}{\normalfont}
 
 \title{Exploring Semantic Hierarchies to Improve Resolution Theorem Proving on Ontologies}
 \author{Stanley C. Small}
