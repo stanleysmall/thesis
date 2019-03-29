@@ -1,77 +1,53 @@
 \documentclass{article}
+% set margins
 \usepackage[left=1.5in, right=1in, top=1in, bottom=1in]{geometry}
-\usepackage[utf8]{inputenc}
-% Add the appendix library
-\usepackage{appendix}
+% add spacing
 \usepackage{setspace}
-
-% allow for links
-\usepackage{hyperref}
-
 % use biblatex
 \usepackage[style=numeric]{biblatex}
-
 % add the bibliography
 \addbibresource{bibliography.bib}
+% remove dots in TOC
+\usepackage[titles]{tocloft}
+\renewcommand{\cftdot}{}
 
-\title{Thesis Rough Draft}
-\author{Stanley Small}
+\title{Exploring Semantic Hierarchies to Improve Resolution Theorem Proving on Ontologies}
+\author{Stanley C. Small}
 \date{March 2019}
 
 \begin{document}
-
-\begin{titlepage}
-\begin{spacing}{2}
-    \begin{center}
-        \MakeUppercase{Exploring Semantic Hierarchies to Improve}
-        
-        \MakeUppercase{Resolution Theorem Proving on Ontologies}
-        
-        \vspace{0.5cm}
-        by
-        
-        \vspace{0.5cm}
-        Stanley C. Small
-        
-        
-        \vspace{4cm}
-        A Thesis Submitted in Partial Fulfillment
-        
-        of the Requirements for a Degree with Honors
-        
-        (Computer Science)
-        
-        \vspace{3cm}
-        
-        The Honors College
-        
-        University of Maine
-
-        May 2019
-    \end{center}
-    
-    Advisory Committee:
-    
-    \hspace{10mm} Dr. Torsten Hahmann, Professor of Things, Advisor
-    
-    \hspace{10mm} Dr. Mark Brewer, Professor of Things
-    
-    \hspace{10mm} Dr. Max Egenhofer, Professor of Things
-    
-    \hspace{10mm} Dr. Sepideh Ghanavati, Professor of Things
-    
-    \hspace{10mm} Dr. Roy Turner, Professor of Things
-    
-    \end{spacing}
-\end{titlepage}
-
-\tableofcontents
-
-\begin{spacing}{2}
-
-
-\newpage
-\section*{Abstract}
+	\begin{titlepage}
+		\makeatletter
+			\begin{center}
+       				\MakeUppercase{\@title} \par
+      				\smallskip 
+     				\vspace{.15in} by \par
+     				\smallskip
+      				\vspace{.15in} \@author \par
+      				\vspace{1in}
+     				A Thesis Submitted in Partial Fulfillment  \par
+      				of the Requirements for a Degree with Honors \par
+      				(Computer Science) \par
+      				\vspace{.75in}
+      				The Honors College \par
+      				University of Maine \par
+      				\@date \par
+     				\vfill
+   			\end{center}
+		\makeatother
+		\begin{flushleft}
+			Advisory Committee: \\
+			\hspace{.3in} Dr. Torsten Hahmann, Professor of Things, Advisor \\
+			\hspace{.3in} Dr. Mark Brewer, Professor of Things \\
+			\hspace{.3in} Dr. Max Egenhofer, Professor of Things \\
+			\hspace{.3in} Dr. Sepideh Ghanavati, Professor of Things \\
+			\hspace{.3in} Dr. Roy Turner, Professor of Things
+		\end{flushleft}
+	\end{titlepage}
+	
+	\pagenumbering{gobble}
+	\newpage
+	\section*{Abstract}
 A resolution-theorem-prover (RTP) evaluates the validity (truthfulness) of conjectures against a set of axioms classified as a knowledge-base. The axioms each contain a number of predicates which provide information about a domain. When given a conjecture, an RTP attempts to resolve the negated conjecture with axioms from the knowledge-base until the prover finds a contradiction. If the RTP finds a contradiction between the axioms and a negated conjecture, it proves the conjecture. 
 
 The order in which the axioms within the knowledge-base are evaluated significantly impacts the run time of the program, as the search-space increases exponentially with the number of axioms. 
@@ -80,13 +56,29 @@ Ontologies, knowledge bases with semantic (and predominantly hierarchical) struc
 
 I plan to develop weighting functions based upon various parameters relevant to the ontological structure of predicates contained in the ontology, such as the size and depth of a hierarchy based upon the structure of the ontology. 
 
-I will implement methods to calculate weights for each predicate and thus each axiom in attempts to select relevant axioms when proving a theorem. Then, I will conduct an experimental study to determine if my methods show any improvements over current reasoning methods. 
-\newpage
-\section*{Acknowledgements}
+I will implement methods to calculate weights for each predicate and thus each axiom in attempts to select relevant axioms when proving a theorem. Then, I will conduct an experimental study to determine if my methods show any improvements over current reasoning methods.
+	
+	\pagenumbering{roman} 
+	\setcounter{page}{3}
+        \newpage
+        \section*{Acknowledgements}
 Many thanks are given to Dr. Hahmann and Robert Powell. The thesis committee was also instrumental in producing this undergraduate thesis.
-\newpage
-\section{Introduction}
-Automated theorem proving has long been a mechanical process providing a versatile method for processing facts. Currently, information encoded in structural hierarchies constructed from ontologies is not taken into account when determining the relevance axioms when attempting to prove a specific conjecture. 
+
+	\newpage
+	\tableofcontents
+
+	\setstretch{2}
+	
+	
+
+
+
+
+	\newpage
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	\section{Introduction}
+Automated theorem proving has long been a mechanical process providing a versatile method for processing facts. Currently, information encoded in structural hierarchies constructed from ontologies is not taken into account when determining the relevance axioms when attempting to prove a specific conjecture.  
 
 My research attempts to reduce the time and space required for proofs within an ontology by using semantic knowledge in addition to the syntax of logical statements. 
 
@@ -96,21 +88,19 @@ One can most directly view the impact of automated theorem proving in mathematic
 
 For this research, I will be conducting an experimental study of different weighting functions in efforts to improve current theorem proving methods. Previous work has shown the effectiveness of automatically weighting the predicates in a set of axioms within a knowledge-base.
 
-\newpage
-\section{Background and Related Work}
+	\newpage
+	\section{Background and Related Work}
 
 Previous attempts to order axioms within a knowledge-base have relied on the frequency of predicates within a knowledge-base, without taking into account the implicit semantic relationships contained within the ontological structure. The structure of ontologies can typically be represented as a hierarchy. This information can be used to gain insights into the relevancy of the predicates. 
 
-
-
-\subsection{Ontologies}
+		\subsection{Ontologies}
 Formal logic, specifically first-order logic, represents an environment using statements which can be used to form logical and mathematical proofs. Predicate logic specifically is the focus of my research. 
 
 Each statement written in formal logic can be expressed with conjunction, disjunction, and negation. 
 
 By expressing facts in a formal notation, one makes proofs using such statements mechanical and easily parsed by a computer. Expressing statements in formal logic poses multiple challenges. First, each object and relationship must be explicitly defined. 
 	
-\subsection{Theorem Proving}
+		\subsection{Theorem Proving}
 Proofs in logic are formed with a series of rules 
 In Axioms are statements accepted without proof
         \[isMan(socrates)\]
@@ -149,33 +139,36 @@ Currently only the syntax of statements is taken into account
 		    \item Possibly advance artificial intelligence research
 		\end{itemize}
 
-\newpage	
-\section{Approach}
-\subsection{Weighting Functions}
+	\newpage	
+	\section{Approach}
+		\subsection{Weighting Functions}
 My experiments were conducted using Prover9, written by William McCune \cite{mccune2005prover9}. Prot{\'e}g{\'e} was also used \cite{gennari2003evolution}.
 
 Git was used for version control and the repository for code can be found at \url{https://github.com/stansmall/thesis}.
 
-\subsection{Computing Weighting Functions}
+		\subsection{Computing Weighting Functions}
 
-\newpage
-\section{Experiments}
+	\newpage
+	\section{Experiments}
 The study was a success!
-\subsection{Setup}
-\subsection{Results}
-\newpage
-\section{Conclusions}
+
+		\subsection{Setup}
+		\subsection{Results}
+	\newpage
+	\section{Conclusions}
 I have concluded something. 
-\nocite{*}
-\newpage
-\printbibliography
-\newpage
-\appendix
-\section{Tests}
-\newpage
-\section*{Author's Biography}
+	\nocite{*}
+	\newpage
+	\printbibliography
+
+	\newpage
+	\appendix
+
+	\section{Tests}
+
+	\newpage
+	\section*{Author's Biography}
 Stanley C. Small grew up in Hampden, Maine with his mother Diane and his father Scott. He attended the University of Maine and received a Bachelor of Science degree in Computer Science. 
 
-\end{spacing}
 
 \end{document}
