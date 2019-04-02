@@ -52,6 +52,7 @@
 	
 	\pagenumbering{gobble}
 	\newpage
+	\setstretch{2}
 	\section*{Abstract}
 A resolution-theorem-prover (RTP) evaluates the validity (truthfulness) of conjectures against a set of axioms classified as a knowledge-base. The axioms each contain a number of predicates which provide information about a domain. When given a conjecture, an RTP attempts to resolve the negated conjecture with axioms from the knowledge-base until the prover finds a contradiction. If the RTP finds a contradiction between the axioms and a negated conjecture, it proves the conjecture. 
 
@@ -67,23 +68,22 @@ I will implement methods to calculate weights for each predicate and thus each a
 	\setcounter{page}{3}
         \newpage
         \section*{Acknowledgements}
-Many thanks are given to Dr. Hahmann and Robert Powell. The thesis committee was also instrumental in producing this undergraduate thesis.
+Many thanks are given to Dr. Hahmann. This work could not be completed without his continued support and encouragement. Despite his tremendously busy schedule, he always made time to meet and answer questions. 
+
+Robert Powell also proved instrumental to the process. His utility which converts Common Logic Interchange Format (CLIF) into web ontology language (OWL). His work streamlined the testing process and allowed me to find necessary results. 
+
+The thesis committee was also instrumental in producing this undergraduate thesis.
 
 	\newpage
+	\setstretch{1.5}
 	\tableofcontents
 
-	\setstretch{2}
-	
-	
-
-
-
-
 	\newpage
+	\setstretch{2}
 	\pagenumbering{arabic}
 	\setcounter{page}{1}
 	\section{Introduction}
-Automated theorem proving has long been a mechanical process providing a versatile method for processing facts. Currently, information encoded in structural hierarchies constructed from ontologies is not taken into account when determining the relevance axioms when attempting to prove a specific conjecture.  
+Automated theorem proving has long been a mechanical process providing a versatile method for reasoning with a set of facts. Resolution theorem proving specifically can be thought of as a "weak" method of artificial intelligence, as a computer requires no sense of awareness or domain knowledge to execute \cite[1020]{russell2016artificial}. Computers excel at proofs using resolution because the process remains simple and repetitive for each case. I hypothesize, due to the one-size-fits-all nature of resolution theorem proving, improvements can be made for specific sets of facts with entities and relationships between such entities called ontologies. Currently, information encoded in structural hierarchies constructed from ontologies is not taken into account when determining the relevance axioms when attempting to prove a specific conjecture.  
 
 My research attempts to reduce the time and space required for proofs within an ontology by using semantic knowledge in addition to the syntax of logical statements. 
 
@@ -96,7 +96,7 @@ For this research, I will be conducting an experimental study of different weigh
 	\newpage
 	\section{Background and Related Work}
 
-Previous attempts to order axioms within a knowledge-base have relied on the frequency of predicates within a knowledge-base, without taking into account the implicit semantic relationships contained within the ontological structure. The structure of ontologies can typically be represented as a hierarchy. This information can be used to gain insights into the relevancy of the predicates. 
+Previous attempts to order axioms within a knowledge-base have relied on the frequency of predicates within a knowledge-base, without taking into account the implicit semantic relationships contained within the ontological structure, typically represented as a hierarchy. This information can be used to gain insights into the relevancy of the predicates. 
 
 		\subsection{Ontologies}
 Formal logic, specifically first-order logic, represents an environment using statements which can be used to form logical and mathematical proofs. Predicate logic specifically is the focus of my research. 
@@ -147,9 +147,10 @@ Currently only the syntax of statements is taken into account
 	\newpage	
 	\section{Approach}
 		\subsection{Weighting Functions}
-My experiments were conducted using Prover9, written by William McCune \cite{mccune2005prover9}. Prot{\'e}g{\'e} was also used \cite{gennari2003evolution}.
 
-Git was used for version control and the repository for code can be found at \url{https://github.com/stansmall/thesis}.
+After a hierarchy has been generated, weights can be assigned to each class and subproperty. The same weighting function is applied to both the classes and sub-properties. 
+
+The weighting functions are currently applied by hand to the ontologies, with the beginnings of an automated program underway. 
 
 		\subsection{Computing Weighting Functions}
 
@@ -158,10 +159,16 @@ Git was used for version control and the repository for code can be found at \ur
 The study was a success!
 
 		\subsection{Setup}
+		My experiments were conducted using Prover9, written by William McCune \cite{mccune2005prover9}. Prot{\'e}g{\'e} was also used \cite{gennari2003evolution}.
+
+Git was used for version control and the repository for code can be found at \url{https://github.com/stanleysmall/thesis}.
 		\subsection{Results}
 	\newpage
 	\section{Conclusions}
-I have concluded something. 
+
+In many cases, the algorithm increases the number of clauses generated for each test, but does not do so to the point where the tests are unusable. For some very specific ontologies, the number of clauses generated decreases. This can be attributed to, in part, by the small number of ontologies available for testing, along with the specific pattern and hierarchy of each ontology. 
+
+Many opportunities for further research include fully automating the search procedure, working with a larger number of ontologies to ensure the weighting functions actually do as they say, developing a new approach towards automatically weighting the predicates. 
 	\nocite{*}
 	\newpage
 	\printbibliography
@@ -173,7 +180,7 @@ I have concluded something.
 
 	\newpage
 	\section*{Author's Biography}
-Stanley C. Small grew up in Hampden, Maine with his mother Diane and his father Scott. He attended the University of Maine and received a Bachelor of Science degree in Computer Science. 
+Stanley C. Small grew up in Hampden, Maine with his mother Diane and his father Scott. He attended the University of Maine and received a Bachelor of Science degree in Computer Science in May of 2019. 
 
 
 \end{document}
