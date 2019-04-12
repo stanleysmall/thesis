@@ -108,7 +108,7 @@ ONTOLOGIES AIM TO CAPTURE THE SEMANTICS OF A DOMAIN'S CONCEPTS AND RELATIONS. Th
 
 		\subsection{Ontologies}
 		
-Ontologies describe entities and relationships between them. The word ontology ("study of being") combines Greek \textit{onto-} ("being") and \textit{-logia} ("logical discourse"). The act of studying knowledge and existence in philosophy has given birth to the study of formal logic and automated reasoning in computer science. Ontologies provide a "common vocabulary" for researchers to speak about a specific domain \cite{noy2001ontology}. Furthermore, ontologies can often be interpreted by machines to aid in automated proofs. While ontologies at a fundamental level exist as a collection of facts, the organization and descriptions which researchers choose to represent a specific domain are important. Perhaps an ontology can best be understood with an example inspired by an example composed by Natalya F. Noy \cite{noy2001ontology}. 
+Ontologies describe entities and relationships between them. The explicit description of a specific environment provides researchers and machines a shared understanding of said environment. The word ontology ("study of being") combines Greek \textit{onto-} ("being") and \textit{-logia} ("logical discourse"). The act of studying knowledge and existence in philosophy has given birth to the study of formal logic and automated reasoning in computer science. Ontologies provide a "common vocabulary" for researchers to speak about a specific domain \cite{noy2001ontology}. Furthermore, ontologies can often be interpreted by machines to aid in automated proofs. While ontologies at a fundamental level exist as a collection of facts, the organization and descriptions which researchers choose to represent a specific domain are important. Perhaps an ontology can best be understood with an example inspired by an example composed by Natalya F. Noy \cite{noy2001ontology}. 
 
 \begin{figure}[h]
 \centering
@@ -139,7 +139,7 @@ In order to use resolution as a proof technique, axioms must first be expressed 
 		 \[isSedan(X) \rightarrow hasFourSeats(X)\]
 		\[\lnot isSedan(X) \lor hasFourSeats(X)\]
 		One can then resolve the statements. 
-		\[\frac{isSedan(X) \lor hasFourSeats(X), \lnot Winter \lor Cold}{Hot \lor Cold}\]
+		\[\frac{isSedan(X) \lor hasFourSeats(X), \lnot isSedan(Subaru Legacy)}{hasFourSeats(Subaru Legacy)}\]
 \end{singlespace} 
 		
 
@@ -170,11 +170,23 @@ The weighting functions are currently applied by hand to the ontologies, with th
 
 	\newpage
 	\section{Experiments}
-The study was a success!
 
-		\subsection{Setup}
-		My experiments were conducted using Prover9, written by William McCune \cite{mccune2005prover9}. Many tests were conducted using a version of the program which supports a GUI, but a command line version is available for running automated tests. 
+\subsection{Setup}
+In efforts to quantitatively evaluate the effectiveness of the proposed weighting functions, a series of experiments were conducted on multiple ontologies. The ontologies selected for testing are part of the COmmon Logic Ontology REpository (COLORE). The objective of COLORE is to serve as a "testbed for ontology evaluation and integration techniques" \cite{gruninger2012specifying}. Code from the project can be found at \url{https://code.google.com/archive/p/colore}. 
+
+My experiments were conducted using Prover9, written by William McCune \cite{mccune2005prover9}. Many tests were conducted using a version of the program which supports a GUI, but a command line version is available for running automated tests. 
 Git was used for version control and a repository containing source code can be found at \url{https://github.com/stanleysmall/thesis}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=6in]{prover9}
+\caption{The graphical user interface for Prover9 on macOS \cite{mccune2005prover9}.}
+\label{fig:prover9}
+\end{figure}
+		
+
+
+
 		\subsection{Results}
 	\newpage
 	\section{Conclusions}
