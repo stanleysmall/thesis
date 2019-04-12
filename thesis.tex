@@ -10,11 +10,18 @@
 % remove dots in TOC
 \usepackage[titles]{tocloft}
 \renewcommand{\cftdot}{}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+
 % unbold things
 \usepackage{titlesec}
 \titleformat*{\section}\MakeUppercase{\normalfont}
 \titleformat*{\subsection}{\em {\normalfont} }
 \titleformat*{\subsubsection}{\normalfont}
+
+\usepackage{graphicx}
+\graphicspath{ {images/} }
 
 \title{Exploring Semantic Hierarchies to Improve Resolution Theorem Proving on Ontologies}
 \author{Stanley C. Small}
@@ -54,9 +61,9 @@
 	\newpage
 	\setstretch{2}
 	\section*{Abstract}
-A resolution-theorem-prover (RTP) evaluates the validity (truthfulness) of conjectures against a set of axioms classified as a knowledge-base. The axioms each contain a number of predicates which provide information about a domain. When given a conjecture, an RTP attempts to resolve the negated conjecture with axioms from the knowledge-base until the prover finds a contradiction. If the RTP finds a contradiction between the axioms and a negated conjecture, it proves the conjecture. 
+A resolution-theorem-prover (RTP) evaluates the validity (truthfulness) of conjectures against a set of axioms classified as a knowledgebase. When given a conjecture, an RTP attempts to resolve the negated conjecture with axioms from the knowledge-base until the prover finds a contradiction. If the RTP finds a contradiction between the axioms and a negated conjecture, it proves the conjecture. 
 
-The order in which the axioms within the knowledge-base are evaluated significantly impacts the run time of the program, as the search-space increases exponentially with the number of axioms. 
+The order in which the axioms within the knowledge-base are evaluated significantly impacts the runtime of the program, as the search-space increases exponentially with the number of axioms. 
 
 Ontologies, knowledge bases with semantic (and predominantly hierarchical) structures, describe objects and their relationships to other objects. For example, a 'Car' class might exist in a sample ontology with 'Vehicle' as a parent class and 'Bus' as a sibling class. Currently, any hierarchical structures within an ontology are not taken into account when evaluating the relevance of each axiom. At present, each predicate is automatically assigned a weight based on a heuristic measure (such as the number of terms or the frequency of predicates relevant to the conjecture) and axioms with higher weights are evaluated first. My research aims to intelligently select relevant axioms within a knowledge-base given a structured relationship between predicates. I will use the semantic hierarchy over predicates to assign weights to each predicate passed to a weighting function. The research aims to design heuristics based upon the semantics of the predicates, rather than solely the syntax of the statements. 
 
@@ -75,6 +82,9 @@ Robert Powell also proved instrumental to the process. His utility which convert
 The thesis committee was also instrumental in producing this undergraduate thesis.
 
 	\newpage
+	\listoffigures
+
+	\newpage
 	\setstretch{1.5}
 	\tableofcontents
 
@@ -83,45 +93,54 @@ The thesis committee was also instrumental in producing this undergraduate thesi
 	\pagenumbering{arabic}
 	\setcounter{page}{1}
 	\section{Introduction}
-Automated theorem proving has long been a mechanical process providing a versatile method for reasoning with a set of facts. Resolution theorem proving specifically can be thought of as a "weak" method of artificial intelligence, as a computer requires no sense of awareness or domain knowledge to execute \cite[1020]{russell2016artificial}. Computers excel at proofs using resolution because the process remains simple and repetitive for each case. I hypothesize, due to the one-size-fits-all nature of resolution theorem proving, improvements can be made for specific sets of facts with entities and relationships between such entities called ontologies. Currently, information encoded in structural hierarchies constructed from ontologies is not taken into account when determining the relevance axioms when attempting to prove a specific conjecture.  
 
-My research attempts to reduce the time and space required for proofs within an ontology by using semantic knowledge in addition to the syntax of logical statements. 
+%Generally, try to expand more and clearly separate the text into modular units: 1) what is theorem proving 2) applications of theorem proving 3) what are ontologies 4) what role does theorem proving play with ontologies 5) what is so special about theorem proving with ontologies.
 
-Improvement for automatic theorem proving has potential to benefit artificial intelligence research, and reasoning in domains with organized relationships. 
+%Try to use some very simple examples, e.g., a toy ontology, specific domains for ontologies, the kind of relations we can find therein (subclass and subproperty, domain and range restrictions), what the semantic hierarchy looks in the example, an example how the semantic hierarchy may help in a proof (when there are lots of irrelevant axioms).
 
-One can most directly view the impact of automated theorem proving in mathematical proofs. 
+A theorem is a statement that can be proved from a series of asserted facts, typically referred to as axioms, using the rules of logic. By expressing facts in a formal manner, new statements can be generated mechanically by a computer program without additional user input. Computers excel at tasks which remain simple and repetitive. Formal logic defines rules of inference which allow one to transform established facts into new conclusions based on the syntax of these statements. Such inference rules are relatively easy to implement in a computer program because these rules rely only on the syntax, or the structure, of facts instead of any sense of meaning inherent in a set of facts. This is referred to as automated theorem proving. Automated theorem proving provides a versatile method for reasoning with a set of facts, and has been used to prove and verify proofs of multiple theorems. The four color map theorem is a notable example of a theorem obtained by an automated proof in 1976, and by a general-purpose theorem-proving software in 2005 \cite{gonthier2008formal}. Moreover, advances have been made in work on the Kepler conjecture and in finding optimal solutions for a Rubik's Cube with computer programs using formal reasoning methods. 
 
-For this research, I will be conducting an experimental study of different weighting functions in efforts to improve current theorem proving methods. Previous work has shown the effectiveness of automatically weighting the predicates in a set of axioms within a knowledge-base.
+ONTOLOGIES AIM TO CAPTURE THE SEMANTICS OF A DOMAIN'S CONCEPTS AND RELATIONS. The general-purpose nature of automated theorem proving makes the method applicable to a variety of problems, but a considerable amount of information is lost when applied on ontologies. ONTOLOGIES ARE SETS OF AXIOMS. An ontology is a set of facts describing entities and the relationships between them. Some relationships between an ontology's terms may be explicitly defined, but many are implicit. EXAMPLE OF RELATIONSHIP. Relationships between entities can often be represented as a tree, and more specifically a hierarchy. Encoded in the hierarchy is a wealth of information detailing the relationships between entities described in an ontology. Currently, knowledge encoded in structural hierarchies constructed from ontologies is not taken into account when determining which axioms might be most helpful when attempting to prove a specific theorem. This work attempts to improve automated theorem proving with ontologies by identifying relevant facts, and ignoring those less likely to yield a proof. DESCRIPTION OF THE CONCRETE OBJECTIVE AND APPROACH OF YOUR WORK
+
 
 	\newpage
 	\section{Background and Related Work}
 
-Previous attempts to order axioms within a knowledge-base have relied on the frequency of predicates within a knowledge-base, without taking into account the implicit semantic relationships contained within the ontological structure, typically represented as a hierarchy. This information can be used to gain insights into the relevancy of the predicates. 
-
 		\subsection{Ontologies}
-Formal logic, specifically first-order logic, represents an environment using statements which can be used to form logical and mathematical proofs. Predicate logic specifically is the focus of my research. 
+		
+Ontologies describe entities and relationships between them. The word ontology ("study of being") combines Greek \textit{onto-} ("being") and \textit{-logia} ("logical discourse"). The act of studying knowledge and existence in philosophy has given birth to the study of formal logic and automated reasoning in computer science. Ontologies provide a "common vocabulary" for researchers to speak about a specific domain \cite{noy2001ontology}. Furthermore, ontologies can often be interpreted by machines to aid in automated proofs. While ontologies at a fundamental level exist as a collection of facts, the organization and descriptions which researchers choose to represent a specific domain are important. Perhaps an ontology can best be understood with an example inspired by an example composed by Natalya F. Noy \cite{noy2001ontology}. 
 
-Each statement written in formal logic can be expressed with conjunction, disjunction, and negation. 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.5]{sample_ontology}
+\caption{This is a simple ontology describing classes (black) and instances (red) in the "automobiles" ontology.}
+\label{fig:sample_ontology}
+\end{figure}
 
-By expressing facts in a formal notation, one makes proofs using such statements mechanical and easily parsed by a computer. Expressing statements in formal logic poses multiple challenges. First, each object and relationship must be explicitly defined. 
-	
 		\subsection{Theorem Proving}
-Proofs in logic are formed with a series of rules 
-In Axioms are statements accepted without proof
-        \[isMan(socrates)\]
-        \[\lnot isMan(X)\lor isMortal(X)\]
-	    A conjecture is an unproved statement believed to be true 
-	    \[isMortal(socrates)\]
-	
+Formal logic, specifically first-order logic, defines a structure for statements which can be used to form logical and mathematical proofs. Asserted facts, called axioms, are used to derive facts which logically follow. Consider the following set of facts. 
+\begin{singlespace}
+        \[isSedan(Subaru Legacy)\]
+        \[isSedan(X) \rightarrow hasFourSeats(X)\]
+ \end{singlespace} 
+        
+The first statement asserts the Subaru Legacy is a sedan. The second statement asserts all sedans have four seats. These two statements do not directly state the Subaru Legacy has four seats. However, one can derive the statement $hasFourSeatsl(Subaru Legacy)$ by using the inference rule \textit{modus ponens}, defined below. 
+\begin{singlespace}
+	 \[A\]
+        \[A \rightarrow B\]
+         \[\therefore B\]
+\end{singlespace} 
 
+One can think of $A$ and $B$ as variables representing statements, and any statement can replace them. An inference rule defines a valid rule for statements. By expressing facts in a formal notation, one makes proofs using such statements mechanical and easily parsed by a computer. Expressing statements in formal logic poses multiple challenges. First, each object and relationship must be explicitly defined.
 
 Resolution is one of many methods for automated theorem proving. Historically, resolution has significance and is widely used \cite[51]{ertel2018introduction}.
 In order to use resolution as a proof technique, axioms must first be expressed in Conjunctive Normal Form. This can be done by expressing the set of facts as a conjunction of disjunctions. 
-		\[Winter \rightarrow Cold\]
-		\[\lnot Winter \lor Cold\]
+\begin{singlespace}
+		 \[isSedan(X) \rightarrow hasFourSeats(X)\]
+		\[\lnot isSedan(X) \lor hasFourSeats(X)\]
 		One can then resolve the statements. 
-		\[\frac{Winter \lor Hot, \lnot Winter \lor Cold}{Hot \lor Cold}\]
-		In the above example, because both $Winter$ and $\lnot Winter $ can be true, one can conclude either $Hot$ or $Cold$ must be true. 
+		\[\frac{isSedan(X) \lor hasFourSeats(X), \lnot Winter \lor Cold}{Hot \lor Cold}\]
+\end{singlespace} 
 		
 
 In resolution, the search space increases exponentially with the addition of each new axiom. 
@@ -137,16 +156,11 @@ Currently only the syntax of statements is taken into account
 		
 	At a simplistic level, semantic hierarchies describing an ontology can be compared to a family tree. Given a pair of two individuals, if one were tasking with determining if two individuals are related, a family tree would prove quite useful. 
 
-	
-		\begin{itemize}
-		    \item Use semantic knowledge in addition to syntax of logical statements
-		    \item Improve automated theorem proving
-		    \item Possibly advance artificial intelligence research
-		\end{itemize}
 
 	\newpage	
 	\section{Approach}
 		\subsection{Weighting Functions}
+Given an ontology and a conjecture, one can generate weights for classes and properties to reduce the number of clauses generated in a proof. Functions are evaluated by their influence on the number of clauses generated with a proof. 
 
 After a hierarchy has been generated, weights can be assigned to each class and subproperty. The same weighting function is applied to both the classes and sub-properties. 
 
@@ -159,9 +173,8 @@ The weighting functions are currently applied by hand to the ontologies, with th
 The study was a success!
 
 		\subsection{Setup}
-		My experiments were conducted using Prover9, written by William McCune \cite{mccune2005prover9}. Prot{\'e}g{\'e} was also used \cite{gennari2003evolution}.
-
-Git was used for version control and the repository for code can be found at \url{https://github.com/stanleysmall/thesis}.
+		My experiments were conducted using Prover9, written by William McCune \cite{mccune2005prover9}. Many tests were conducted using a version of the program which supports a GUI, but a command line version is available for running automated tests. 
+Git was used for version control and a repository containing source code can be found at \url{https://github.com/stanleysmall/thesis}.
 		\subsection{Results}
 	\newpage
 	\section{Conclusions}
@@ -169,7 +182,6 @@ Git was used for version control and the repository for code can be found at \ur
 In many cases, the algorithm increases the number of clauses generated for each test, but does not do so to the point where the tests are unusable. For some very specific ontologies, the number of clauses generated decreases. This can be attributed to, in part, by the small number of ontologies available for testing, along with the specific pattern and hierarchy of each ontology. 
 
 Many opportunities for further research include fully automating the search procedure, working with a larger number of ontologies to ensure the weighting functions actually do as they say, developing a new approach towards automatically weighting the predicates. 
-	\nocite{*}
 	\newpage
 	\printbibliography
 
