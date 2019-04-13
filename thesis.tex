@@ -139,9 +139,15 @@ In order to use resolution as a proof technique, axioms must first be expressed 
 		 \[isSedan(X) \rightarrow hasFourSeats(X)\]
 		\[\lnot isSedan(X) \lor hasFourSeats(X)\]
 		One can then resolve the statements. 
-		\[\frac{isSedan(X) \lor hasFourSeats(X), \lnot isSedan(Subaru Legacy)}{hasFourSeats(Subaru Legacy)}\]
+		\[\frac{isSedan(Subaru Legacy), \lnot isSedan(X) \lor hasFourSeats(X)}{hasFourSeats(Subaru Legacy)}\]
 \end{singlespace} 
-		
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=6in]{resolution_tree}
+\caption{This shows a resolution tree.}
+\label{fig:resolution_tree}
+\end{figure}
 
 In resolution, the search space increases exponentially with the addition of each new axiom. 
 Currently only the syntax of statements is taken into account
@@ -172,7 +178,7 @@ The weighting functions are currently applied by hand to the ontologies, with th
 	\section{Experiments}
 
 \subsection{Setup}
-In efforts to quantitatively evaluate the effectiveness of the proposed weighting functions, a series of experiments were conducted on multiple ontologies. The ontologies selected for testing are part of the COmmon Logic Ontology REpository (COLORE). The objective of COLORE is to serve as a "testbed for ontology evaluation and integration techniques" \cite{gruninger2012specifying}. Code from the project can be found at \url{https://code.google.com/archive/p/colore}. 
+In efforts to quantitatively evaluate the effectiveness of the proposed weighting functions, a series of experiments were conducted on multiple ontologies. The ontologies selected for testing are part of the COmmon Logic Ontology REpository (COLORE). The objective of COLORE is to serve as a "testbed for ontology evaluation and integration techniques" \cite{gruninger2012specifying}. Code from the project can be found at \url{https://code.google.com/p/colore}. 
 
 My experiments were conducted using Prover9, written by William McCune \cite{mccune2005prover9}. Many tests were conducted using a version of the program which supports a GUI, but a command line version is available for running automated tests. 
 Git was used for version control and a repository containing source code can be found at \url{https://github.com/stanleysmall/thesis}.
