@@ -1,0 +1,17 @@
+formulas(sos).
+  (all x all y (INCH(x,y) -> (exists z (CS(z,x) & CH(z,y))))).
+  (all x all y all z (INCH(x,y) & INCH(y,z) & INCH(z,x) -> INCH(y,x))).
+  (all x all y (INCH(x,y) -> (exists z (CS(z,x) & INCH(z,y) & INCH(y,z))))).
+  (all x all y (CH(x,y) -> CS(x,y))).
+  (all x all y (GED(x,y) & GED(y,x) -> (exists z all w (INCH(z,w) <-> INCH(x,w) | INCH(y,w))))).
+  (all x all y (GED(x,y) & GED(y,x) -> (exists z all w (INCH(z,w) <-> (exists v (INCH(v,w) & CH(v,x) & -(INCH(v,y) & INCH(y,v)))))))).
+  (all x all y (CS(x,y) <-> (all z (INCH(x,z) -> INCH(y,z))))).
+  (all x all y (CH(x,y) <-> INCH(x,y) & (all z (INCH(x,z) & INCH(z,x) -> INCH(y,z) & INCH(z,y))))).
+  (all x all y (ZEXI(x) <-> -INCH(x,x))).
+  (all x all y (GED(x,y) <-> ZEXI(y) | (exists z (INCH(x,z) & INCH(z,y))))).
+  (all x all y (x = y <-> (all z (INCH(x,z) <-> INCH(y,z))))).
+  (all x all y (x = y <-> (all z (INCH(z,x) <-> INCH(z,y))))).
+  (all x all y (INCH(x,y) -> INCH(x,x))).
+  (all x all y (GED(x,y) | GED(y,x))).
+  (all x all y all z (GED(x,y) & GED(y,z) -> GED(x,z))).
+end_of_list.

@@ -1,1 +1,0 @@
-(all x (V(x) -> Hole(x) | Gap(x))).

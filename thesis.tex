@@ -20,20 +20,15 @@
 \titleformat*{\subsection}{\centering \normalfont}
 \titleformat*{\subsubsection}{\normalfont}
 
-% format the table of contents
-\usepackage[]{tocstyle}
-\usetocstyle{standard}
-\makeatletter
-\renewcommand\tableofcontents{
-  \null\hfill\MakeUppercase{\contentsname}\hfill\null\par
-  \hfill \break
-  \@starttoc{toc}}
-\makeatother
 \setcounter{tocdepth}{2}
 
 % use images from the 'images' directory
 \usepackage{graphicx}
 \graphicspath{{images/}}
+
+% place csv files in the thesis
+\usepackage{csvsimple}
+\usepackage{longtable}
 
 % metadata
 \title{Exploring Semantic Hierarchies to Improve Resolution Theorem Proving on Ontologies}
@@ -327,8 +322,19 @@ Many opportunities for further research include fully automating the search proc
 
 \newpage
 \appendix
-
 \section{\MakeUppercase{Tests}}
+\begin{singlespace}
+\csvautolongtable[
+      table head=\caption{multidim space voids weights}\label{tab:some}\\\hline
+               \csvlinetotablerow\\\hline
+               \endfirsthead\hline
+               \csvlinetotablerow\\\hline
+               \endhead\hline
+               \endfoot,
+               respect all
+               ]{tests/multidim_space_voids/weights.csv}
+\end{singlespace}
+
 
 \newpage
 \addcontentsline{toc}{section}{\MakeUppercase{Author's Biography}}

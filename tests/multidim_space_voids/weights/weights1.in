@@ -1,0 +1,25 @@
+list(weights).
+	weight(CAVITY(x)) = 10.
+	weight(Closed(x)) = 10.
+    weight(Gap(x)) = 2.
+  	weight(HOL(x)) = 2.
+	weight(Hole(x)) = 10.
+ 	weight(PED(x)) = 10.
+		%weight(F(x)) = .
+			%weight(DPF(x)) = .
+			%weight(RPF(x)) = .
+		%weight(mat(x)) = .
+			%weight(M(x)) = .
+	weight(S(x)) = 10.
+		%weight(Con(x)) = .
+			%weight(ICon(x)) = .
+		%weight(Max(x)) = .
+		%weight(MaxDim(x)) = .
+		%weight(Min(x)) = .
+		%weight(MinDim(x)) = .
+		%weight(ZEX(x)) = .
+	weight(TUN(x)) = 10.
+	weight(V(x)) = 1.
+		weight(ComplexV(x)) = 2.
+        	weight(SimpleV(x)) = 2.
+end_of_list.
