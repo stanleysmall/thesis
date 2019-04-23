@@ -1,0 +1,953 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#" ontologyIRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl" xml:base="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl">
+  <Prefix IRI="http://www.w3.org/2002/07/owl#" name="owl"/>
+  <Prefix IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#" name="rdf"/>
+  <Prefix IRI="http://www.w3.org/XML/1998/namespace" name="xml"/>
+  <Prefix IRI="http://www.w3.org/2001/XMLSchema#" name="xsd"/>
+  <Prefix IRI="http://www.w3.org/2000/01/rdf-schema#" name="rdfs"/>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surroundsvoid"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#enclosesvoid"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#isurroundsvoid"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#osurroundsvoid"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#osurroundsvoid"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surroundsvoid"/>
+  </SubObjectPropertyOf>
+  <DisjointObjectProperties>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#osurroundsvoid"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#enclosesvoid"/>
+  </DisjointObjectProperties>
+  <DisjointObjectProperties>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#osurroundsvoid"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#isurroundsvoid"/>
+  </DisjointObjectProperties>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#isurroundsvoid"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surroundsvoid"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#voidspaceall"/>
+  </Declaration>
+  <FunctionalObjectProperty>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#voidspaceall"/>
+  </FunctionalObjectProperty>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#r"/>
+  </Declaration>
+  <FunctionalObjectProperty>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#r"/>
+  </FunctionalObjectProperty>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsvany"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsvany"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv1"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv1"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsvany"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv2"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv2"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsvany"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv3"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv3"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsvany"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#VS"/>
+  </Declaration>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PED"/>
+  </Declaration>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#VS"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PED"/>
+  </ObjectPropertyDomain>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#VS"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ch"/>
+  </Declaration>
+  <FunctionalObjectProperty>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ch"/>
+  </FunctionalObjectProperty>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#SimpleV"/>
+  </Declaration>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#V"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#SimpleV"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#V"/>
+  </SubClassOf>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ComplexV"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ComplexV"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#V"/>
+  </SubClassOf>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#V"/>
+    <ObjectUnionOf>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#SimpleV"/>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ComplexV"/>
+    </ObjectUnionOf>
+  </SubClassOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hosts"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hosts"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#POB"/>
+  </Declaration>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#mat"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#POB"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#mat"/>
+  </SubClassOf>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#M"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#M"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#mat"/>
+  </SubClassOf>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#RPF"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#RPF"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#mat"/>
+  </SubClassOf>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#mat"/>
+    <ObjectUnionOf>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#POB"/>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#M"/>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#RPF"/>
+    </ObjectUnionOf>
+  </SubClassOf>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#F"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PED"/>
+    <ObjectUnionOf>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#POB"/>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#M"/>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#F"/>
+    </ObjectUnionOf>
+  </SubClassOf>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#POB"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PED"/>
+  </SubClassOf>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#M"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PED"/>
+  </SubClassOf>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#F"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PED"/>
+  </SubClassOf>
+  <DisjointClasses>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#POB"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#M"/>
+  </DisjointClasses>
+  <DisjointClasses>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#POB"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#F"/>
+  </DisjointClasses>
+  <DisjointClasses>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#M"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#F"/>
+  </DisjointClasses>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#NAPO"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#NAPO"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#POB"/>
+  </SubClassOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hosts"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PED"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hosts"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#F"/>
+  </ObjectPropertyRange>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hosts"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#F"/>
+  </ObjectPropertyRange>
+  <AsymmetricObjectProperty>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hosts"/>
+  </AsymmetricObjectProperty>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#RPF"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#F"/>
+  </SubClassOf>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#DPF"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#DPF"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#F"/>
+  </SubClassOf>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#F"/>
+    <ObjectUnionOf>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#RPF"/>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#DPF"/>
+    </ObjectUnionOf>
+  </SubClassOf>
+  <DisjointClasses>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#RPF"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#DPF"/>
+  </DisjointClasses>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ch"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#TCont"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Cont"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#TCont"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Cont"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#SC"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#C"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#SC"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#C"/>
+  </SubObjectPropertyOf>
+  <SymmetricObjectProperty>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#SC"/>
+  </SymmetricObjectProperty>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt="/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#EqDim"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#EqDim"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt="/>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#EqDim"/>
+    <ObjectInverseOf>
+      <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt="/>
+    </ObjectInverseOf>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt="/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt="/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ZEX"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ZEX"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </SubClassOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Cont"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt="/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#MaxDim"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#MaxDim"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </SubClassOf>
+  <DisjointClasses>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#MaxDim"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ZEX"/>
+  </DisjointClasses>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#MinDim"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#MinDim"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </SubClassOf>
+  <DisjointClasses>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#MinDim"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ZEX"/>
+  </DisjointClasses>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#EQUALS"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Cont"/>
+    <ObjectComplementOf>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ZEX"/>
+    </ObjectComplementOf>
+  </ObjectPropertyRange>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Cont"/>
+    <ObjectComplementOf>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ZEX"/>
+    </ObjectComplementOf>
+  </ObjectPropertyDomain>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#P"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#P"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Cont"/>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#P"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#EqDim"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Inc"/>
+  </Declaration>
+  <SymmetricObjectProperty>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Inc"/>
+  </SymmetricObjectProperty>
+  <DisjointObjectProperties>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#EqDim"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Inc"/>
+  </DisjointObjectProperties>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PO"/>
+  </Declaration>
+  <SymmetricObjectProperty>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PO"/>
+  </SymmetricObjectProperty>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PO"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#EqDim"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PP"/>
+  </Declaration>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Max"/>
+  </Declaration>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PP"/>
+    <ObjectComplementOf>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Max"/>
+    </ObjectComplementOf>
+  </ObjectPropertyDomain>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Max"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </SubClassOf>
+  <DisjointClasses>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Max"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ZEX"/>
+  </DisjointClasses>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Min"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PP"/>
+    <ObjectComplementOf>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Min"/>
+    </ObjectComplementOf>
+  </ObjectPropertyRange>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Min"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </SubClassOf>
+  <DisjointClasses>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Min"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ZEX"/>
+  </DisjointClasses>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PP"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#P"/>
+  </SubObjectPropertyOf>
+  <DisjointObjectProperties>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PP"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#EQUALS"/>
+  </DisjointObjectProperties>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#BCont"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#BCont"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Cont"/>
+  </SubObjectPropertyOf>
+  <DisjointObjectProperties>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#BCont"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#EqDim"/>
+  </DisjointObjectProperties>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Covers"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Covers"/>
+    <ObjectInverseOf>
+      <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt"/>
+    </ObjectInverseOf>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#gt"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt"/>
+    <ObjectInverseOf>
+      <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#gt"/>
+    </ObjectInverseOf>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#gt"/>
+    <ObjectInverseOf>
+      <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt"/>
+    </ObjectInverseOf>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#gt="/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt="/>
+    <ObjectInverseOf>
+      <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#gt="/>
+    </ObjectInverseOf>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#gt="/>
+    <ObjectInverseOf>
+      <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt="/>
+    </ObjectInverseOf>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt="/>
+  </SubObjectPropertyOf>
+  <DisjointObjectProperties>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#EqDim"/>
+  </DisjointObjectProperties>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ICont"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ICont"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Cont"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Closed"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#BCont"/>
+    <ObjectComplementOf>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Closed"/>
+    </ObjectComplementOf>
+  </ObjectPropertyRange>
+  <DisjointClasses>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PED"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </DisjointClasses>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#r"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </ObjectPropertyRange>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Cont"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Cont"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </ObjectPropertyRange>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#lt"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </ObjectPropertyRange>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#BCont"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#BCont"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </ObjectPropertyRange>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PED"/>
+    <ObjectAllValuesFrom>
+      <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#r"/>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#MaxDim"/>
+    </ObjectAllValuesFrom>
+  </SubClassOf>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ICon"/>
+  </Declaration>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Con"/>
+  </Declaration>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#ICon"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Con"/>
+  </SubClassOf>
+  <SubClassOf>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Con"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#S"/>
+  </SubClassOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#porespace"/>
+  </Declaration>
+  <FunctionalObjectProperty>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#porespace"/>
+  </FunctionalObjectProperty>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#voidspace"/>
+  </Declaration>
+  <FunctionalObjectProperty>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#voidspace"/>
+  </FunctionalObjectProperty>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#convoidspace"/>
+  </Declaration>
+  <FunctionalObjectProperty>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#convoidspace"/>
+  </FunctionalObjectProperty>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#conporespace"/>
+  </Declaration>
+  <FunctionalObjectProperty>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#conporespace"/>
+  </FunctionalObjectProperty>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#DK1"/>
+  </Declaration>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#DK1"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#M"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#DK1"/>
+    <ObjectUnionOf>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#POB"/>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#RPF"/>
+    </ObjectUnionOf>
+  </ObjectPropertyRange>
+  <InverseFunctionalObjectProperty>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#DK1"/>
+  </InverseFunctionalObjectProperty>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surrounds"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surroundsvoid"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surrounds"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surroundsvoid"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#V"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#detcont"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surrounds"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#detcont"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surrounds"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#mat"/>
+  </ObjectPropertyDomain>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#fullphyscont"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matdep"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#detcont"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#fullphyscont"/>
+  </SubObjectPropertyOf>
+  <DisjointObjectProperties>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#detcont"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matdep"/>
+  </DisjointObjectProperties>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#dep"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matdep"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#dep"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matdep"/>
+    <ObjectUnionOf>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#mat"/>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#V"/>
+    </ObjectUnionOf>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matdep"/>
+    <ObjectUnionOf>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#mat"/>
+      <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#V"/>
+    </ObjectUnionOf>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#StrongC"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#StrongC"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#SC"/>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#StrongC"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#EqDim"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#dep"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PED"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#dep"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PED"/>
+  </ObjectPropertyRange>
+  <SymmetricObjectProperty>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#dep"/>
+  </SymmetricObjectProperty>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#fullphyscont"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PED"/>
+  </ObjectPropertyRange>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#fullphyscont"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#PED"/>
+  </ObjectPropertyDomain>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#enclosesvoid"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surroundsvoid"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsh"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsh"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsg"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsg"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Hole"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsh"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Hole"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Gap"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsg"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#Gap"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostscavity"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostscavity"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#CAVITY"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostscavity"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#CAVITY"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostscavityi"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostscavityi"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostscavity"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostscavityt"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostscavityt"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostscavity"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostshollow"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostshollow"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#HOL"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostshollow"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#HOL"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hoststunnel"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hoststunnel"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#TUN"/>
+  </Declaration>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hoststunnel"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#TUN"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsve"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsve"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsvi"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsvi"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsv"/>
+  </SubObjectPropertyOf>
+  <DisjointObjectProperties>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsvi"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#hostsve"/>
+  </DisjointObjectProperties>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surroundsmat"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#enclosesmat"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#isurroundsmat"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#osurroundsmat"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#osurroundsmat"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surroundsmat"/>
+  </SubObjectPropertyOf>
+  <DisjointObjectProperties>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#osurroundsmat"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#enclosesmat"/>
+  </DisjointObjectProperties>
+  <DisjointObjectProperties>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#osurroundsmat"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#isurroundsmat"/>
+  </DisjointObjectProperties>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#isurroundsmat"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surroundsmat"/>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surroundsmat"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surrounds"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surroundsmat"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#mat"/>
+  </ObjectPropertyRange>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#enclosesmat"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#surroundsmat"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#voidinside"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#inside"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#voidinside"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#inside"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#voidinside"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#V"/>
+  </ObjectPropertyDomain>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#inside"/>
+    <ObjectInverseOf>
+      <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#detcont"/>
+    </ObjectInverseOf>
+  </SubObjectPropertyOf>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#inside"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#V"/>
+  </ObjectPropertyRange>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matfillsinside"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matinside"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matfillsinside"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matinside"/>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matinside"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#inside"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matinside"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#mat"/>
+  </ObjectPropertyDomain>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matsplitinside"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matsplitinside"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matinside"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#depimmatcontains"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#depcont"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#depimmatcontains"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#depcont"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#depimmatcontains"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#V"/>
+  </ObjectPropertyDomain>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#depcont"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#fullphyscont"/>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#depcont"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matdep"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#depmatcont"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#depmatcont"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#depcont"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#depmatcont"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#mat"/>
+  </ObjectPropertyDomain>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#subvoid"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#immatcont"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#subvoid"/>
+    <ObjectInverseOf>
+      <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#immatcont"/>
+    </ObjectInverseOf>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#immatcont"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#depcont"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#immatcont"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#V"/>
+  </ObjectPropertyRange>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#immatcont"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#V"/>
+  </ObjectPropertyDomain>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#submaterial"/>
+  </Declaration>
+  <Declaration>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matcont"/>
+  </Declaration>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#submaterial"/>
+    <ObjectInverseOf>
+      <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matcont"/>
+    </ObjectInverseOf>
+  </SubObjectPropertyOf>
+  <SubObjectPropertyOf>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matcont"/>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#depcont"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyRange>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matcont"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#mat"/>
+  </ObjectPropertyRange>
+  <ObjectPropertyDomain>
+    <ObjectProperty IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#matcont"/>
+    <Class IRI="http://colore.oor.net/multidim_space_physcont/fullphyscont_full.owl#mat"/>
+  </ObjectPropertyDomain>
+</Ontology>

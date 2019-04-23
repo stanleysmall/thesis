@@ -1,0 +1,430 @@
+(all x12 all x13 (inc(x12,x13) <-> (exists x11 (leq(x11,x12) & -eqdim(x11,x12) & cont(x11,x12) & p(x11,x13))) | (exists x11 (leq(x11,x13) & -eqdim(x11,x13) & cont(x11,x13) & p(x11,x12))))).
+
+
+
+(all x11 all x12 (depmatcont(x12,x11) <-> depcont(x12,x11) & mat(x12))).
+
+
+
+
+
+
+(all x11 all x12 (isurroundsmat(x12,x11) <-> surroundsmat(x12,x11) & -p(r(x11),voidspaceall(x12)))).
+
+
+
+(all x11 all x12 (gt(x11,x12) <-> lt(x12,x11))).
+(all x21 all x22 (geq(x21,x22) <-> leq(x22,x21))).
+(all x31 all x32 (lt(x31,x32) <-> leq(x31,x32) & -eqdim(x31,x32))).
+
+
+
+(exists x2 mindim(x2)).
+
+
+
+(all x11 all x12 (osurroundsvoid(x12,x11) <-> surroundsvoid(x12,x11) & -enclosesvoid(x12,x11) & -isurroundsvoid(x12,x11))).
+
+
+
+(all x11 all x12 (surroundsmat(x12,x11) <-> surrounds(x12,x11) & mat(x11))).
+
+
+
+(all x11 all x12 (matcont(x12,x11) <-> depcont(x12,x11) & mat(x11) & mat(x12))).
+
+
+
+(all x11 all x12 (matinside(x11,x12) <-> inside(x11,x12) & mat(x11))).
+
+
+
+(all x12 all x13 (icont(x12,x13) <-> cont(x12,x13) & (all x11 (cont(x11,x12) -> -bcont(x11,x13))))).
+
+
+
+(all x11 all x12 (strongc(x11,x12) <-> sc(x11,x12) & eqdim(x11,x12) & covers(x11,intersection(x11,x12)))).
+
+
+
+(all x12 all x13 (covers(x12,x13) <-> lt(x13,x12) & (all x11 (s(x11) -> -(lt(x13,x11) & lt(x11,x12)))))).
+
+
+
+(all x12 all x13 (tcont(x12,x13) <-> cont(x12,x13) & (exists x11 (cont(x11,x12) & bcont(x11,x13))))).
+
+
+
+(all x11 (-ped(x11) | -s(x11))).
+(all x21 s(r(x21))).
+(all x31 (s(x31) <-> x31 = r(x31))).
+(all x41 all x42 (cont(x41,x42) -> s(x41) & s(x42))).
+(all x51 all x52 (lt(x51,x52) -> s(x51) & s(x52))).
+(all x61 (zex(x61) -> s(x61))).
+(all x71 all x72 (bcont(x71,x72) -> s(x71) & s(x72))).
+(all x81 (ped(x81) -> maxdim(r(x81)))).
+(all x91 all x92 (dk1(x91,x92) -> p(r(x91),r(x92)))).
+(all x101 all x102 (hosts(x101,x102) -> (rpf(x102) <-> p(r(x102),r(x101))))).
+(all x111 all x114 all x113 all x112 (hosts(x111,x114) & rpf(x114) & dk1(x113,x111) & dk1(x112,x114) -> p(r(x112),r(x113)))).
+(all x121 all x122 (hosts(x121,x122) -> (dpf(x122) <-> -po(r(x121),r(x122))))).
+
+
+
+(all x2 (mat(x2) <-> pob(x2) | m(x2) | rpf(x2))).
+
+
+
+
+
+
+(all x11 all x12 (osurroundsmat(x12,x11) <-> surroundsmat(x12,x11) & -enclosesmat(x12,x11) & -isurroundsmat(x12,x11))).
+
+
+
+(all x11 all x12 (hostsh(x11,x12) <-> hostsv(x11,x12) & icon(r(x11)))).
+(all x21 all x22 (hostsg(x21,x22) <-> hostsv(x21,x22) & -icon(r(x21)))).
+(all x32 (hole(x32) <-> (exists x31 hostsh(x31,x32)))).
+(all x42 (gap(x42) <-> (exists x41 hostsg(x41,x42)))).
+(all x51 all x52 (hostscavity(x51,x52) <-> hostsv(x51,x52) & -covers(r(x51),op(x51,x52)))).
+(all x62 (cavity(x62) <-> (exists x61 hostscavity(x61,x62)))).
+(all x71 all x72 (hostscavityi(x71,x72) <-> hostscavity(x71,x72) & zex(op(x71,x72)))).
+(all x81 all x82 (hostscavityt(x81,x82) <-> hostscavity(x81,x82) & -zex(op(x81,x82)))).
+(all x91 all x92 (hostshollow(x91,x92) <-> hostsv(x91,x92) & covers(r(x91),op(x91,x92)) & icon(op(x91,x92)))).
+(all x102 (hol(x102) <-> (exists x101 hostshollow(x101,x102)))).
+(all x111 all x112 (hoststunnel(x111,x112) <-> hostsv(x111,x112) & covers(r(x111),op(x111,x112)) & -icon(op(x111,x112)))).
+(all x122 (tun(x122) <-> (exists x121 hoststunnel(x121,x122)))).
+(all x132 all x134 (hostsve(x132,x134) <-> hostsv(x132,x134) & (exists x131 (p(x131,op(x132,x134)) & (all x133 (hostsv(x132,x133) & eqdim(intersection(x131,r(x133)),x131) -> po(r(x134),r(x133)) & cont(intersection(x131,r(x133)),op(x132,x133)))))))).
+(all x141 all x142 (hostsvi(x141,x142) <-> hostsv(x141,x142) & -hostsve(x141,x142))).
+
+
+
+
+
+
+(all x11 all x12 (surrounds(x12,x11) <-> detcont(x12,x11) & mat(x12))).
+
+
+
+(all x11 all x12 (surroundsvoid(x12,x11) <-> surrounds(x12,x11) & v(x11))).
+
+
+
+(all x11 all x12 (dk1(x11,x12) -> m(x11))).
+(all x21 all x22 (dk1(x21,x22) -> pob(x22) | rpf(x22))).
+(all x32 all x33 all x31 (dk1(x32,x33) & dk1(x31,x33) -> x32 = x31)).
+(all x42 (pob(x42) | rpf(x42) -> (exists x41 dk1(x41,x42)))).
+
+
+
+(all x11 (maxdim(x11) <-> s(x11) & -zex(x11) & (all x12 (s(x12) -> leq(x12,x11))))).
+(all x21 (mindim(x21) <-> s(x21) & -zex(x21) & (all x22 (s(x22) & -zex(x22) -> leq(x21,x22))))).
+
+
+
+(all x11 all x12 (matsplitinside(x11,x12) <-> matinside(x11,x12) & pp(r(x11),r(x12)) & icon(r(x12)) & -icon(difference(r(x12),r(x11))))).
+
+
+
+(all x12 all x13 (po(x12,x13) <-> (exists x11 (p(x11,x12) & p(x11,x13))))).
+
+
+
+
+
+
+(all x11 all x12 (dep(x11,x12) -> ped(x11))).
+(all x21 all x22 (dep(x21,x22) -> ped(x22))).
+(all x31 all x32 (dep(x31,x32) -> dep(x32,x31))).
+(all x41 all x42 (mat(x41) & mat(x42) -> (dep(x41,x42) <-> po(r(x41),r(x42))))).
+(all x51 all x52 (v(x51) & mat(x52) -> (dep(x52,x51) <-> hostsvany(x52,x51)))).
+(all x61 all x64 (v(x61) & v(x64) -> (dep(x61,x64) <-> po(r(x61),r(x64)) & (exists x63 exists x62 (hostsv(x63,x61) & hostsv(x62,x64) & mat(x63) & mat(x62) & (p(r(x63),r(x62)) | p(r(x62),r(x63)))))))).
+(all x71 (ped(x71) -> dep(x71,x71))).
+
+
+
+(all x11 (closed(x11) <-> (all x12 -bcont(x12,x11)))).
+
+
+
+(all x11 (icon(x11) <-> con(x11) & (all x12 (pp(x12,x11) -> covers(x11,intersection(x12,difference(x11,x12))))))).
+
+
+
+(all x11 all x12 (immatcont(x12,x11) <-> depcont(x12,x11) & v(x11) & v(x12))).
+
+
+
+(all x11 (s(x11) & -zex(x11) -> po(x11,x11))).
+(all x21 all x22 (po(x21,x22) -> po(x22,x21))).
+(all x31 all x32 (po(x31,x32) -> eqdim(x31,x32))).
+
+
+
+(all x11 (ped(x11) -> pob(x11) | m(x11) | f(x11))).
+(all x21 (pob(x21) -> ped(x21))).
+(all x31 (m(x31) -> ped(x31))).
+(all x41 (f(x41) -> ped(x41))).
+(all x51 (pob(x51) -> -m(x51))).
+(all x61 (pob(x61) -> -f(x61))).
+(all x71 (m(x71) -> -f(x71))).
+(all x81 (napo(x81) -> pob(x81))).
+(all x91 all x92 (hosts(x91,x92) -> ped(x91) & f(x92))).
+(all x101 (f(x101) <-> (exists x102 hosts(x102,x101)))).
+(all x111 all x112 (hosts(x111,x112) -> -hosts(x112,x111))).
+(all x121 (f(x121) <-> rpf(x121) | dpf(x121))).
+(all x131 (-rpf(x131) | -dpf(x131))).
+
+
+
+(all x11 all x12 (inside(x11,x12) <-> detcont(x12,x11) & v(x12))).
+
+
+
+(all x11 all x12 (depcont(x12,x11) <-> fullphyscont(x12,x11) & matdep(x12,x11))).
+
+
+
+(all x11 all x12 (hostsv(x11,x12) -> op(x11,x12) = intersection(r(x12),difference(cuni,sum(r(x11),r(x12)))))).
+
+
+
+(all x11 all x12 sum(x11,x12) = sum(x12,x11)).
+(all x21 all x22 (lt(x21,x22) -> x22 = sum(x21,x22))).
+(all x32 all x33 all x31 (leq(x32,x33) & cont(x31,x33) -> cont(x31,sum(x32,x33)))).
+(all x42 all x43 all x41 (cont(x41,sum(x42,x43)) & -cont(x41,x42) -> cont(difference(x41,x42),x43))).
+
+
+
+
+
+
+(all x11 all x12 (hostsvany(x12,x11) <-> hostsv(x12,x11) | hostsv1(x12,x11) | hostsv2(x12,x11) | hostsv3(x12,x11))).
+(all x21 all x23 (po(x23,voidspaceall(x21)) <-> (exists x22 (hostsvany(x21,x22) & po(x23,r(x22)))))).
+(all x31 (mat(x31) & -zex(voidspaceall(x31)) -> (exists x33 exists x32 (r(x33) = voidspaceall(x31) & hostsv(x32,x33))))).
+
+
+
+(all x12 all x14 all x11 all x13 (tsum(x12,x14,x11) & tsum(x12,x14,x13) -> s(x12) & s(x14) & s(x11) & x13 = x11)).
+(all x22 all x23 all x21 (tsum(x22,x23,x21) -> tsum(x23,x22,x21))).
+(all x31 all x32 (lt(x31,x32) -> tsum(x31,x32,x32))).
+(all x42 all x44 all x41 all x43 (tsum(x42,x44,x41) & leq(x42,x44) & cont(x43,x44) -> cont(x43,x41))).
+(all x52 all x54 all x51 all x53 (tsum(x52,x54,x51) & cont(x53,x51) & -cont(x53,x52) -> cont(difference(x53,x52),x54))).
+(all x62 all x64 all x61 (s(x61) & eqdim(x62,x64) & (all x63 (po(x63,x61) <-> po(x63,x62) | po(x63,x64))) -> tsum(x62,x64,x61))).
+(all x72 all x75 (eqdim(x72,x75) & (all x71 (cont(x71,x72) & cont(x71,x75) & min(x71) -> (exists x74 exists x73 (p(x74,x72) & p(x73,x75) & bcont(x71,x74) & bcont(x71,x73))))) -> (exists x71 tsum(x72,x75,x71)))).
+(all x81 (s(x81) & -zex(x81) -> cont(x81,cuni))).
+
+
+
+(all x11 (max(x11) <-> s(x11) & -zex(x11) & (all x12 -pp(x11,x12)))).
+(all x21 (min(x21) <-> s(x21) & -zex(x21) & (all x22 -pp(x22,x21)))).
+
+
+
+(all x11 all x12 (bcont(x11,x12) -> cont(x11,x12) & -eqdim(x11,x12))).
+(all x22 all x24 all x23 all x21 (sc(x22,x24) & min(x22) & p(x22,x23) & cont(x24,x23) & cont(x21,x22) & cont(x21,x24) -> bcont(x21,x22))).
+(all x32 all x34 all x31 all x33 (sc(x32,x34) & p(x32,x33) & p(x34,x33) & cont(x31,x32) & cont(x31,x34) & covers(x33,x31) -> -bcont(x31,x33))).
+(all x42 all x45 all x41 (bcont(x42,x45) & p(x45,x41) & (all x44 all x43 (p(x44,x41) & -po(x44,x45) & p(x43,x42) -> -cont(x43,x44))) -> bcont(x42,x41))).
+(all x52 all x53 all x51 (bcont(x52,x53) & cont(x51,x52) -> bcont(x51,x53))).
+
+
+
+
+
+
+(all x11 all x12 (detcont(x12,x11) <-> fullphyscont(x12,x11) & -matdep(x12,x11))).
+
+
+
+(all x11 all x12 (submaterial(x11,x12) <-> matcont(x12,x11) & p(r(x11),r(x12)))).
+
+
+
+(all x11 all x13 (enclosesvoid(x13,x11) <-> surroundsvoid(x13,x11) & (exists x12 (hostsvany(x13,x12) & hostscavity(x13,x12) & p(r(x11),r(x13)))))).
+
+
+
+(all x12 all x13 (c(x12,x13) <-> (exists x11 (cont(x11,x12) & cont(x11,x13))))).
+
+
+
+(all x11 all x12 (sc(x11,x12) -> c(x11,x12))).
+(all x22 all x23 (sc(x22,x23) -> -(exists x21 (cont(x21,x22) & p(x21,x23))))).
+(all x32 all x33 (sc(x32,x33) -> -(exists x31 (p(x31,x32) & cont(x31,x33))))).
+(all x42 all x43 (c(x42,x43) & (all x41 (-cont(x41,x42) | -cont(x41,x43) | -p(x41,x42) & -p(x41,x43))) -> sc(x42,x43))).
+(all x51 -sc(x51,x51)).
+(all x61 all x62 (sc(x61,x62) -> sc(x62,x61))).
+(all x72 all x73 (sc(x72,x73) -> (exists x71 (lt(x71,x72) & lt(x71,x73) & cont(x71,x72) & cont(x71,x73))))).
+
+
+
+(all x13 all x14 (po(x13,porespace(x14)) <-> (exists x11 (dk1(x11,x14) & (all x12 (hostsv(x14,x12) -> -po(x13,r(x12)))) & (exists x12 (hostsv(x11,x12) & po(x13,r(x12)))))))).
+(all x22 all x23 (po(x22,voidspace(x23)) <-> po(x22,porespace(x23)) | (exists x21 (hostsv(x23,x21) & po(x22,r(x21)))))).
+(all x33 (-zex(porespace(x33)) -> (exists x32 exists x31 (r(x32) = porespace(x33) & hostsv(x31,x32) & dk1(x31,x33))))).
+(all x43 (-zex(voidspace(x43)) -> (exists x42 exists x41 (r(x42) = voidspace(x43) & hostsv(x41,x42) & dk1(x41,x43))))).
+(all x52 all x53 (po(x52,convoidspace(x53)) <-> (exists x51 (po(x52,x51) & icon(x51) & cont(x51,voidspace(x53)) & strongc(x51,difference(cuni,sum(r(x53),voidspace(x53)))))))).
+(all x62 all x63 (po(x62,conporespace(x63)) <-> (exists x61 (po(x62,x61) & icon(x61) & cont(x61,porespace(x63)) & strongc(x61,difference(cuni,sum(r(x63),porespace(x63)))))))).
+
+
+
+
+
+
+
+
+
+(all x11 all x12 (vs(x11,x12) <-> ped(x11) & s(x12) & cont(x12,ch(x11)) & -po(x12,r(x11)))).
+(all x21 all x22 (simplev(x22) <-> icon(r(x22)) & (exists x21 hostsv(x21,x22)))).
+(all x31 all x32 (complexv(x32) <-> -icon(r(x32)) & (exists x31 hostsv(x31,x32)))).
+(all x41 (v(x41) <-> simplev(x41) | complexv(x41))).
+(all x51 all x52 (hostsv(x51,x52) -> hosts(x51,x52) & vs(x51,r(x52)) & strongc(r(x51),r(x52)))).
+(all x62 all x64 all x61 (hostsv(x62,x64) & complexv(x64) & po(r(x61),r(x64)) -> (exists x63 (hostsv(x62,x63) & simplev(x63) & po(r(x61),r(x63)))))).
+(all x71 all x72 (hosts(x71,x72) & v(x72) -> -v(x71))).
+(all x82 all x83 (hostsv(x82,x83) & rpf(x82) -> (exists x81 (hosts(x81,x82) & -f(x81) & hostsv(x81,x83))))).
+(all x92 all x93 (hostsv(x92,x93) & -f(x92) -> (exists x91 (hosts(x92,x91) & rpf(x91) & hostsv(x91,x93))))).
+(all x102 all x103 all x101 (hostsv(x102,x103) & hostsv(x102,x101) & po(r(x103),r(x101)) -> cont(r(x103),r(x101)) | cont(r(x101),r(x103)))).
+(all x111 all x114 all x113 (hostsv(x111,x113) & p(r(x111),r(x114)) & ped(x114) & -dpf(x114) & -cont(r(x113),r(x114)) -> (exists x112 (cont(difference(r(x113),r(x114)),r(x112)) & hostsv(x114,x112))))).
+(all x121 all x124 all x123 (hostsv(x121,x123) & p(r(x124),r(x121)) & ped(x124) & -dpf(x124) & po(r(x123),ch(x124)) -> (exists x122 (r(x122) = intersection(r(x123),ch(x124)) & hostsv(x124,x122))))).
+(all x132 all x133 all x131 (mat(x133) & mat(x131) & hostsv(x133,x132) & p(r(x133),r(x131)) & -po(r(x131),r(x132)) -> hostsv(x131,x132))).
+
+
+
+(all x11 s(ch(x11))).
+(all x21 ch(x21) = ch(r(x21))).
+(all x31 (-zex(x31) -> icon(ch(x31)))).
+(all x41 ch(x41) = ch(ch(x41))).
+(all x51 (-zex(x51) -> cont(r(x51),ch(x51)))).
+(all x61 (-zex(x61) & -closed(r(x61)) -> tcont(r(x61),ch(x61)))).
+(all x71 all x72 (cont(r(x71),r(x72)) -> cont(ch(x71),ch(x72)))).
+(all x81 all x82 (ch(x81) = ch(x82) & -zex(x81) -> c(r(x81),r(x82)))).
+(all x91 all x92 (maxdim(r(x91)) & maxdim(r(x92)) & r(x91) = ch(x91) & r(x92) = ch(x92) -> intersection(ch(x91),ch(x92)) = ch(intersection(ch(x91),ch(x92))))).
+(all x101 all x102 (icont(r(x101),r(x102)) & -closed(difference(r(x102),r(x101))) -> difference(r(x102),r(x101)) != ch(difference(r(x102),r(x101))))).
+(all x111 all x112 (icont(r(x111),r(x112)) & maxdim(r(x111)) & maxdim(r(x112)) -> cont(r(x111),ch(difference(r(x112),r(x111)))))).
+(all x122 all x124 (-zex(x122) | -zex(x124) -> (exists x121 exists x123 (tsum(r(x122),r(x124),r(x121)) & tsum(ch(x122),ch(x124),r(x123)) & cont(x123,ch(x121)))))).
+(all x132 all x135 all x131 all x134 all x133 (eqdim(x132,x135) & eqdim(x135,x131) & sc(x132,x135) & sc(x135,x131) & -c(x132,x131) & tsum(x132,x135,x134) & tsum(x135,x131,x133) & x134 = ch(x134) & x133 = ch(x133) -> x135 = ch(x135))).
+
+
+
+(all x11 (s(x11) & -zex(x11) <-> cont(x11,x11))).
+(all x21 all x22 (cont(x21,x22) & cont(x22,x21) -> x21 = x22)).
+(all x32 all x33 all x31 (cont(x32,x33) & cont(x33,x31) -> cont(x32,x31))).
+(all x41 all x42 (zex(x41) -> s(x41) & -cont(x42,x41) & -cont(x41,x42))).
+(all x51 all x52 (zex(x51) & zex(x52) -> x51 = x52)).
+
+
+
+(all x11 all x12 (voidinside(x11,x12) <-> inside(x11,x12) & v(x11))).
+
+
+
+(all x11 all x12 (depimmatcontains(x12,x11) <-> depcont(x12,x11) & v(x12))).
+
+
+
+(all x11 all x13 (enclosesmat(x13,x11) <-> surroundsmat(x13,x11) & (exists x12 (hostsvany(x13,x12) & hostscavity(x13,x12) & p(r(x11),r(x13)))))).
+
+
+
+(all x11 all x12 (p(x11,x12) <-> cont(x11,x12) & eqdim(x11,x12))).
+
+
+
+(all x11 all x12 (matdep(x11,x12) -> dep(x11,x12))).
+(all x21 all x22 (matdep(x21,x22) -> mat(x21) | v(x21))).
+(all x31 all x32 (matdep(x31,x32) -> mat(x32) | v(x32))).
+(all x41 all x43 (matdep(x41,x43) & v(x41) & mat(x43) -> po(r(x41),r(x43)) | (exists x42 (hostsv(x43,x42) & po(r(x41),r(x42)))))).
+(all x51 all x52 (matdep(x51,x52) & v(x51) & v(x52) -> po(r(x51),r(x52)))).
+(all x61 all x62 (matdep(x61,x62) -> po(r(x61),r(x62)) | strongc(r(x61),r(x62)))).
+(all x71 all x72 (matdep(x71,x72) & mat(x71) & mat(x72) -> po(r(x71),r(x72)))).
+(all x82 all x84 (mat(x82) & v(x84) -> (matdep(x82,x84) <-> (exists x81 exists x83 (submat(x81,x82) & submat(x81,x83) & hostsv(x83,x84) & (strongc(r(x81),r(x84)) | po(r(x81),r(x84)))))))).
+(all x92 all x95 (v(x92) & v(x95) -> (matdep(x92,x95) <-> po(r(x92),r(x95)) & (exists x94 exists x93 exists x91 (hostsv(x94,x92) & hostsv(x93,x95) & mat(x94) & mat(x93) & p(r(x94),r(x93)) & p(r(x93),r(x94))))))).
+
+
+
+(all x11 all x12 (fullphyscont(x12,x11) <-> ped(x11) & ped(x12) & p(r(x11),ch(x12)) & (-mat(x12) -> p(r(x11),r(x12))))).
+
+
+
+(all x11 -inc(x11,x11)).
+(all x21 all x22 (inc(x21,x22) -> inc(x22,x21))).
+(all x31 all x32 (eqdim(x31,x32) -> -inc(x31,x32))).
+(all x41 all x42 (inc(x41,x42) -> lt(x41,x42) | lt(x42,x41))).
+(all x51 all x52 (cont(x51,x52) & lt(x51,x52) -> inc(x51,x52))).
+(all x62 all x63 all x61 (inc(x62,x63) & p(x63,x61) -> inc(x62,x61))).
+
+
+
+(all x12 all x13 (sc(x12,x13) <-> (exists x11 (cont(x11,x12) & cont(x11,x13))) & (all x11 (cont(x11,x12) & cont(x11,x13) -> leq(x11,x12) & -eqdim(x11,x12) & leq(x11,x13) & -eqdim(x11,x13))))).
+
+
+
+(all x11 all x12 (matfillsinside(x11,x12) <-> matinside(x11,x12) & r(x11) = r(x12))).
+
+
+
+(all x11 all x12 (cont(x11,x12) -> leq(x11,x12))).
+
+
+
+(all x11 (con(x11) <-> s(x11) & (all x12 (pp(x12,x11) -> sc(x12,difference(x11,x12)))))).
+
+
+
+(all x11 all x13 (subvoid(x11,x13) <-> immatcont(x13,x11) & (exists x12 (hostsv(x12,x13) & hostsv(x12,x11))))).
+
+
+
+(all x11 all x12 (pp(x11,x12) <-> p(x11,x12) & x11 != x12)).
+
+
+
+(all x11 (s(x11) & -zex(x11) -> (exists x12 (p(x12,x11) & min(x12))))).
+(all x21 all x22 (s(x21) & s(x22) & bcont(x21,x22) -> cont(x21,x22) & inc(x21,x22))).
+(all x32 all x34 all x33 all x31 (s(x32) & s(x34) & s(x33) & s(x31) & sc(x32,x34) & min(x32) & p(x32,x33) & cont(x34,x33) & cont(x31,x32) & cont(x31,x34) -> bcont(x31,x32))).
+(all x42 all x44 all x41 all x43 (s(x42) & s(x44) & s(x43) & s(x41) & sc(x42,x44) & p(x42,x43) & p(x44,x43) & cont(x41,x42) & cont(x41,x44) & covers(x43,x41) -> -bcont(x41,x43))).
+(all x52 all x55 all x51 (s(x52) & s(x55) & s(x51) & bcont(x52,x55) & p(x55,x51) & (all x54 all x53 (s(x54) & s(x53) & p(x54,x51) & -po(x54,x55) & p(x53,x52) -> -cont(x53,x54))) -> bcont(x52,x51))).
+(all x62 all x63 all x61 (s(x62) & s(x63) & s(x61) & bcont(x62,x63) & cont(x61,x62) -> bcont(x61,x63))).
+(all x72 all x73 (s(x72) & s(x73) & bcont(x72,x73) <-> s(x72) & s(x73) & -zex(x72) & (all x71 (p(x71,x72) & min(x71) -> bcont(x71,x73))))).
+
+
+
+(all x11 (-ped(x11) | -s(x11))).
+(all x21 s(r(x21))).
+(all x31 (s(x31) <-> x31 = r(x31))).
+(all x41 all x42 (cont(x41,x42) -> s(x41) & s(x42))).
+(all x51 all x52 (lt(x51,x52) -> s(x51) & s(x52))).
+(all x61 (zex(x61) -> s(x61))).
+(all x71 all x72 (bcont(x71,x72) -> s(x71) & s(x72))).
+(all x81 (ped(x81) -> maxdim(r(x81)))).
+(all x91 all x92 (hosts(x91,x92) -> (rpf(x92) <-> p(r(x92),r(x91))))).
+(all x101 all x102 (hosts(x101,x102) -> (dpf(x102) <-> -po(r(x101),r(x102))))).
+
+
+
+(all x11 all x12 (s(x11) & s(x12) & -c(x11,x12) <-> zex(intersection(x11,x12)))).
+(all x21 all x22 (s(x21) & s(x22) & -zex(intersection(x21,x22)) -> cont(intersection(x21,x22),x21))).
+(all x32 all x33 all x31 (cont(x31,x32) & cont(x31,x33) -> leq(x31,intersection(x32,x33)))).
+(all x42 all x43 all x41 (cont(x41,x42) & cont(x41,x43) & eqdim(x41,intersection(x42,x43)) <-> p(x41,intersection(x42,x43)))).
+(all x51 all x52 (s(x51) & s(x52) & -zex(difference(x51,x52)) -> eqdim(x51,difference(x51,x52)))).
+(all x61 all x62 (lt(x62,x61) -> x61 = difference(x61,x62))).
+(all x72 all x73 all x71 (leq(x72,x73) & cont(x71,x72) & lt(intersection(x71,x73),x71) -> cont(x71,difference(x72,x73)))).
+(all x82 all x83 all x81 (leq(x82,x83) & cont(x81,difference(x82,x83)) -> cont(x81,x82))).
+(all x92 all x93 all x91 (leq(x92,x93) & p(x91,difference(x92,x93)) -> lt(intersection(x91,x93),x91))).
+(all x101 all x102 (zex(difference(x101,x102)) <-> zex(x101) | cont(x101,x102))).
+
+
+
+(all x11 all x12 (eqdim(x11,x12) <-> leq(x11,x12) & leq(x12,x11))).
+
+
+
+(all x11 all x12 (isurroundsvoid(x12,x11) <-> surroundsvoid(x12,x11) & -p(r(x11),voidspaceall(x12)))).
+
+
+
+(all x11 all x12 (leq(x11,x12) -> s(x11))).
+(all x21 all x22 (leq(x21,x22) -> s(x22))).
+(all x31 (zex(x31) -> s(x31))).
+(all x41 (s(x41) -> leq(x41,x41))).
+(all x52 all x53 all x51 (leq(x52,x53) & leq(x53,x51) -> leq(x52,x51))).
+(all x61 all x62 (zex(x61) & zex(x62) -> x61 = x62)).
+(all x71 all x72 (zex(x71) & s(x72) -> leq(x71,x72))).

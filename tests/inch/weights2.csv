@@ -1,0 +1,6 @@
+Entity,Type,Superclass(es),1,2,3,4,5,6
+ZEXI,Class,owl:Thing,,10,10,,,
+CH,ObjectProperty,,1,1,1,1,1,1
+CS,ObjectProperty,,1,1,10,10,1,1
+GED,ObjectProperty,,10,1,1,1,1,10
+INCH,ObjectProperty,,1,1,1,1,1,1
