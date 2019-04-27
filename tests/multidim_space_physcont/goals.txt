@@ -8,4 +8,4 @@
 
 (all x all y (enclosesvoid(x,y) -> (surroundsvoid(x,y)))).
 
-(all x all y (matinside(x,y) -> (inside(x,y)))).(all x all y (voidinside(x,y) -> (inside(x,y)))).
+(all x all y (matinside(x,y) -> (inside(x,y)))).(all x all y (voidinside(x,y) -> (inside(x,y)))).

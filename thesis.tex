@@ -33,7 +33,7 @@
 % metadata
 \title{Exploring Semantic Hierarchies to Improve Resolution Theorem Proving on Ontologies}
 \author{Stanley C. Small}
-\date{March 2019}
+\date{May 2019}
 
 \begin{document}
 \begin{titlepage}
@@ -168,18 +168,18 @@ Ontologies, especially those used in research, can contain hundreds or thousands
 Automatic theorem proving requires a logic defining the syntax of valid statements to run without additional user input. Formal logics like first-order logic, also known as predicate logic and first-order predicate calculus, define a structure for statements which can be used to form logical and mathematical proofs. Consider the following set of asserted facts expressed in first-order predicate logic, commonly referred to as axioms. 
 
 \begin{singlespace}
-\[isSedan(Subaru Legacy)\]
+\[isSedan(myCar)\]
 \[\forall x \; isSedan(x) \rightarrow hasFourSeats(x)\]
 \end{singlespace} 
 
-The first axiom asserts the Subaru Legacy is a sedan. The second axiom asserts all sedans have four seats. By expressing facts in a formal notation, one makes proofs using such statements mechanical and easily parsed by a computer. Ontologies used for experiments are described used Common Logic, a formal logic based on first-order logic. Predicates describe objects in a knowledge base. In the cases above, $isSedan()$ would serve as a predicate acting on a $SubaruLegacy$ object in the former, and a variable labeled $x$ in the latter. Variables in first-order logic are quantified, meaning the application of a variable is defined for either some ($\exists$) or all ($\forall$) objects in the domain. 
+The first axiom asserts my car is a sedan. The second axiom asserts all sedans have four seats. By expressing facts in a formal notation, one makes proofs using such statements mechanical and easily parsed by a computer. Ontologies used for experiments are described used Common Logic, a formal logic based on first-order logic. Predicates describe objects in a knowledge base. In the cases above, $isSedan()$ would serve as a predicate acting on a $myCar$ object in the former, and a variable labeled $x$ in the latter. Variables in first-order logic are quantified, meaning the application of a variable is defined for either some ($\exists$) or all ($\forall$) objects in the domain. 
 
 \subsection{{Theorem Proving}}
 Automated theorem proving depends on having an established logic for expressing facts (such as Common Logic), a method of generating new facts without requiring additional knowledge, and a strategy for searching through all possible new facts one could generate to reach a specific goal (such as proving a conjecture).
 
 \subsubsection{Inference Rules}
 
-One can use axioms to derive facts which logically follow using inference rules. The two previous statements do not directly state the Subaru Legacy has four seats. However, one can derive the statement $hasFourSeats(Subaru Legacy)$ by using the inference rule \textit{modus ponens}, defined below. 
+One can use axioms to derive facts which logically follow using inference rules. The two previous statements do not directly state the my car has four seats. However, one can derive the statement $hasFourSeats(myCar)$ by using the inference rule \textit{modus ponens}, defined below. 
 \begin{equation}
 \begin{gathered}
 A \\
@@ -187,7 +187,7 @@ A \\
 \end{gathered}
 \end{equation}
 
-One can think of $A$ and $B$ as variables representing statements, and any statements can replace them. In the example above, one can replace $A$ with $isSedan(Subaru Legacy)$ and B with $hasFourSeats(SubaruLegacy)$ after instantiating $x$ with $Subaru Legacy$ (which is possible because $x$ is bound by the universal quantifier $\forall$ and we can replace $x$ with anything defined in the domain). Therefore, one can assert $hasFourSeats(Subaru Legacy)$ is true, without the statement having been defined explicitly as an axiom. An inference rule defines a valid rule for statements and always generates true statements when the assumed premises are true. 
+One can think of $A$ and $B$ as variables representing statements, and any statements can replace them. In the example above, one can replace $A$ with $isSedan(myCar)$ and B with $hasFourSeats(myCar)$ after instantiating $x$ with $myCar$ (which is possible because $x$ is bound by the universal quantifier $\forall$ and we can replace $x$ with anything defined in the domain). Therefore, one can assert $hasFourSeats(myCar)$ is true, without the statement having been defined explicitly as an axiom. An inference rule defines a valid rule for statements and always generates true statements when the assumed premises are true. 
 \subsubsection{Resolution}
 
 Automated theorem proving requires a set of axioms and a set of rules to generate new facts, but also a strategy to search through the possible applications of the inference rules. Knowledge bases can grow quite large, and generating all possible facts based on a given set of axioms often remains impractical or unfeasible. Resolution exists as historically significant and widely used method for automated theorem proving \cite[51]{ertel2018introduction}. 
@@ -201,17 +201,17 @@ Automated theorem proving requires a set of axioms and a set of rules to generat
 
 In order to use resolution as a proof technique, axioms must first be expressed in Conjunctive Normal Form (CNF), also known as clausal form. One may follow a 7-step procedure of converting the set of facts into a conjunction of disjunctions. The process eliminates biconditionals, implications, and quantifiers so the second axiom $\forall x \; isSedan(x) \rightarrow hasFourSeats(x)$ becomes 
 $\lnot isSedan(x) \lor hasFourSeats(x)$. One can then resolve the statements by instantiating the variable $x$ with $SubaruLegacy$ in a process called unification, binding the variable. 
-\[\frac{isSedan(Subaru Legacy), \lnot isSedan(x) \lor hasFourSeats(x)}{hasFourSeats(Subaru Legacy)}\]
+\[\frac{isSedan(myCar), \lnot isSedan(x) \lor hasFourSeats(x)}{hasFourSeats(myCar)}\]
 Finally, one can resolve the axiom with the negated conjecture, proving the statement true. 
 
 \begin{figure}[h]
 \begin{verbatim}
 1 (all x (isSedan(x) -> hasFourSeats(x))) # label(non_clause).  [assumption].
-2 hasFourSeats(SubaruLegacy) # label(non_clause) # label(goal).  [goal].
+2 hasFourSeats(myCar) # label(non_clause) # label(goal).  [goal].
 3 -isSedan(x) | hasFourSeats(x).  [clausify(1)].
-4 isSedan(SubaruLegacy).  [assumption].
-5 hasFourSeats(SubaruLegacy).  [resolve(3,a,4,a)].
-6 -hasFourSeats(SubaruLegacy).  [deny(2)].
+4 isSedan(myCar).  [assumption].
+5 hasFourSeats(myCar).  [resolve(3,a,4,a)].
+6 -hasFourSeats(myCar).  [deny(2)].
 7 $F.  [resolve(5,a,6,a)].
 \end{verbatim}
 \caption{Prover9 displays output for the automated proof. }
@@ -363,31 +363,53 @@ Git was used for version control and a repository containing source code for tes
 \end{figure}
 
 \subsection{Results}
-\subsubsection{multidim\_space\_voids}
+Below are empirical results for the described study. Each table contains a series of conjectures, and the number of clauses generated for both default weights and each of the weighting functions. A dash represents no change, and 0 indicates a change less than 1 percent.  All weights for the tests are contained in Appendix A. 
+\vspace{1cm}
 \begin{table}[h]
 \centering
 \csvautotabular{tests/multidim_space_voids/results.csv}
 \caption{Results for the multidim\_space\_voids Ontology}
 \end{table}
 
-\subsubsection{inch}
 \begin{table}[h]
 \centering
 \csvautotabular{tests/inch/results.csv}
 \caption{Results for the inch Ontology}
 \end{table}
 
+\begin{table}[h]
+\centering
+\csvautotabular{tests/multidim_space_physcont/results.csv}
+\caption{Results for the multidim\_space\_physcont Ontology}
+\end{table}
+
+\begin{table}[h]
+\centering
+\csvautotabular{tests/s.csv}
+\caption{Overall Results}
+\end{table}
+
+\newpage
 \subsection{Discussion}
+In some cases, the algorithm increases the number of clauses generated when proving a conjecture, but does not do so to the point where the proof does not finish. For the majority of proofs, the number of clauses generated decreases or remains unchanged.
+
+Function 1 saw an average 19 percent reduction in the number of clauses generated and function 2 saw an average 23 percent reduction, suggesting the use of semantic hierarchies can reduce the number of clauses generated by an automatic theorem prover when attempting to prove a conjecture on an ontology. Both approaches seem to provide the same or better performance in many cases, with only a handful of cases where the number of clauses generated actually increased. Neither function performs significantly better than the other for a specific ontology, or for the majority of tests. The functions designed performed well for the ontologies tested; however, more tests are required to make generalized claims regarding the effectiveness of said methods. 
+
+The functions appear to help most when pairs of predicates are at a greater distance from one another (in regards to the minimum path), or when the semantic hierarchies are many levels deep. This seems to apply both to predicates describing classes and relationships, especially so when a percentage decrease in number of clauses generated for a specific conjecture exceeded 50 percent. 
+
+In the inch calculus ontology, conjecture 2 is \texttt{(all x all y (GED(x,y) \& GED(y,x) \& (all z (CH(z,x) -> CH(z,y))) -> CS(x,y))).} In this case, the weighting functions increased the number of clauses generated by a significant amount. The relationship hierarchy is much smaller than those for the other ontologies. Additionally, two predicates are repeated twice in the conjecture, unlike many others. The combination of a shallow hierarchy and repeated predicates likely contributed to an increase in the number of clauses generated. 
 
 \newpage
 \vspace*{.05in}
 \section{\MakeUppercase{Conclusion}}
 
-In some cases, the algorithm increases the number of clauses generated for each test, but does not do so to the point where the tests are unusable. For the majority of proofs, the number of clauses generated decreases or remains unchanged.
+When proving specific conjectures with few predicates on large ontologies, semantic hierarchies can focus the search of a resolution theorem prover. Results of the experiments conducted indicate further work might yield lucrative results, especially for exceptionally large ontologies. Tests demonstrated success in a relatively unexplored domain of research. 
 
-The scarcity of suitable ontologies to test provides many opportunities for advancement. 
+\subsection{Future Work}
+The scarcity of suitable ontologies to test provides many opportunities for advancement. Opportunities for further research include fully automating the search procedure, working with a larger number of ontologies to ensure the weighting functions actually do as they say, or developing a new approach for  automatically weighting the predicates. 
 
-Many opportunities for further research include fully automating the search procedure, working with a larger number of ontologies to ensure the weighting functions actually do as they say, developing a new approach towards automatically weighting the predicates. 
+Adjustments regarding the tolerance or aggressiveness of the functions appears to be a promising path forward. Depending on the shape and depth of semantic hierarchies for an ontology, weights could be increased to values nearing 100 or more. Experiments conducted used a maximum weight of ten for any one predicate in efforts to reduce any increases in the number of clauses generated. 
+
 \newpage
 \addcontentsline{toc}{section}{\MakeUppercase{References}}
 \vspace*{.05in}
@@ -436,6 +458,26 @@ Many opportunities for further research include fully automating the search proc
                \endfoot,
                respect all
                ]{tests/inch/weights2.csv}
+               
+\csvautolongtable[
+      table head=\caption{multidim space physcont weights for function 1}\label{tab:some}\\\hline
+               \csvlinetotablerow\\\hline
+               \endfirsthead\hline
+               \csvlinetotablerow\\\hline
+               \endhead\hline
+               \endfoot,
+               respect all
+               ]{tests/multidim_space_physcont/weights1.csv}
+               
+\csvautolongtable[
+      table head=\caption{multidim space physcont weights for function 2}\label{tab:some}\\\hline
+               \csvlinetotablerow\\\hline
+               \endfirsthead\hline
+               \csvlinetotablerow\\\hline
+               \endhead\hline
+               \endfoot,
+               respect all
+               ]{tests/multidim_space_physcont/weights2.csv}
                
                
 \end{singlespace}
