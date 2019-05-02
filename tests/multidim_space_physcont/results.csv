@@ -7,6 +7,6 @@ Conjecture,Default,Function 1,Percent Change 1,Function 2,Percent Change 2
 6,283,240,-15,283, -   
 7,495,425,-14,255,-48
 ,,,,,
-Avergage,377,358,-12,330,-18
-Median,426,425,-14,323,-12
-Sum,2642,2506,-37,2310,-91
+Average,377,358,-5,330,-12
+Median,426,425,0,323,-24
+Sum,2642,2506,-5,2310,-13
