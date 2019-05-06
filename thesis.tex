@@ -30,6 +30,9 @@
 \usepackage{csvsimple}
 \usepackage{longtable}
 
+\renewcommand*\listfigurename{\MakeUppercase{List of Figures}}
+\renewcommand*\listtablename{\MakeUppercase{List of Tables}}
+
 % metadata
 \title{Exploring Semantic Hierarchies to Improve Resolution Theorem Proving on Ontologies}
 \author{Stanley C. Small}
@@ -44,11 +47,11 @@
  				\vspace{.15in} by \par
  				\smallskip
   				\vspace{.15in} \@author \par
-  				\vspace{1in}
+  				\vspace{1.5in}
  				A Thesis Submitted in Partial Fulfillment  \par
   				of the Requirements for a Degree with Honors \par
   				(Computer Science) \par
-  				\vspace{.75in}
+  				\vspace{1.75in}
   				The Honors College \par
   				University of Maine \par
   				\@date \par
@@ -79,7 +82,7 @@ The order in which the axioms within the knowledge-base are evaluated significan
 
 Ontologies, knowledge bases with semantic (and predominantly hierarchical) structures, describe objects and their relationships to other objects. For example, a 'Sedan' class might exist in a sample ontology with 'Automobile' as a parent class and 'Minivan' as a sibling class. Currently, hierarchical structures within an ontology are not taken into account when evaluating the relevance of each axiom. Instead, each predicate is automatically assigned a weight based on a heuristic measure (such as the number of terms or the frequency of predicates relevant to the conjecture) and axioms with higher weights are evaluated first. My research aims to intelligently select relevant axioms within a knowledge-base given a structured relationship between predicates. I have used semantic hierarchies passed to a weighting function to assign weights to each predicate. The research aims to design heuristics based upon the semantics of the predicates, rather than solely the syntax of the statements. 
 
-I developed weighting functions based upon various parameters relevant to the ontological structure of predicates contained in the ontology, such as the size and depth of a hierarchy based upon the structure of the ontology. The functions I have designed calculate weights for each predicate and thus each axiom in attempts to select relevant axioms when proving a theorem. I have conducted an experimental study to determine if my methods show any improvements over current reasoning methods. Results for the experiments conducted show promising results for generating weights based on semantic hierarchies and encourage further research. 
+I developed weighting functions based upon various parameters relevant to the ontological structure of predicates contained in the ontology, such as the size and depth of a hierarchy based upon the structure. The functions I have designed calculate weights for each predicate and thus each axiom in attempts to select relevant axioms when proving a theorem. I have conducted an experimental study to determine if my methods show any improvements over current reasoning methods. Results for the experiments conducted show promising results for generating weights based on semantic hierarchies and encourage further research. 
 	
 \pagenumbering{roman} 
 \setcounter{page}{3}
@@ -95,6 +98,10 @@ Robert Powell also proved instrumental to the process. He wrote a utility which 
 The thesis committee was also instrumental in producing an undergraduate thesis of scale.
 
 \newpage
+\setstretch{1.5}
+\tableofcontents
+
+\newpage
 \addcontentsline{toc}{section}{\MakeUppercase{List of Figures}}
 \vspace*{.05in}
 \listoffigures
@@ -105,17 +112,13 @@ The thesis committee was also instrumental in producing an undergraduate thesis 
 \listoftables
 
 \newpage
-\setstretch{1.5}
-\tableofcontents
-
-\newpage
 \setstretch{2}
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \vspace*{.05in}
 \section{\MakeUppercase{Introduction}}
 
-The rules of logic enable one to prove theorems from axioms stored in a knowledge base. Axioms, asserted facts typically expressed in a formal manner, provide a computer program with tools to confirm or refute conjectures without additional user input. Because computers excel at simple and repetitive tasks, one can witness the applications of automated theorem proving in fields which rely heavily on "knowledge acquisition and information retrieval" \cite{sanchez2012ontology}. The ability for machines to deduce logically valid conclusions has applications in artificial intelligence and a variety of scientific domains \cite{urban2011overview}. Automated theorem proving provides a versatile method for reasoning with a set of facts, and has been used to prove and verify proofs of multiple theorems. The four color map theorem, obtained by an automated proof in 1976 by a general-purpose theorem-proving software in 2005 remains a notable example \cite{gonthier2008formal}. Moreover, advances have been made in work on the Kepler conjecture and in finding optimal solutions for a Rubik's Cube. The general-purpose nature of automated theorem proving yields applications to a variety of problems. However, automated theorem proving programs often neglect semantic knowledge embedded in an ontology.
+The rules of logic enable one to prove theorems from axioms stored in a knowledge base. Axioms, asserted facts typically expressed in a formal manner, provide a computer program with tools to confirm or refute conjectures without additional user input. Because computers excel at simple and repetitive tasks, one can witness the applications of automated theorem proving in fields which rely heavily on "knowledge acquisition and information retrieval" \cite{sanchez2012ontology}. The ability for machines to deduce logically valid conclusions has applications in artificial intelligence and a variety of scientific domains \cite{urban2011overview}. Automated theorem proving provides a versatile method for reasoning with a set of facts, and has been used to prove and verify proofs of multiple theorems. The four color map theorem, initially proved in 1976 and later proved by a general-purpose theorem-proving software in 2005 remains a notable example \cite{gonthier2008formal}. Moreover, advances have been made in work on the Kepler conjecture and in finding optimal solutions for a Rubik's Cube. The general-purpose nature of automated theorem proving yields applications to a variety of problems. However, automated theorem proving programs often neglect semantic knowledge embedded in an ontology.
 
 Ontologies provide a "common vocabulary" for researchers to speak about a specific domain by describing entities and the relationships between them \cite{noy2001ontology}. A formal description of a specific environment provides researchers and machines with a shared understanding by aiming to capture the semantics of a domain's concepts and relations. Some relationships between an ontology's terms may be explicitly defined, but many are implicit. For example, three axioms one might find in a knowledge base are below. 
 
@@ -134,20 +137,20 @@ Like many taxonomies, or schemes of classification, one can often form maps of r
 \section{\MakeUppercase{Background and Related Work}}
 
 
-\subsection{{Ontologies}}
+\subsection{\underline{Ontologies}}
 
- The word ontology ("study of being") combines Greek \textit{onto-} ("being") and \textit{-logia} ("logical discourse"). The act of studying knowledge and existence in philosophy has given birth to the study of formal logic and automated reasoning in computer science. Researchers often use ontologies to share information among people or computer programs, to enable domain knowledge reuse, to make definitions of a particular domain explicit, or to analyze domain knowledge \cite{noy2001ontology}.
+ The word ontology ("study of being") combines Greek \textit{onto-} ("being") and \textit{-logia} ("logical discourse"). The act of organized and classifying knowledge and existence in philosophy has given birth to the study of formal logic and automated reasoning in computer science. Researchers often use ontologies to share information among people or computer programs, to enable domain knowledge reuse, to make definitions of a particular domain explicit, or to analyze domain knowledge \cite{noy2001ontology}.
  
 \begin{figure}[h]
 \centering
 \includegraphics[width=4in]{sample_ontology}
-\caption{This sample ontology, with inspiration from an example by Natalya F. Noy, describes entities and relations in the 'automobiles' domain. The ontology serves to provide a "formal explicit description" of classes (outlined in black) along with properties which describe relationships between classes (such as how Subaru Legacy is produced by Subaru). While not displayed in the figure, an ontology also defines property restrictions within the domain (so an instance of the Subaru class cannot produce a car manufacturer). The ontology, along with individual instances of classes (highlighted in red) constitutes a knowledge base \cite{noy2001ontology}. }
+\caption[Sample Ontology]{This sample ontology, with inspiration from an example by Natalya F. Noy, describes entities and relations in the 'automobiles' domain. The ontology serves to provide a "formal explicit description" of classes (outlined in black) along with properties which describe relationships between classes (such as how Subaru Legacy is produced by Subaru). While not displayed in the figure, an ontology also defines property restrictions within the domain (so an instance of the Subaru class cannot produce a car manufacturer). The ontology, along with individual instances of classes (highlighted in red) constitutes a knowledge base \cite{noy2001ontology}. }
 \label{fig:sample_ontology}
 \end{figure}
 
-In reality, few differences between an ontology and a knowledge base exists. Knowledge engineers must traverse a "fine line where the ontology ends and the knowledge base begins" \cite{noy2001ontology}. At the least, an ontology defines categories (or classes) and relationships among objects. One can think of an ontology as a "vocabulary" used to describe a domain \cite[308]{russell2016artificial}. Typically, both classes and relationships between classes can be arranged as hierarchies  (see Figure \ref{fig:sample_ontology}), which are here referred to as semantic hierarchies. When designing an ontology, one must decide the scope and organization of the knowledge, along with the language used. 
+In reality, few differences between an ontology and a knowledge base exist. Knowledge engineers must traverse a "fine line where the ontology ends and the knowledge base begins" \cite{noy2001ontology}. At the least, an ontology defines categories (or classes) and relationships among objects. One can think of an ontology as a "vocabulary" used to describe a domain \cite[308]{russell2016artificial}. Typically, both classes and relationships between classes can be arranged as hierarchies  (see Figure \ref{fig:sample_ontology}), which are here referred to as semantic hierarchies. When designing an ontology, one must decide the scope and organization of the knowledge, along with the language used. 
 
-\subsubsection{Class Inheritance and Semantic Reasoning}
+\subsubsection{\underline{Class Inheritance and Semantic Reasoning}}
 
 Many relations within an ontology serve to organize classes. For example, in the 'automobiles' ontology, most of the classes are organized by "is-a" relationships and classes inherit attributes such as domain and range restrictions. For example, my car would inherit properties of the 'Automobile', 'Sedan', and 'Subaru Legacy' classes, such as having four seats. 
 
@@ -155,7 +158,7 @@ Many relations within an ontology serve to organize classes. For example, in the
 \centering
 \includegraphics[width=2.5in]{class-hierarchy}
 \includegraphics[width=2.5in]{object-property-hierarchy}
-\caption{Hierarchies describing classes and relationships within the commonly used Gene Ontology (not used for experiments)  can be viewed in Prot{\'e}g{\'e}, with inferred hierarchies generated by Pellet reasoner \cite{gennari2003evolution}.}
+\caption[Semantic Hierarchies]{Hierarchies describing classes and relationships within the commonly used Gene Ontology (not used for experiments)  can be viewed in Prot{\'e}g{\'e}, with inferred hierarchies generated by Pellet reasoner \cite{gennari2003evolution}.}
 \label{fig:class-hierarchy}
 \end{figure}
 
@@ -163,7 +166,7 @@ Software tools referred to as semantic reasoners, or simply reasoners, can infer
 
 Ontologies, especially those used in research, can contain hundreds or thousands of classes and relationships but only a small fraction of those are likely needed for any specific proof. By consulting knowledge embedded in the semantic hierarchies for a specific ontology one could possibly reduce the time needed to prove a specific conjecture when many irrelevant axioms exist. 
 
-\subsubsection{First-order Logic Ontologies}
+\subsubsection{\underline{First-order Logic Ontologies}}
 
 Automatic theorem proving requires a logic defining the syntax of valid statements to run without additional user input. Formal logics like first-order logic, also known as predicate logic and first-order predicate calculus, define a structure for statements which can be used to form logical and mathematical proofs. Consider the following set of asserted facts expressed in first-order predicate logic, commonly referred to as axioms. 
 
@@ -174,10 +177,10 @@ Automatic theorem proving requires a logic defining the syntax of valid statemen
 
 The first axiom asserts my car is a sedan. The second axiom asserts all sedans have four seats. By expressing facts in a formal notation, one makes proofs using such statements mechanical and easily parsed by a computer. Ontologies used for experiments are described used Common Logic, a formal logic based on first-order logic. Predicates describe objects in a knowledge base. In the cases above, $isSedan()$ would serve as a predicate acting on a $myCar$ object in the former, and a variable labeled $x$ in the latter. Variables in first-order logic are quantified, meaning the application of a variable is defined for either some ($\exists$) or all ($\forall$) objects in the domain. 
 
-\subsection{{Theorem Proving}}
+\subsection{\underline{Theorem Proving}}
 Automated theorem proving depends on having an established logic for expressing facts (such as Common Logic), a method of generating new facts without requiring additional knowledge, and a strategy for searching through all possible new facts one could generate to reach a specific goal (such as proving a conjecture).
 
-\subsubsection{Inference Rules}
+\subsubsection{\underline{Inference Rules}}
 
 One can use axioms to derive facts which logically follow using inference rules. The two previous statements do not directly state the my car has four seats. However, one can derive the statement $hasFourSeats(myCar)$ by using the inference rule \textit{modus ponens}, defined below. 
 \begin{equation}
@@ -187,15 +190,15 @@ A \\
 \end{gathered}
 \end{equation}
 
-One can think of $A$ and $B$ as variables representing statements, and any statements can replace them. In the example above, one can replace $A$ with $isSedan(myCar)$ and B with $hasFourSeats(myCar)$ after instantiating $x$ with $myCar$ (which is possible because $x$ is bound by the universal quantifier $\forall$ and we can replace $x$ with anything defined in the domain). Therefore, one can assert $hasFourSeats(myCar)$ is true, without the statement having been defined explicitly as an axiom. An inference rule defines a valid rule for statements and always generates true statements when the assumed premises are true. 
-\subsubsection{Resolution}
+One can think of $A$ and $B$ as variables representing statements, and any statements can replace them. In the example above, one can replace $A$ with $isSedan(myCar)$ and B with $hasFourSeats(myCar)$ after instantiating $x$ with $myCar$ (which is possible because $x$ is bound by the universal quantifier $\forall$ and we can replace $x$ with anything defined in the domain). Therefore, one can assert $hasFourSeats(myCar)$ is true, without the statement having been defined explicitly as an axiom. A sound inference rule defines a valid rule for statements and always generates true statements when the assumed premises are true. 
+\subsubsection{\underline{Resolution}}
 
 Automated theorem proving requires a set of axioms and a set of rules to generate new facts, but also a strategy to search through the possible applications of the inference rules. Knowledge bases can grow quite large, and generating all possible facts based on a given set of axioms often remains impractical or unfeasible. Resolution exists as historically significant and widely used method for automated theorem proving \cite[51]{ertel2018introduction}. 
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=6in]{resolution_tree}
-\caption{The figure above displays a resolution tree for the inference rule described in the previous section. The bold statement shows the negated conjecture. The tree also displays $x$ bound to $SubaruLegacy$.}
+\caption[Resolution Tree]{The figure above displays a resolution tree for the inference rule described in the previous section. The bold statement shows the negated conjecture. The tree also displays $x$ bound to $SubaruLegacy$.}
 \label{fig:resolution_tree}
 \end{figure}
 
@@ -214,14 +217,14 @@ Finally, one can resolve the axiom with the negated conjecture, proving the stat
 6 -hasFourSeats(myCar).  [deny(2)].
 7 $F.  [resolve(5,a,6,a)].
 \end{verbatim}
-\caption{Prover9 displays output for the automated proof. }
+\caption[Prover9 Output]{Prover9 displays output for the automated proof. }
 \label{fig:prover9out}
 \end{figure}
 
 Because the number of clauses an automated theorem prover can generate greatly increases with respect to the size of the knowledge base, researchers have begun to form heuristics to evaluate the relevance of axioms when completing a proof. Some methods include evaluating the semantic similarity between predicates to determine which axioms might be more relevant when attempting to form a proof. 
 
-\subsection{Semantic Similarity}
-Evaluating the similarity of two entities (i.e. classes or relationships) can serve as one heuristic when attempting to reduce the number of clauses generated during a proof. Multiple metrics have been developed for evaluating the semantic similarity of terms with different approaches, including: edge-counting measures, feature-based measures, and measures based on Information Content \cite{sanchez2012ontology} \cite{rodriguez1999assessing} \cite{roederer2009divvy}.  Edge-counting metrics for semantic similarity when applied to semantic hierarchies remain the focus of this work. 
+\subsection{\underline{Semantic Similarity}}
+Evaluating the similarity of two entities (i.e. classes or relationships) can serve as one heuristic when attempting to reduce the number of clauses generated during a proof. Multiple metrics have been developed for evaluating the semantic similarity of terms with different approaches, including: edge-counting measures, feature-based measures, and measures based on information content \cite{sanchez2012ontology} \cite{rodriguez1999assessing} \cite{roederer2009divvy}.  Edge-counting metrics for semantic similarity when applied to semantic hierarchies remain the focus of this work. 
 
 Calculating the distance between two entities in an ontology is a a straightforward and intuitive method of calculating the semantic similarity. One can formally define the metric as follows. In an undirected graph $G$ defined as a pair $(V,E)$, where $V$ is a set of vertices, and $E$ is a set of edges between the vertices $E \subseteq {(u,v) | u, v \in V}$, one can define a path $path(a,b)=l_{1,\dots ,}l_k$ as a set of links connecting $a$ and $b$ in a taxonomy and $\lvert path(a,b) \rvert = k$ as the length of the path \cite{sanchez2012ontology}. One can calculate the semantic distance between $a$ and $b$ using equation \ref{rada} \cite{rada1989development}.
 
@@ -229,7 +232,7 @@ Calculating the distance between two entities in an ontology is a a straightforw
 sim_1(a,b)=min_{\forall i}\lvert{path_i(a,b)}\rvert
 \label{rada}
 \end{equation}
-Semantic hierarchies can be expressed as trees, and by incorporating depth of the taxonomy into the function, Zhibiao Wu has seen improvement in the metric. Because ontologies can vary greatly in depth due to the design of the ontology, some researchers have attempted to calculate semantic similarity using the lowest common ancestor (LCA), defined between two verticies $a$ and $b$ as the lowest vertex in the tree with both $a$ and $b$ as descendants (where we allow a vertex to be a descendant of itself) \cite{wu1994verbs}. The $root$ of a tree has no ancestors. 
+Semantic hierarchies can be expressed as trees, and by incorporating depth of the taxonomy into the function, Wu has seen improvement in the metric \cite{wu1994verbs}. Because ontologies can vary greatly in depth due to the design of the ontology, some researchers have attempted to calculate semantic similarity using the lowest common ancestor (LCA), defined between two verticies $a$ and $b$ as the lowest vertex in the tree with both $a$ and $b$ as descendants (where we allow a vertex to be a descendant of itself) \cite{wu1994verbs}. The $root$ of a tree has no ancestors. 
 \begin{equation}
 sim_2(a,b)=\frac{2 \times sim_1(LCA,root)}{sim_1(a,LCA)+sim_1(b,LCA)+2 \times sim_1(LCA,root)}
 \label{wu}
@@ -243,19 +246,19 @@ This work aims to evaluate the effectiveness of using a semantic hierarchy gener
 \begin{figure}[h]
 \centering
 \includegraphics[width=6in]{flowchart}
-\caption{The figure above illustrates my process of conducting experiments. The first step, converting the ontologies into OWL format, lives outside of the scope of my research.}
+\caption[Approach]{The figure above illustrates my process of conducting experiments. The first step, converting the ontologies into OWL format, lives outside of the scope of my research.}
 \label{fig:flowchart}
 \end{figure}
 
-\subsection{Converting Ontologies}
+\subsection{\underline{Converting Ontologies}}
 The ontologies in COLORE are specified using the Common Logic syntax. No tools exist for generation of the complete hierarchy directly from an ontology defined using Common Logic. However, virtually all Web Ontology Language (OWL) reasoners efficiently implement the task of organizing classes. Thus, one needs to translate the ontology to OWL, use an OWL reasoner to complete the hierarchy, and then calculate predicate weight based on that hierarchy. Robert Powell has written a utility which executes the conversion and has generated the files necessary to conduct this research. Not all ontologies in COLORE have conjectures, which limits the scope of my experiments to the sufficiently large ontologies. 
 
-\subsection{Generating a Complete Heirarchy}
+\subsection{\underline{Generating a Complete Heirarchy}}
 After converting an ontology into the OWL format, one can generate semantic heirarchies including both asserted relationships and inferred relationships. Pellet can be used to generate the inferred semantic hierarchy, which are then displayed in 
- Prot{\'e}g{\'e} (Figure \ref{fig:class-hierarchy}). The reasoner parses the axioms for inferred logical consequences (i.e. relationships between classes) not explicitly defined. The reasoner generates complete class hierarchies, but does not change the relationship hierarchy.
+ Prot{\'e}g{\'e} (Figure \ref{fig:class-hierarchy}). The reasoner parses the axioms for inferred logical consequences (i.e.~relationships between classes) not explicitly defined. The reasoner generates complete class hierarchies, but does not change the relationship hierarchy.
 
-\subsection{Calculating Weights for Resolution Theorem Proving}
-\subsubsection{Default Weights in Prover9}
+\subsection{\underline{Calculating Weights for Resolution Theorem Proving}}
+\subsubsection{\underline{Default Weights in Prover9}}
 Prover9 assigns weights to predicates automatically unless the user explicitly defines them. An understanding of the process helps one to develop new weights for the predicates. Lower weights give higher preference for a predicate when generating clauses. Rules for weighting axioms in terms of relevance when attempting to prove a specific conjecture are as follows \cite{mccune2005prover9}: 
 
 \begin{singlespace}
@@ -282,19 +285,19 @@ end_of_list.
 \end{verbatim}
 \end{singlespace}
 
-\subsubsection{Semantic Weighting Functions}
+\subsubsection{\underline{Semantic Weighting Functions}}
 Assigning weights to specific predicates will likely yield the best results. After semantic hierarchies have been generated, weights can be assigned to each class and subproperty. Two explicit weighting functions inspired by related works in calculating semantic similarity, were formed and tested. The weights for each conjecture were then calculated by hand and entered into a spreadsheet. A python script was used to generate the input files used by Prover9 from the spreadsheet for each conjecture. The calculated weights were then entered into Prover9 as additional input along with the axioms and the conjecture. The weighting functions are currently applied by hand to the ontologies, with the beginnings of an automated program underway. 
 
-\subsubsection{Function 1} 
+\subsubsection{\underline{Function 1} }
 
-The first function attempts to make use of the completed class hierarchy generated by a semantic reasoner by giving preference to predicates existing on a path between pairs of predicates in the conjecture. For example, if one wished to prove the conjecture $Automobile(myCar)$ using the ontology provided in Figure \ref{fig:sample_ontology}, it is reasonable to assume the theorem prover would need to traverse a series of axioms ascending the class hierarchy. Also, the 'Sedan' and 'Subaru Legacy' classes might not be given as much preference as predicates contained in the conjecture (i.e. $Automobile(x)$). Additionally, if the conjecture contains relationships (such as $Produces(x,y)$), once can apply the same principles. Additionally, in efforts to give lower preference to predicates not contained on paths connecting pairs of classes or relationships, unweighted ancestors and descendants are assigned higher weights. In order to achieve the goals above, Function 1 is defined as follows: 
+The first function attempts to make use of the completed class hierarchy generated by a semantic reasoner by giving preference to predicates existing on a path between pairs of predicates in the conjecture. For example, if one wished to prove the conjecture $Automobile(myCar)$ using the ontology provided in Figure \ref{fig:sample_ontology}, it is reasonable to assume the theorem prover would need to traverse a series of axioms ascending the class hierarchy. Also, the 'Sedan' and 'Subaru Legacy' classes might not be given as much preference as predicates contained in the conjecture (i.e. $Automobile(x)$). Additionally, if the conjecture contains relationships (such as $Produces(x,y)$), once can apply the same principles. Additionally, in an effort to give lower preference to predicates not contained on paths connecting pairs of classes or relationships, unweighted ancestors and descendants are assigned higher weights. In order to achieve the goals above, Function 1 is defined as follows: 
 
 \begin{singlespace}
 \begin{itemize}
 	\item Each predicate describing a class or relationship contained in the conjecture is given weight 1. 
 	\item For each pair of predicates describing classes within the conjecture, if a path exists between the two classes in the class hierarchy, predicates describing classes contained on the path are given weight 1. 
 	\item For each pair of predicates describing relationships within the conjecture, if a path exists between the two relationships in the relationship hierarchy, predicates describing relationships contained on the path are given weight 1. 
-	\item Decedents of predicates describing classes or relationships contained in conjecture without weights are given a weight corresponding to the depth of the entity. Subclasses and sub-properties are given a weight of the respective parent class or property plus 1. 
+	\item Descendents of predicates describing classes or relationships contained in conjecture without weights are given a weight corresponding to the depth of the entity. Subclasses and sub-properties are given a weight of the respective parent class or property plus 1. 
 	\item All ancestors of predicates with a weight generated and all top-level classes corresponding to predicates without a weight assigned are given weight 10.
 	\item All ancestors of predicates with a weight generated all top-level relationships corresponding to predicates without a weight assigned are given weight 10.
 \end{itemize}
@@ -317,9 +320,9 @@ end_of_list.
 \end{verbatim}
 \end{singlespace}
 
-\subsubsection{Function 2}
+\subsubsection{\underline{Function 2}}
 
-The second function attempts to make use of the lowest common ancestor (LCA) of each class or relationship with inspiration from equation \ref{wu}. Again, predicates in within the conjecture are preferred. Siblings and the parent of the LCA are weighted highly, and decedents of predicates without weights are given weights increasing with the depth of the semantic hierarchy. 
+The second function attempts to make use of the lowest common ancestor (LCA) of each class or relationship with inspiration from equation \ref{wu}. Again, predicates in within the conjecture are preferred. Siblings and the parent of the LCA are weighted highly, and descendents of predicates without weights are given weights increasing with the depth of the semantic hierarchy. 
 
 \begin{singlespace}
 \begin{itemize}
@@ -327,7 +330,7 @@ The second function attempts to make use of the lowest common ancestor (LCA) of 
 	\item For each pair of predicates describing classes within the conjecture, if a path exists between the two classes in the class hierarchy, predicates describing the lowest common ancestor are given weight 1 and classes contained on the path which are neither a predicate contained in the conjecture or the lowest common ancestor are given weight 2. 
 	\item For each pair of predicates describing relationships within the conjecture, if a path exists between the two relationships in the class hierarchy, predicates describing the lowest common ancestor are given weight 1 and classes contained on the path which are neither a predicate contained in the conjecture or the lowest common ancestor are given weight 2. 
 	\item Siblings and parents of a LCA are given a weight 3. 
-	\item Decedents of predicates describing classes or relationships contained in conjecture without weights are given a weight corresponding to the depth of the entity. Subclasses and sub-properties are given a weight of the respective parent class or property plus 1. 
+	\item Descendents of predicates describing classes or relationships contained in conjecture without weights are given a weight corresponding to the depth of the entity. Subclasses and sub-properties are given a weight of the respective parent class or property plus 1. 
 \end{itemize}
 \end{singlespace}
 
@@ -351,18 +354,18 @@ end_of_list.
 \vspace*{.05in}
 \section{\MakeUppercase{Experiments}}
 
-\subsection{{Setup}}
+\subsection{\underline{Setup}}
 
-Experiments were conducted using Prover9, an "automated theorem prover for first-order and equational logic" written by William McCune \cite{mccune2005prover9}. Many tests were conducted using a version of the program which supports a Graphical User Interface (GUI), but a command line version, useful for running automated tests, exists. 
+Experiments were conducted using Prover9, an "automated theorem prover for first-order and equational logic" written by William McCune \cite{mccune2005prover9}. Many tests were conducted using a version of the program which supports a graphical user interface (GUI), but a command line version, useful for running automated tests, exists. 
 Git was used for version control and a repository containing source code for tests can be found at \url{https://github.com/stanleysmall/thesis}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=6in]{prover9}
-\caption{The GUI for Prover9 on macOS is shown above. One enters axioms into the top text field and conjectures into the bottom text field. Predicate weights are entered in the 'Additional Input' tab in the navigation bar. Users can start the proof by pressing the 'Start' button below the Prover9 logo after specifying a time limit. After the proof has completed, users can view the number of clauses generated by the proof by pressing the 'Info' button below the 'Start' button \cite{mccune2005prover9}.}
+\caption[Prover9 GUI]{The GUI for Prover9 on macOS is shown above. One enters axioms into the top text field and conjectures into the bottom text field. Predicate weights are entered in the 'Additional Input' tab in the navigation bar. Users can start the proof by pressing the 'Start' button below the Prover9 logo after specifying a time limit. After the proof has completed, users can view the number of clauses generated by the proof by pressing the 'Info' button below the 'Start' button \cite{mccune2005prover9}.}
 \label{fig:prover9}
 \end{figure}
 
-\subsection{Results}
+\subsection{\underline{Results}}
 Below are empirical results for the described study. Each table contains a series of conjectures, and the number of clauses generated for both default weights and each of the weighting functions. A dash represents no change, and 0 indicates a change less than 1 percent.  All weights for the tests are contained in Appendix A. 
 \vspace{1cm}
 \begin{table}[h]
@@ -390,7 +393,7 @@ Below are empirical results for the described study. Each table contains a serie
 \end{table}
 
 \newpage
-\subsection{Discussion}
+\subsection{\underline{Discussion}}
 In some cases, the algorithm increases the number of clauses generated when proving a conjecture, but does not do so to the point where the proof does not finish. For the majority of proofs, the number of clauses generated decreases or remains unchanged.
 
 Function 1 saw an average 19 percent reduction in the number of clauses generated and function 2 saw an average 23 percent reduction, suggesting the use of semantic hierarchies can reduce the number of clauses generated by an automatic theorem prover when attempting to prove a conjecture on an ontology. Both approaches seem to provide the same or better performance in many cases, with only a handful of cases where the number of clauses generated actually increased. Neither function performs significantly better than the other for a specific ontology, or for the majority of tests. The functions designed performed well for the ontologies tested; however, more tests are required to make generalized claims regarding the effectiveness of said methods. 
@@ -405,10 +408,11 @@ In the inch calculus ontology, conjecture 2 is \texttt{(all x all y (GED(x,y) \&
 
 When proving specific conjectures with few predicates on large ontologies, semantic hierarchies can focus the search of a resolution theorem prover. Results of the experiments conducted indicate further work might yield lucrative results, especially for exceptionally large ontologies. Tests demonstrated success in a relatively unexplored domain of research. 
 
-\subsection{Future Work}
+\subsection{\underline{Future Work}}
 The scarcity of suitable ontologies to test provides many opportunities for advancement. Opportunities for further research include fully automating the search procedure, working with a larger number of ontologies to ensure the weighting functions actually do as they say, or developing a new approach for  automatically weighting the predicates. 
 
-Adjustments regarding the tolerance or aggressiveness of the functions appears to be a promising path forward. Depending on the shape and depth of semantic hierarchies for an ontology, weights could be increased to values nearing 100 or more. Experiments conducted used a maximum weight of ten for any one predicate in efforts to reduce any increases in the number of clauses generated. 
+%DEFINE agressiveness
+Adjustments regarding the tolerance or aggressiveness of the functions appears to be a promising path forward. Depending on the shape and depth of semantic hierarchies for an ontology, weights could be increased to values nearing 100 or more. Experiments conducted used a maximum weight of ten for any one predicate in an effort to reduce any increase in the number of clauses generated. 
 
 \newpage
 \addcontentsline{toc}{section}{\MakeUppercase{References}}
