@@ -305,8 +305,8 @@ The first function attempts to make use of the completed class hierarchy generat
 \end{itemize}
 \end{singlespace}
 
-Given the example 'automobile' ontology and the conjecture $Automobile(myCar)$, the weights can be calculated as follows. 
-%the following weights are calculated:%Please give one example how these numbers come about.
+Given the example 'automobile' ontology and the conjecture $Automobile(myCar)$, the following weights are calculated. 
+
 
 \begin{singlespace}
 \begin{verbatim}
@@ -322,6 +322,8 @@ list(weights).
 end_of_list.
 \end{verbatim}
 \end{singlespace}
+
+$Automobile(x)$ is contained within the conjecture, and is given a weight 1. $Sedan(x)$ and $SubaruLegacy(x)$ are given a weight 1 because they exist on the path between the predicates necessary to prove a conjecture regarding $myCar$. $Minivan(x)$ is one step away from the path and is given weight 2. Furthermore, $ToyotaSienna(x)$ and $FordWindstar(x)$ are grandchildren (two steps down) of those contained on the path, and are given a weight 3. Finally, $CarManufactuer$ is given weight 10, as all ancestors of predicates with a weight generated and all top-level classes corresponding to predicates without a weight assigned are given weight 10.
 
 \subsubsection{\underline{Function 2}}
 
@@ -352,6 +354,8 @@ list(weights).
 end_of_list.
 \end{verbatim}
 \end{singlespace}
+
+Again, $Automobile(x)$ is contained within the conjecture, and is given a weight 1 for being both on the path, and for being the lowest common ancestor. $FordWindstar(x)$ and $SubaruLegacy(x)$ are given a weight 1 because they exist on the path between the predicates necessary to prove a conjecture regarding $myCar$. $Minivan(x)$ and $Sedan(x)$ are one step away from the path and is given weight 2. Furthermore, $ToyotaSienna(x)$ and $FordWindstar(x)$ are grandchildren (two steps down) of those contained on the path, and are given a weight 3.
 
 \newpage
 \vspace*{.05in}
